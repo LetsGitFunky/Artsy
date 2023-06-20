@@ -1,7 +1,10 @@
 {
-  "name": "artsy_render",
+  "name": "artsy-render",
   "version": "1.0.0",
-  "description": "Artsy, bringing Art to you",
+  "description": "artsy is fun, yay!.",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
@@ -9,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "16.2"
+    "node": "16.20.0"
   }
 }
