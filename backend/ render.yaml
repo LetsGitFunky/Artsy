@@ -1,6 +1,6 @@
 databases:
   - name: artsy
-    user: nick_hein
+    user: artsy
     plan: free
     region: oregon
 
