@@ -13,7 +13,7 @@ const RegisterForm = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
 
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    // const sessionUser = useSelector(state => state.session.user);
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = (e) => {

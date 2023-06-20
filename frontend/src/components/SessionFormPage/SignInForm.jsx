@@ -11,14 +11,20 @@ const SignInForm = ({setFormType}) => {
     const [email, setEmail] = useState('');
 
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
+    // const sessionUser = useSelector(state => state.session.user);
     const [errors, setErrors] = useState([]);
+
+    const handleDemoSignIn = (e) => {
+        e.preventDefault(); // prevent form from submitting
+        setEmail("test@test.com");
+        setPassword("password");
+        dispatch(sessionActions.login({ email: "test@test.com", password: "password" }));
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
         // setIsModalOpen(false);
-
                 return dispatch(sessionActions.login({ email, password }))
         .catch(async (res) => {
             let data;
@@ -78,6 +84,12 @@ const SignInForm = ({setFormType}) => {
             </div>
 
             <button className="formButton" type="submit">Sign In</button>
+
+            <button className="formButton"
+            type="button"
+            onClick={handleDemoSignIn}>Sign In as Demo User
+            </button>
+
 
         </form>
     </>)
