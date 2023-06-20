@@ -17,7 +17,7 @@
 
 #!/usr/bin/env bash
 
-exit on error
+# exit on error
 set -o errexit
 
 npm run build
