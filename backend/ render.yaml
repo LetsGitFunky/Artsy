@@ -11,8 +11,8 @@ services:
     region: oregon
     branch: main
     env: ruby
-    buildCommand: "./backend/bin/render-build.sh"
-    startCommand: "cd backend && rails s"
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "rails s"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
