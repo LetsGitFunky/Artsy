@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import '../../styles/FormStyles.css'
-import '../../styles/Nav.css'
+import './FormStyles.css'
+import '../Navigation/Nav.css'
 
 const SignInForm = ({setFormType}) => {
 

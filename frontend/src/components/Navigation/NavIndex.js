@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import '../../styles/Nav.css'
 import ProfileButton from './ProfileButton';
 import LogoButton from './LogoButton';
 import CartButton from '../Cart/CartButton';
 import Categories from '../Categories/categories';
-import { Modal, ModalContext } from '../../context/Modal';
+import { Modal } from '../../context/Modal';
 import SessionForm from '../SessionFormPage/SessionForm';
 import { BsSearch } from 'react-icons/bs';
+import './Nav.css'
 
 
 const Navigation = () => {

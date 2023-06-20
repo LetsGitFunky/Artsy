@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import SignInForm from './SignInForm';
 import RegisterForm from './RegisterForm';
-import '../../styles/FormStyles.css'
-import '../../styles/Nav.css'
+import './FormStyles.css'
+import '../Navigation/Nav.css'
 
 const SessionForm = ({formType, setFormType})  => {
     const sessionUser = useSelector(state => state.session.user);
