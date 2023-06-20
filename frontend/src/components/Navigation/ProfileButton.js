@@ -40,7 +40,7 @@ const ProfileButton = () => {
                 <li>{user.firstName}</li>
                 <li>{user.email}</li>
                 <li>
-                <button onClick={handleLogout} className="navbar logout">Logout</button>
+                <button onClick={handleLogout} className="logout">Logout</button>
                 </li>
             </ul>
         )}
