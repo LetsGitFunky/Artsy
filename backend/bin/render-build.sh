@@ -4,8 +4,8 @@
 set -o errexit
 
 # Build the React app
-npm install --prefix frontend
-npm run build --prefix frontend
+npm install --prefix ./backend/frontend
+npm run build --prefix ./backend/frontend
 
 # Install Rails dependencies and migrate the database
 bundle install
