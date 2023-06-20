@@ -17,21 +17,21 @@
 
 #!/usr/bin/env bash
 
-# exit on error
-# set -o errexit
+exit on error
+set -o errexit
 
-# npm run build
-# bundle install
-# rails db:migrate
-# rails db:seed #if needed
+npm run build
+bundle install
+rails db:migrate
+rails db:seed #if needed
 
 
 #!/usr/bin/env bash
 
 # exit on error
-set -o errexit
+# set -o errexit
 
-npm --prefix ./backend run build
-cd ./backend && bundle install
-cd ./backend  && rails db:migrate
-cd ./backend  && rails db:seed #if needed
+# npm --prefix ./backend run build
+# cd ./backend && bundle install
+# cd ./backend  && rails db:migrate
+# cd ./backend  && rails db:seed #if needed
