@@ -13,6 +13,7 @@ ApplicationRecord.transaction do
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('products')
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -21,6 +22,8 @@ ApplicationRecord.transaction do
       email: 'test@test.com',
       password: 'password'
     )
+
+    puts "Done!"
 
     # More users
     # 10.times do
@@ -31,5 +34,48 @@ ApplicationRecord.transaction do
     #   })
     # end
 
-    puts "Done!"
+
+    art1 = Product.create!(
+      name: "Mona Lisa",
+      description: "Look at that smile!",
+      price: 20,
+      category: "Art"
+    )
+
+    art2 = Product.create!(
+      name: "Last Supper",
+      description: "Da Vinci Code",
+      price: 20,
+      category: "Art"
+      )
+
+      art3 = Product.create!(
+        name: "Birth of Venus",
+        description: "Take that beyonce!",
+        price: 20,
+        category: "Art"
+      )
+
+    jewelry1 = Product.create!(
+      name: "Jade Earrings",
+      description: "Beads of Jade for beauty",
+      price: 50,
+      category: "Jewelry"
+    )
+
+    jewelry2 = Product.create!(
+      name: "Diamond Ring",
+      description: "Diamonds are forever",
+      price: 1000,
+      category: "Jewelry"
+    )
+    
+    jewelry3 = Product.create!(
+      name: "Gold Bracelet",
+      description: "Take that beyonce!",
+      price: 150,
+      category: ""
+    )
+
+
   end
