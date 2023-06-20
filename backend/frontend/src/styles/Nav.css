@@ -1,0 +1,177 @@
+.navMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-bottom: 2px solid lightgray;
+}
+
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navRight {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    padding-right: 2em;
+    align-items: center;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0 10px;
+    background-color: white;
+    color: black;
+    font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans", Arial, sans-serif;
+    font-weight: 400;
+    font-size: smaller;
+}
+
+.navbar button:hover {
+    background-color: lightgray;
+}
+
+.navbar button:visited {
+    color: black;
+}
+
+.navbar button,
+.profile-button {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 2em;
+    padding: 6px 9px;
+    border: none;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.profile-button:hover:before,
+.profile-button:hover:after {
+    transform: scaleX(0.7) scaleY(0.7) perspective(1px);
+}
+
+.navbar button:hover,
+.profile-button:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+@keyframes slideDownFromTop {
+    from {
+        transform: translateY(0%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-menu {
+    list-style-type: none; /* Removes the default list-style */
+    margin: 0;  /* Removes the default margin */
+    padding: 0;  /* Removes the default padding */
+    background-color: #fff;  /* Sets the background color to white */
+    border-radius: 8px;  /* Gives the menu rounded corners */
+    box-shadow: 0 1px 5px black;
+    overflow: hidden;  /* Ensures the border-radius affects inner elements */
+    position: absolute;
+    animation: slideDownFromTop 0.5s ease-out forwards;
+}
+
+.profile-menu li {
+    padding: 12px 20px;  /* Adds some space around the text */
+    border-bottom: 1px solid #f2f2f2;  /* Adds a light separator between items */
+    color: #333;  /* Sets the text color */
+    font-size: 15px;  /* Sets the font size */
+    cursor: pointer;  /* Changes the cursor on hover */
+}
+
+.profile-menu li:last-child {
+    border-bottom: none;  /* Removes the border-bottom from the last item */
+}
+
+.profile-menu li:hover {
+    background-color: #f2f2f2;  /* Changes the background color on hover */
+}
+
+.logout {
+    border: none
+}
+
+.login button {
+    min-width: 40px;
+    font-size: smaller;
+}
+
+.searchContainer {
+    display: flex;
+    border: 2px solid #222;
+    border-radius: 96px;
+    box-shadow: none;
+    background: rgba(0,0,0,0);
+    background-color: rgb(247, 245, 245);
+    width: 70%;
+}
+
+.searchbar {
+    flex-grow: 1;
+    padding-left: 18px;
+    padding-right: 42px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 96px 0 0 96px;
+    background: transparent;
+    color: gray;
+}
+
+.searchbar:focus {
+    outline: none;
+    background-color: white;
+}
+
+.searchbar:focus + .searchButton {
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.searchButton {
+    border: none;
+    border-radius: 0 96px 96px 0;
+    background: transparent;
+    cursor: pointer;
+    padding-right: 1.5em;
+    padding-left: 1em;
+}
+
+.searchbar:focus + .searchButton .searchIcon {
+    color: white;
+}
+
+.searchButton .searchIcon {
+    color: black; /* default color of search icon */
+    transition: color 0.3s ease-in-out;
+}
+
+.logo-image {
+    width: 90px;
+    height: 40px;
+}
+
+.logo-button {
+    padding-top: 10px;
+    padding-left: 20px;
+}

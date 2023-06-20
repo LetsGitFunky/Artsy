@@ -1,0 +1,14 @@
+{
+  "name": "artsy_render",
+  "version": "1.0.0",
+  "description": "Artsy, bringing Art to you",
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "16.2"
+  }
+}
