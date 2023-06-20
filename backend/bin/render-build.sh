@@ -33,5 +33,5 @@ set -o errexit
 
 npm --prefix ./backend run build
 cd ./backend && bundle install
-cd ./backend && rails db:migrate
-cd ./backend && rails db:seed #if needed
+cd ./backend  && rails db:migrate
+cd ./backend  && rails db:seed #if needed
