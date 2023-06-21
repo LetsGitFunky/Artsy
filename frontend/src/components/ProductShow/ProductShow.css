@@ -48,7 +48,7 @@
 
 .prod-desc,
 .prod-cat {
-    font-size: .9em;
+    font-size: 1em;
 }
 
 /* Thumbnail styling */
@@ -128,4 +128,30 @@
 
 .carousel .thumbs {
     flex-direction: column;
+}
+
+
+/* Select-Size */
+
+.select-size {
+    transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+    appearance: none;
+    box-shadow: 0 1px 6px 0 rgba(34,34,34,.15);
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    height: 35px;
+    padding-left: 12px;
+    padding-right: 36px;
+    width: 100%;
+    border-radius: 6px;
+    background: #fff;
+    border-color: rgba(34,34,34,.15);
+    border-style: solid;
+    border-width: 1px;
+    color: #222;
+    text-indent: 0.01px;
+    text-overflow: "";
+    cursor: pointer;
+    box-sizing: border-box;
 }
