@@ -1,76 +1,131 @@
-.prod-show-container {
+/* Basic setup for different containers */
+.prod-show-container,
+.img-carousel-container,
+.thumbnails-container,
+.prod-img-container,
+.prod-info-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    align-self: center;
-    margin: 20px auto;
+    gap: 10px;
+}
+
+.prod-show-container {
+    margin: auto;
     width: 100%;
     max-width: 1000px;
+    padding-top: 70px;
+}
+
+.thumbnails-container {
+    flex-direction: column;
+    margin: 10px;
 }
 
 .prod-img-container {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px; /* Fixed width */
-    height: 600px; /* Fixed height */
-}
-
-.prod-main-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Will resize image to fit within its container while maintaining aspect ratio */
-    border-radius: 5px;
-    overflow: hidden;
+    width: 600px;
+    height: 600px;
 }
 
 .prod-info-container {
     flex: 1;
-    padding: 20px;
-    display: flex;
+    padding-left: 20px;
     flex-direction: column;
-    padding-top: 5%;
-    gap: 15px;
     max-width: 30%;
 }
 
+/* Font styling */
 .prod-price {
     font-weight: bold;
     font-size: 1.7em;
 }
 
 .prod-name {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #333;
 }
 
-.prod-desc {
-    font-size: 1em;
-}
-
+.prod-desc,
 .prod-cat {
-    font-size: 1em;
+    font-size: .9em;
 }
 
-.thumbnails-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* spacing between thumbnails */
-    margin: 10px; /* add some space above the thumbnails */
-}
-
-.thumbnail {
-    width: 60px; /* adjust as necessary */
-    height: 60px; /* adjust as necessary */
-    object-fit: cover; /* ensure images maintain their aspect ratio */
+/* Thumbnail styling */
+.thumbnail,
+.carousel .thumbs-wrapper .thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
     border: 2px solid transparent;
     cursor: pointer;
     border-radius: 5px;
+    opacity: 0.4;
 }
 
-.thumbnail.selected {
-    border-color: black; /* change to match your design, indicates the currently selected image */
+.thumbnail.selected,
+.carousel .thumbs-wrapper .selected {
+    border-color: black;
+    opacity: 1;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+/* Carousel styles */
+.carousel .slide {
+    background: none;
+}
+
+.carousel-main-img {
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 2%;
+    object-fit: contain;
+}
+
+.carousel.carousel-slider .control-arrow {
+    height: 60px;
+    width: 60px;
+    top: calc(50% - 30px);
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left: 16px solid black;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 16px solid black;
+}
+
+.carousel .control-next.control-arrow:hover:before {
+    border-left-color: lightgrey;
+}
+
+.carousel .control-prev.control-arrow:hover:before {
+    border-right-color: lightgrey;
+}
+
+.carousel .carousel-status {
+    display: none;
+}
+
+.carousel .carousel-slider {
+    display: flex;
+}
+
+.carousel .thumbs-wrapper {
+    position: relative;
+    width: 100px;
+    order: -1;
+    overflow-y: auto;
+    height: auto;
+}
+
+.carousel .thumbs {
+    flex-direction: column;
 }
