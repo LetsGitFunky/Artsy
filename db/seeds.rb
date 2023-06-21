@@ -40,7 +40,9 @@ ApplicationRecord.transaction do
       description: "Look at that smile!",
       price: 20,
       category: "Art",
-      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/Mona.jpeg"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/Mona.jpeg",
+      "https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/MonaFloor.avif",
+    "https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/MonaWall.avif"],
       sizes: ['11×17', '18×24', '24×36', '27×40']
     )
 

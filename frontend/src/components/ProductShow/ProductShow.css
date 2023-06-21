@@ -13,13 +13,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 600px; /* Fixed width */
+    height: 600px; /* Fixed height */
 }
 
 .prod-main-img {
     max-width: 100%;
-    max-height: 500px;
-    object-fit: cover;
+    max-height: 100%;
+    object-fit: cover; /* Will resize image to fit within its container while maintaining aspect ratio */
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .prod-info-container {
@@ -27,7 +30,9 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    padding-top: 5%;
     gap: 15px;
+    max-width: 30%;
 }
 
 .prod-price {
@@ -44,7 +49,28 @@
     font-size: 1em;
 }
 
-
 .prod-cat {
     font-size: 1em;
+}
+
+.thumbnails-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* spacing between thumbnails */
+    margin: 10px; /* add some space above the thumbnails */
+}
+
+.thumbnail {
+    width: 60px; /* adjust as necessary */
+    height: 60px; /* adjust as necessary */
+    object-fit: cover; /* ensure images maintain their aspect ratio */
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.thumbnail.selected {
+    border-color: black; /* change to match your design, indicates the currently selected image */
 }
