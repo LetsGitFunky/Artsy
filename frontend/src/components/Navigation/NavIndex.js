@@ -50,7 +50,7 @@ const Navigation = () => {
                         placeholder={"Search for anything"}
                     />
                     <button type="submit" className="searchButton">
-                        <span class="searchIcon"><BsSearch size={17} /></span>
+                        <span className="searchIcon"><BsSearch size={17} /></span>
                     </button>
                 </div>
 

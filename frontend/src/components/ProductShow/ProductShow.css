@@ -1,0 +1,50 @@
+.prod-show-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.prod-img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod-main-img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.prod-info-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prod-price {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.prod-name {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.prod-desc {
+    font-size: 1em;
+}
+
+
+.prod-cat {
+    font-size: 1em;
+}

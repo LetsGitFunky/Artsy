@@ -1,0 +1,21 @@
+.pii-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.pii-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.pii-link {
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.pii-desc, .pii-price {
+    margin-top: 5px;
+}

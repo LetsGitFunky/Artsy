@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../store/product.js";
 import ProductIndexItem from "../ProductIndexItem/ProductIndexItem.js";
+import './ProductIndex.css';
 
 const ProductIndex = () => {
     const products = useSelector((state) => Object.values(state.products));
@@ -14,7 +15,7 @@ const ProductIndex = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className="product-index-container">
             {products.map((product) => (
                 <ProductIndexItem key={product.id} product={product} />
             ))}

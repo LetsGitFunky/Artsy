@@ -39,42 +39,48 @@ ApplicationRecord.transaction do
       name: "Mona Lisa",
       description: "Look at that smile!",
       price: 20,
-      category: "Art"
+      category: "Art",
+      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
     )
 
     art2 = Product.create!(
       name: "Last Supper",
       description: "Da Vinci Code",
       price: 20,
-      category: "Art"
+      category: "Art",
+      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
       )
 
       art3 = Product.create!(
         name: "Birth of Venus",
         description: "Take that beyonce!",
         price: 20,
-        category: "Art"
+        category: "Art",
+        img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
       )
 
     jewelry1 = Product.create!(
       name: "Jade Earrings",
       description: "Beads of Jade for beauty",
       price: 50,
-      category: "Jewelry"
+      category: "Jewelry",
+      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
     )
 
     jewelry2 = Product.create!(
       name: "Diamond Ring",
       description: "Diamonds are forever",
       price: 1000,
-      category: "Jewelry"
+      category: "Jewelry",
+      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
     )
 
     jewelry3 = Product.create!(
       name: "Gold Bracelet",
       description: "Take that beyonce!",
       price: 150,
-      category: "Jewelry"
+      category: "Jewelry",
+      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
     )
 
 
