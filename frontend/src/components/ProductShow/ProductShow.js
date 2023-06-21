@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../../store/product';
 import { useParams } from 'react-router-dom';
@@ -7,18 +7,23 @@ import "../SessionFormPage/FormStyles.css"
 
 function ProductShow() {
     const dispatch = useDispatch();
-    const { productId } = useParams(); // Get the productId from the URL parameters
+    const { productId } = useParams();
     const product = useSelector(state => state.products[productId]);
+
+    const [selectedSize, setSelectedSize] = useState("")
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
     }, [dispatch, productId]);
 
-    // Render a loading screen if the product hasn't been fetched yet
     if (!product) {
         return (
         <div>Loading...</div>
         );
+    }
+
+    const handleSizeChange = (e) => {
+        setSelectedSize(e.target.value);
     }
 
     return (
@@ -36,7 +41,13 @@ function ProductShow() {
             <p className="prod-desc">{product.description}</p>
             <p className="prod-cat">{product.category}</p>
             <p>Ratings go here</p>
-            
+            <select value={selectedSize} onChange={handleSizeChange}>
+                <option value="">Select size</option>
+                {product.sizes.map((size, index) => (
+                    <option key={index} value={size}>{size}</option>
+                ))}
+            </select>
+
             <button className='formButton'>Add to Cart</button>
             {/* Render more product details as needed */}
         </div>

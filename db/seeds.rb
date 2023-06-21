@@ -40,7 +40,8 @@ ApplicationRecord.transaction do
       description: "Look at that smile!",
       price: 20,
       category: "Art",
-      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+      img_urls: ["https://shorturl.at/wJKQY"],
+      sizes: ['11×17', '18×24', '24×36', '27×40']
     )
 
     art2 = Product.create!(
@@ -48,7 +49,8 @@ ApplicationRecord.transaction do
       description: "Da Vinci Code",
       price: 20,
       category: "Art",
-      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+      img_urls: ["https://shorturl.at/wJKQY"],
+      sizes: ['11×17', '18×24', '24×36', '27×40']
       )
 
       art3 = Product.create!(
@@ -56,7 +58,8 @@ ApplicationRecord.transaction do
         description: "Take that beyonce!",
         price: 20,
         category: "Art",
-        img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+        img_urls: ["https://shorturl.at/wJKQY"],
+        sizes: ['11×17', '18×24', '24×36', '27×40']
       )
 
     jewelry1 = Product.create!(
@@ -64,7 +67,8 @@ ApplicationRecord.transaction do
       description: "Beads of Jade for beauty",
       price: 50,
       category: "Jewelry",
-      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+      img_urls: ["https://shorturl.at/wJKQY"],
+      sizes: []
     )
 
     jewelry2 = Product.create!(
@@ -72,7 +76,8 @@ ApplicationRecord.transaction do
       description: "Diamonds are forever",
       price: 1000,
       category: "Jewelry",
-      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+      img_urls: ["https://shorturl.at/wJKQY"],
+      sizes: []
     )
 
     jewelry3 = Product.create!(
@@ -80,7 +85,8 @@ ApplicationRecord.transaction do
       description: "Take that beyonce!",
       price: 150,
       category: "Jewelry",
-      img_urls: ["https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"]
+      img_urls: ["https://shorturl.at/wJKQY"],
+      sizes: []
     )
 
 
