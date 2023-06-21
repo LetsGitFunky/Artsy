@@ -41,7 +41,7 @@ function ProductShow() {
             <p className="prod-desc">{product.description}</p>
             <p className="prod-cat">{product.category}</p>
             <p>Ratings go here</p>
-            <select value={selectedSize} onChange={handleSizeChange}>
+            <select classname="select-size" value={selectedSize} onChange={handleSizeChange}>
                 <option value="">Select size</option>
                 {product.sizes.map((size, index) => (
                     <option key={index} value={size}>{size}</option>

@@ -40,7 +40,7 @@ ApplicationRecord.transaction do
       description: "Look at that smile!",
       price: 20,
       category: "Art",
-      img_urls: ["https://shorturl.at/wJKQY"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/Mona.jpeg"],
       sizes: ['11×17', '18×24', '24×36', '27×40']
     )
 
@@ -49,7 +49,7 @@ ApplicationRecord.transaction do
       description: "Da Vinci Code",
       price: 20,
       category: "Art",
-      img_urls: ["https://shorturl.at/wJKQY"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"],
       sizes: ['11×17', '18×24', '24×36', '27×40']
       )
 
@@ -58,7 +58,7 @@ ApplicationRecord.transaction do
         description: "Take that beyonce!",
         price: 20,
         category: "Art",
-        img_urls: ["https://shorturl.at/wJKQY"],
+        img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/BirthOfVenus.jpeg"],
         sizes: ['11×17', '18×24', '24×36', '27×40']
       )
 
@@ -67,7 +67,7 @@ ApplicationRecord.transaction do
       description: "Beads of Jade for beauty",
       price: 50,
       category: "Jewelry",
-      img_urls: ["https://shorturl.at/wJKQY"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/Jade.jpeg"],
       sizes: []
     )
 
@@ -76,7 +76,7 @@ ApplicationRecord.transaction do
       description: "Diamonds are forever",
       price: 1000,
       category: "Jewelry",
-      img_urls: ["https://shorturl.at/wJKQY"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond.jpeg"],
       sizes: []
     )
 
@@ -85,7 +85,7 @@ ApplicationRecord.transaction do
       description: "Take that beyonce!",
       price: 150,
       category: "Jewelry",
-      img_urls: ["https://shorturl.at/wJKQY"],
+      img_urls: ["https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold.jpeg"],
       sizes: []
     )
 

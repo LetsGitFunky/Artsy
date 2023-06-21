@@ -43,7 +43,7 @@ const RegisterForm = () => {
                     <p>Registration is easy.</p>
                 </div>
                 <ul className="errorList">
-                    {errors.map(error => <li key={error}>{error}</li>)}
+                    {errors.map(error => <li key={`error-${error}`}>{error}</li>)}
                 </ul>
                 <label className="inputLabel">
                     Email address

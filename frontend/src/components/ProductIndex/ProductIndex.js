@@ -17,7 +17,7 @@ const ProductIndex = () => {
     return (
         <div className="product-index-container">
             {products.map((product) => (
-                <ProductIndexItem key={product.id} product={product} />
+                <ProductIndexItem key={`item-${product.id}`} product={product} />
             ))}
         </div>
     );
