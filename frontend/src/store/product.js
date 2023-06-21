@@ -21,22 +21,25 @@ export const fetchProducts = () => async (dispatch) => {
 
     if (response.ok) {
         const products = await response.json()
+        console.log(products)
         dispatch(receiveProducts(products))
     }
-}
+};
 
-export const fetchPost = (productId) => async (dispatch) => {
-    const response = await fetch(`/api/products/${productId}`)
+export const fetchProduct = (product) => async (dispatch) => {
+    const response = await fetch(`/api/products/${product}`)
 
     if (response.ok) {
         const product = await response.json()
         dispatch(receiveProduct(product))
     }
-}
+};
 
-//
+const initialState = {
+    products: {},
+};
 
-const productReducer = (state = {}, action) => {
+const productReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
@@ -47,7 +50,6 @@ const productReducer = (state = {}, action) => {
     default:
         return state;
     }
-
-}
+};
 
 export default productReducer
