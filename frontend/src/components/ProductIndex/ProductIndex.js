@@ -4,8 +4,8 @@ import { fetchProducts } from "../../store/product.js";
 import ProductIndexItem from "../ProductIndexItem/ProductIndexItem.js";
 
 const ProductIndex = () => {
-    // const products = useSelector((state) => Object.values(state.products));
-    const products = useSelector(state => state.products);
+    const products = useSelector((state) => Object.values(state.products));
+    // const products = useSelector(state => state.products);
 
     const dispatch = useDispatch();
 

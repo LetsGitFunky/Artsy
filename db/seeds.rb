@@ -69,12 +69,12 @@ ApplicationRecord.transaction do
       price: 1000,
       category: "Jewelry"
     )
-    
+
     jewelry3 = Product.create!(
       name: "Gold Bracelet",
       description: "Take that beyonce!",
       price: 150,
-      category: ""
+      category: "Jewelry"
     )
 
 

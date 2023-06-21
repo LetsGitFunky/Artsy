@@ -1,13 +1,23 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation/NavIndex';
-// import ProductIndex from './components/ProductIndex/ProductIndex';
+import ProductIndex from './components/ProductIndex/ProductIndex';
+import ProductShow from './components/ProductShow/ProductShow';
 
 
 function App() {
   return (
     <>
     <Navigation/>
-    {/* <ProductIndex/> */}
+    <Switch>
+        <Route path="/products/:productId">
+          <ProductShow />
+        </Route>
+        <Route path="/products">
+          <ProductIndex />
+        </Route>
+        {/* Add more routes as needed */}
+      </Switch>
     </>
   );
 }
