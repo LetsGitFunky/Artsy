@@ -13,6 +13,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  # user can view the products they've reviewed
+  def show
+    @user = User.find(params[:id])
+    @reviews = @user.reviews.includes(:product)
+    render :show
+  end
+
+
 
   private
 
