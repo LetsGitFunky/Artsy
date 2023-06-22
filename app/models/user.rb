@@ -12,6 +12,7 @@
 #
 class User < ApplicationRecord
   has_secure_password
+  has_many :reviews
 
   validates :first_name,
     length: { in: 2..30 },
@@ -27,6 +28,7 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..255 }, allow_nil: true
 
   before_validation :ensure_session_token
+
 
 
   def self.find_by_credentials(email, password)
