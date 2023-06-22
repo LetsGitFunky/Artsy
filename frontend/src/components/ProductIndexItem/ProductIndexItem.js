@@ -9,7 +9,7 @@ const ProductIndexItem = ({ product }) => {
         <Link className="pii-link" to={`/products/${product.id}`}>
             <div className="pii-container">
                 <img className="pii-img"
-                    src={product.img_urls ? product.img_urls[0]
+                    src={product.images ? product.images[0]
                     : "https://publicdelivery.org/wp-content/uploads/2018/10/Fernando-Botero-Mona-Lisa-1978-183-x-166-cm.jpg"}
                     alt={product.name} />
                 <div className="pii-text-container">

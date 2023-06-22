@@ -35,7 +35,7 @@ function ProductShow() {
 
         <div className="img-carousel-container">
             <div className="thumbnails-container">
-                {product.img_urls.map((url, index) => (
+                {product.images.map((url, index) => (
                     <img
                         className={`thumbnail ${index === currentImgIndex ? "selected" : ""}`}
                         key={index}
@@ -55,7 +55,7 @@ function ProductShow() {
                     infiniteLoop={true}
                     showIndicators={false}
                 >
-                    {product.img_urls.map((url, index) => (
+                    {product.images.map((url, index) => (
                         <div key={index}>
                             <img
                             className="carousel-main-img"
@@ -88,42 +88,4 @@ function ProductShow() {
     </div>
     );
 }
-
-
-// const handleThumbnailClick = (index) => {
-//     setCurrentImgIndex(index);
-// }
-
-// const handlePrevClick = () => {
-//     setCurrentImgIndex((currentImgIndex - 1 + product.img_urls.length) % product.img_urls.length);
-// }
-
-// const handleNextClick = () => {
-//     setCurrentImgIndex((currentImgIndex + 1) % product.img_urls.length);
-// }
-
-{/* <div className="prod-img-container">
-<div className="thumbnails-container">
-    {product.img_urls.map((url, index) => (
-        <img
-            className={`thumbnail ${index === currentImgIndex ? "selected" : ""}`}
-            key={index}
-            src={url}
-            alt={`${product.name} ${index}`}
-            onClick={() => setCurrentImgIndex(index)}
-        />
-    ))}
-</div>
-
-    <button onClick={handlePrevClick}>Prev</button>
-
-    <img
-    className="prod-main-img"
-    // src={product.img_urls ? product.img_urls[currentImgIndex] : "https://shorturl.at/wJKQY"}
-    src={product.img_urls[currentImgIndex]}
-    alt={product.name}
-    />
-
-    <button onClick={handleNextClick}>Next</button>
-</div> */}
 export default ProductShow;
