@@ -9,9 +9,9 @@
 #  category    :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  img_urls    :string           default([]), not null, is an Array
 #  sizes       :string           default([]), is an Array
 #
 class Product < ApplicationRecord
     has_many :reviews
+    
 end
