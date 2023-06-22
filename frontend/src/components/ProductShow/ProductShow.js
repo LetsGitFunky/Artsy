@@ -71,10 +71,10 @@ function ProductShow() {
             <p className="prod-price">${product.price}</p>
             <p className="prod-name">{product.name}</p>
             <p className="prod-desc">{product.description}</p>
-            <p className="prod-cat">{product.category}</p>
+            {/* <p className="prod-cat">{product.category}</p> */}
             <p className='prod-rating'>(Ratings will go here)</p>
 
-            <label>Size
+            <label className='prod-size-label'>Size
                 <select className="select-size" value={selectedSize} onChange={handleSizeChange}>
                     <option value="">Select size</option>
                     {product.sizes.map((size, index) => (

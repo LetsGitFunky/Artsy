@@ -1,21 +1,81 @@
 .pii-container {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
+    /* border: 1px solid #ccc; */
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+    overflow: hidden; /* Added this line to apply border radius to the image */
+    box-sizing: border-box; /* To prevent padding from expanding container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text */
+    width: 100%; /* Fixed width */
+}
+
+.pii-text-container {
+    text-align: left; /* This will align the text to the left */
+    width: 100%; /* This will take up the full width of the container */
+}
+
+.pii-link {
+    text-decoration: none;
 }
 
 .pii-img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+    object-position: 50% 20%;
+    display: block;
+    margin: auto;
 }
 
-.pii-link {
-    margin-top: 10px;
+.pii-name {
     color: #333;
     text-decoration: none;
+    font-size: .9em;
 }
 
-.pii-desc, .pii-price {
-    margin-top: 5px;
+.pii-price {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.pii-text {
+    color: #333;
+    text-decoration: none !important;
+    margin: 5px;
+}
+
+.pii-rating {
+    font-size: .6em;
+}
+
+.pii-shipping {
+    font-size: .6em;
+    color: rgb(106, 106, 106);
+}
+
+.pii-verified {
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    font-size: .6em;
+    color: rgb(106, 106, 106);
+}
+
+.pii-delivery {
+    font-weight: bold;
+    font-size: .7em;
+}
+
+.pii-cart-button {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px 12px 5px 8px;
+    font-size: .7em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
