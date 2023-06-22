@@ -21,7 +21,7 @@ export const fetchProducts = () => async (dispatch) => {
 
     if (response.ok) {
         const products = await response.json()
-        console.log(products)
+        // console.log(products)
         dispatch(receiveProducts(products))
     }
 };
