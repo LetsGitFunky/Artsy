@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../../store/product';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // This imports the styles
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./ProductShow.css"
 import "../SessionFormPage/FormStyles.css"
+import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -31,7 +32,6 @@ function ProductShow() {
 
     return (
         <div className="prod-show-container">
-
 
         <div className="img-carousel-container">
             <div className="thumbnails-container">
@@ -84,6 +84,10 @@ function ProductShow() {
             </label>
 
             <button className='formButton'>Add to Cart</button>
+        </div>
+
+        <div className='prod_show_rev_idx'>
+            <ReviewIndex productId={productId} />
         </div>
     </div>
     );

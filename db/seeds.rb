@@ -100,3 +100,17 @@ require "open-uri"
     )
 
     jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold.jpeg"), filename: "Gold1.jpg")
+
+
+    # seed random reviews
+    Product.all.map do |product|
+      3.times do
+        Review.create!(
+          title: Faker::Book.title, # generating random titles for the reviews
+          rating: rand(1..5),
+          body: Faker::Lorem.paragraph(sentence_count: 2),
+          user_id: User.first.id, # assuming that user with id 1 always exists
+          product_id: product.id
+        )
+      end
+    end

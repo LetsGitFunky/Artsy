@@ -6,7 +6,6 @@ import './ProductIndex.css';
 
 const ProductIndex = () => {
     const products = useSelector((state) => Object.values(state.products));
-    // const products = useSelector(state => state.products);
 
     const dispatch = useDispatch();
 
