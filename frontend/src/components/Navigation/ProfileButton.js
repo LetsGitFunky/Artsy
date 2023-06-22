@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import {FaUserCircle} from "react-icons/fa"
+import {TiArrowSortedDown} from "react-icons/ti"
 
 const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -34,7 +36,7 @@ const ProfileButton = () => {
 
     return (
         <div className="profile-container" onClick={openMenu}>
-        <button className="navbar profile-button">Picture</button>
+        <button className="navbar profile-button"><FaUserCircle size={20} style={{ color: "#0091F5" }}/> <TiArrowSortedDown style={{ color: "#0091F5" }}/></button>
         {showMenu && (
             <ul className='profile-menu'>
                 <li>{user.firstName}</li>

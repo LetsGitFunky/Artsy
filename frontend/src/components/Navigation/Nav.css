@@ -48,7 +48,7 @@
     cursor: pointer;
     background-color: #fff;
     border-radius: 2em;
-    padding: 6px 9px;
+    padding: 6px;
     border: none;
     transition: background-color 0.1s ease-in-out;
 }

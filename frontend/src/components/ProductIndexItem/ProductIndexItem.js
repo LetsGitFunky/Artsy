@@ -18,7 +18,7 @@ const ProductIndexItem = ({ product }) => {
                     <p className="pii-text pii-rating">(ratings will go here)</p>
                     <p className="pii-text pii-price">${product.price}</p>
                     <p className="pii-text pii-shipping">Free shipping</p>
-                    <p className="pii-text pii-verified"><MdVerified size={12} style={{ marginRight: '2px', color: "#8a45ba" }}/>Verified seller</p>
+                    <p className="pii-text pii-verified"><MdVerified size={12} style={{ marginRight: '2px', color: "#6400F5" }}/>Verified seller</p>
                     <p className="pii-text pii-delivery">Ships 5-7 business days</p>
                     <button className="pii-cart-button"><AiOutlinePlus size={16} style={{ marginRight: '2px' }}/>Add to cart</button>
                 </div>
