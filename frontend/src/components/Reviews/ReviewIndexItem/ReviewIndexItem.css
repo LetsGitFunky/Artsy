@@ -7,4 +7,31 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
+    padding: 10px;
+    gap: 5px
 }
+
+/* .rii-rating {} */
+
+.rii-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+.rii-body {
+    font-size: .8em;
+    line-height: 28px;
+}
+.rii-author {
+    font-size: .7em;
+}
+
+.rii-helpful {
+    border: none;
+    background-color: white;
+    font-size: .7em;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* .rii-text {} */
