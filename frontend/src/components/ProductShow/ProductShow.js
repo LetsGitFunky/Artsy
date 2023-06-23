@@ -31,19 +31,21 @@ function ProductShow() {
     }
 
     return (
+        <>
+
         <div className="prod-show-container">
 
         <div className="img-carousel-container">
             <div className="thumbnails-container">
                 {product.images.map((url, index) => (
                     <img
-                        className={`thumbnail ${index === currentImgIndex ? "selected" : ""}`}
-                        key={index}
-                        src={url}
-                        alt={`${product.name} ${index}`}
-                        onClick={() => setCurrentImgIndex(index)}
+                    className={`thumbnail ${index === currentImgIndex ? "selected" : ""}`}
+                    key={index}
+                    src={url}
+                    alt={`${product.name} ${index}`}
+                    onClick={() => setCurrentImgIndex(index)}
                     />
-                ))}
+                    ))}
             </div>
 
             <div className="prod-img-container">
@@ -54,7 +56,7 @@ function ProductShow() {
                     autoPlay={false}
                     infiniteLoop={true}
                     showIndicators={false}
-                >
+                    >
                     {product.images.map((url, index) => (
                         <div key={index}>
                             <img
@@ -86,10 +88,11 @@ function ProductShow() {
             <button className='formButton'>Add to Cart</button>
         </div>
 
-        <div className='prod_show_rev_idx'>
+    </div>
+        <div className='prod-review-index'>
             <ReviewIndex productId={productId} />
         </div>
-    </div>
+                        </>
     );
 }
 export default ProductShow;

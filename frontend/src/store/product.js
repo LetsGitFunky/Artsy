@@ -1,3 +1,5 @@
+import { receiveReviews } from "./review";
+
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 
@@ -29,8 +31,10 @@ export const fetchProduct = (product) => async (dispatch) => {
     const response = await fetch(`/api/products/${product}`)
 
     if (response.ok) {
-        const product = await response.json()
-        dispatch(receiveProduct(product))
+        const data = await response.json()
+        debugger
+        dispatch(receiveProduct(data.product))
+        dispatch(receiveReviews(data.reviews))
     }
 };
 
@@ -44,6 +48,7 @@ const productReducer = (state = initialState, action) => {
         case RECEIVE_PRODUCTS:
         return {...action.products}
         case RECEIVE_PRODUCT:
+            debugger
         return {...state, [action.product.id]: action.product}
 
     default:

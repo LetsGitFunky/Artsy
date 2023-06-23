@@ -1,0 +1,11 @@
+.review-index-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-item-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
