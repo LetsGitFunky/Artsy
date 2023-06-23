@@ -1,0 +1,17 @@
+.avg-rating-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.avg-text {
+    font-size: .8em;
+    font-weight: 500;
+    padding-right: 8px;
+    border-right: 1px solid black;
+}
+
+.avg-rating-text {
+    font-size: .7em;
+}

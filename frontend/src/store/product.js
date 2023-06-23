@@ -32,7 +32,7 @@ export const fetchProduct = (product) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json()
-        debugger
+        // debugger
         dispatch(receiveProduct(data.product))
         dispatch(receiveReviews(data.reviews))
     }
@@ -48,7 +48,7 @@ const productReducer = (state = initialState, action) => {
         case RECEIVE_PRODUCTS:
         return {...action.products}
         case RECEIVE_PRODUCT:
-            debugger
+            // debugger
         return {...state, [action.product.id]: action.product}
 
     default:

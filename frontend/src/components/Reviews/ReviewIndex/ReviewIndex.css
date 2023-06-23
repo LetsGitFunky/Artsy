@@ -4,8 +4,12 @@
     gap: 20px;
 }
 
-.review-item-container {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.review-index-container {
     padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.avg-rating {
+    margin-left: 15px;
 }
