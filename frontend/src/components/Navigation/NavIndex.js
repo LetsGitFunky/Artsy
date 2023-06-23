@@ -40,21 +40,21 @@ const Navigation = () => {
     }
 
     return (
-        <div className='navMain'>
-            <div className='navTop'>
+        <div className='nav-wrapper'>
+            <div className='nav-top'>
                     <LogoButton/>
-                <div className='searchContainer'>
+                <div className='search-container'>
                     <input
                         className='searchbar'
                         type="text"
                         placeholder={"Search for anything"}
                     />
-                    <button type="submit" className="searchButton">
-                        <span className="searchIcon"><BsSearch size={17} /></span>
+                    <button type="submit" className="search-button">
+                        <span className="search-icon"><BsSearch size={17} /></span>
                     </button>
                 </div>
 
-                <div className='navRight'>
+                <div className='nav-right'>
                     {sessionLinks}
                     <CartButton/>
                 </div>

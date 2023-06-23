@@ -42,9 +42,9 @@ const SignInForm = ({setFormType}) => {
     return (
     <>
 
-        <form className="formContainer" onSubmit={handleSubmit}>
+        <form className="form-wrapper" onSubmit={handleSubmit}>
 
-            <div className="signInHeader">
+            <div className="sign-in-header">
                 <h1>Sign in</h1>
                 <button
                 type="button"
@@ -53,15 +53,15 @@ const SignInForm = ({setFormType}) => {
                 </button>
             </div>
 
-            <ul className="errorList">
+            <ul className="error-list">
                 {errors.map((error, index) => <li key={index}>{error}</li>)}
             </ul>
 
             <div>
-                <label className="inputLabel">
+                <label className="input-label">
                     Email Address
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -71,10 +71,10 @@ const SignInForm = ({setFormType}) => {
             </div>
 
             <div>
-                <label className="inputLabel">
+                <label className="input-label">
                     Password
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -83,9 +83,9 @@ const SignInForm = ({setFormType}) => {
                 </label>
             </div>
 
-            <button className="formButton" type="submit">Sign In</button>
+            <button className="form-button" type="submit">Sign In</button>
 
-            <button className="formButton"
+            <button className="form-button"
             type="button"
             onClick={handleDemoSignIn}>Sign In as Demo User
             </button>

@@ -2,12 +2,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.review-index-container {
     padding: 10px;
     max-width: 1000px;
-    margin: auto;
+    margin: 10px auto auto auto;
 }
 
 .avg-rating {

@@ -1,5 +1,16 @@
 /* Basic setup for different containers */
-.prod-show-container,
+
+.prod-home-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 100vw;
+    max-width: 1000px;
+}
+
+.prod-show-wrapper,
 .img-carousel-container,
 .thumbnails-container,
 .prod-img-container,
@@ -7,32 +18,35 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 5px;
 }
 
-.prod-show-container {
+.prod-show-wrapper {
     margin: auto;
     width: 100%;
+    height: 45%;
     max-width: 1000px;
     padding-top: 70px;
 }
 
 .thumbnails-container {
     flex-direction: column;
+    gap: 5px;
 }
 
 .prod-img-container {
-    flex: 1;
-    width: 600px;
-    height: 600px;
+    /* flex: 1; */
+    width: 65%;
+    height: 60%;
 }
 
 .prod-info-container {
-    flex: 1;
+    /* flex: 1; */
     padding-left: 20px;
+    justify-content: flex-start;
     flex-direction: column;
-    max-width: 30%;
-    gap: 10px;
+    height: 100%;
+    width: 35%;
+    gap: 20px;
 }
 
 /* Font styling */
@@ -49,10 +63,6 @@
 .prod-desc,
 .prod-cat {
     font-size: 1em;
-}
-
-.prod-size-label {
-    font-size: .8em;
 }
 
 /* Thumbnail styling */
@@ -78,13 +88,18 @@
 }
 
 /* Carousel styles */
+.img-carousel-container {
+    width: 60vw;
+    height: 60vh;
+}
+
 .carousel .slide {
     background: none;
 }
 
 .carousel-main-img {
-    max-width: 600px;
-    max-height: 600px;
+    width: 50vw;
+    height: 60vh;
     border-radius: 2%;
     object-fit: contain;
 }
@@ -96,6 +111,7 @@
     background: white;
     border-radius: 50%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .carousel .control-next.control-arrow:before {
@@ -137,12 +153,18 @@
 
 /* Select-Size */
 
+.prod-size-label {
+    width: 90%;
+    font-size: .8em;
+}
+
+.size-star {
+    color: red;
+    font-size: 1.4em;
+}
+
 .select-size {
-    -webkit-appearance: none;  /* removes default chrome and safari style */
-    -moz-appearance: none; /* removes default firefox style */
-    appearance: none;
     transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
-    appearance: none;
     box-shadow: 0 1px 6px 0 rgba(34,34,34,.15);
     display: block;
     font-family: inherit;
@@ -165,20 +187,29 @@
 
 .select-wrapper {
     position: relative;
-    /* display: inline-block; */
-    width: 20vw
+    width: 100%;
+    padding-top: 5px;
 }
 
-.select-wrapper::after {
-    content: "▼";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-size: 10px; /* Adjust this value to change the size of the arrow */
+.prod-cart-button {
+    width: 80%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6em;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 18px;
+    overflow: hidden;
 }
 
-.prod-review-index {
-    margin-top: 30px;
+.prod-cart-button:hover {
+    background-color: rgb(47, 47, 47);
+    scale: 1.01;
+    transition: 0.2s all ease-in-out;
+}
+
+.review-index-wrapper {
+    width: 100%;
 }

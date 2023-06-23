@@ -37,55 +37,55 @@ const RegisterForm = () => {
     };
 
     return (
-        <form className="formContainer" onSubmit={handleSubmit}>
-                <div className="signUpHeader">
+        <form className="form-wrapper" onSubmit={handleSubmit}>
+                <div className="sign-up-header">
                     <h1 >Create your account</h1>
                     <p>Registration is easy.</p>
                 </div>
-                <ul className="errorList">
+                <ul className="error-list">
                     {errors.map(error => <li key={`error-${error}`}>{error}</li>)}
                 </ul>
-                <label className="inputLabel">
+                <label className="input-label">
                     Email address
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </label>
-                <label className="inputLabel">
+                <label className="input-label">
                     First name
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
                     />
                 </label>
-                <label className="inputLabel">
+                <label className="input-label">
                     Password
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </label>
-                <label className="inputLabel">
+                <label className="input-label">
                     Confirm Password
                     <input
-                        className="formInput"
+                        className="form-input"
                         type="password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                     />
                 </label>
-                <button className="formButton" type="submit">Register</button>
+                <button className="form-button" type="submit">Register</button>
             </form>
     )
 

@@ -1,8 +1,6 @@
 /* TODO Add site wide styles */
 body {
     font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans", Arial, sans-serif;
-}
-
-body {
-    font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans", Arial, sans-serif;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
 }
