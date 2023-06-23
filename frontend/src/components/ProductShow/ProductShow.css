@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    gap: 5px;
 }
 
 .prod-show-container {
@@ -19,7 +19,6 @@
 
 .thumbnails-container {
     flex-direction: column;
-    margin: 10px;
 }
 
 .prod-img-container {
@@ -33,6 +32,7 @@
     padding-left: 20px;
     flex-direction: column;
     max-width: 30%;
+    gap: 10px;
 }
 
 /* Font styling */
@@ -138,12 +138,15 @@
 /* Select-Size */
 
 .select-size {
+    -webkit-appearance: none;  /* removes default chrome and safari style */
+    -moz-appearance: none; /* removes default firefox style */
+    appearance: none;
     transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
     appearance: none;
     box-shadow: 0 1px 6px 0 rgba(34,34,34,.15);
     display: block;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 13px;
     height: 35px;
     padding-left: 12px;
     padding-right: 36px;
@@ -158,6 +161,22 @@
     text-overflow: "";
     cursor: pointer;
     box-sizing: border-box;
+}
+
+.select-wrapper {
+    position: relative;
+    /* display: inline-block; */
+    width: 20vw
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 10px; /* Adjust this value to change the size of the arrow */
 }
 
 .prod-review-index {

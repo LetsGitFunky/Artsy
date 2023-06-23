@@ -77,12 +77,14 @@ function ProductShow() {
             <p className='prod-rating'>(Ratings will go here)</p>
 
             <label className='prod-size-label'>Size
-                <select className="select-size" value={selectedSize} onChange={handleSizeChange}>
-                    <option value="">Select size</option>
-                    {product.sizes.map((size, index) => (
-                        <option key={index} value={size}>{size}</option>
+                <div className="select-wrapper">
+                    <select className="select-size" value={selectedSize} onChange={handleSizeChange}>
+                        <option value="">Select a size</option>
+                        {product.sizes.map((size, index) => (
+                            <option key={index} value={size}>{size}</option>
                         ))}
-                </select>
+                    </select>
+                </div>
             </label>
 
             <button className='formButton'>Add to Cart</button>
