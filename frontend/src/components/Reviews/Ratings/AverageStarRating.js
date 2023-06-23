@@ -1,7 +1,8 @@
 import React from "react";
 import StarRating from "./StarRating";
 import "./AverageStarRating.css"
-const calculateAverageRating = (reviews) => {
+
+export const calculateAverageRating = (reviews) => {
     if (reviews.length === 0) return 0;
     const sum = reviews.reduce((acc, review) => acc + review.rating, 0);
     return (sum / reviews.length).toFixed(1);

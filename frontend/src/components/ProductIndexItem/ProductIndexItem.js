@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './ProductIndexItem.css';
-import {AiOutlinePlus} from "react-icons/ai"
-import {MdVerified} from "react-icons/md"
+import { AiOutlinePlus } from "react-icons/ai"
+import { MdVerified } from "react-icons/md"
+// import { calculateAverageRating } from "../Reviews/Ratings/AverageStarRating.js";
+// import StarRating from "../Reviews/Ratings/StarRating.js";
 
 const ProductIndexItem = ({ product }) => {
+
+
+
     return (
         <Link className="pii-link" to={`/products/${product.id}`}>
             <div className="pii-container">
@@ -14,7 +19,6 @@ const ProductIndexItem = ({ product }) => {
                     alt={product.name} />
                 <div className="pii-text-container">
                     <h2 className="pii-text pii-name">{product.name}</h2>
-                    {/* <p className="pii-desc">{product.description}</p> */}
                     <p className="pii-text pii-rating">(ratings will go here)</p>
                     <p className="pii-text pii-price">${product.price}</p>
                     <p className="pii-text pii-shipping">Free shipping</p>
