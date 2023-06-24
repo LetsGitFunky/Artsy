@@ -78,7 +78,7 @@ function ProductShow() {
                 </div>
 
                 <div className="prod-info-container">
-                    <p className="prod-price">${product.price}</p>
+                    <p className="prod-price">${product.price}.00</p>
                     <p className="prod-name">{product.name}</p>
                     <p className="prod-desc">{product.description}</p>
                     {/* <p className="prod-cat">{product.category}</p> */}
