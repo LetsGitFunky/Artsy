@@ -14,8 +14,6 @@ const receiveProduct = (product) => ({
     product
 });
 
-
-
 //thunk action creators
 
 export const fetchProducts = () => async (dispatch) => {

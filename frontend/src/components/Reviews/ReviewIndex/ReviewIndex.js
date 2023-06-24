@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import ReviewIndexItem from "../ReviewIndexItem/ReviewIndexItem.js";
 import './ReviewIndex.css';
 import AverageStarRating from "../Ratings/AverageStarRating";
@@ -13,7 +13,7 @@ const ReviewIndex = () => {
                 <AverageStarRating reviews={reviews} />
             </div>
                 {reviews.map((review) => (
-                    <ReviewIndexItem key={`item-${review.id}`} review={review} />
+                    <ReviewIndexItem key={`rev-item-${review.id}`} review={review} />
                 ))}
         </div>
     );
