@@ -86,18 +86,6 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                             <label className="review-input-label">
                                 Rating
                                 <ReviewStarRating onRatingChange={(newRating) => setRating(newRating)} />
-                                {/* <select
-                                    className="review-form-input"
-                                    value={rating}
-                                    onChange={(e) => setRating(e.target.value)}
-                                    required
-                                >
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                    <option value={4}>4</option>
-                                    <option value={5}>5</option>
-                                </select> */}
                             </label>
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>

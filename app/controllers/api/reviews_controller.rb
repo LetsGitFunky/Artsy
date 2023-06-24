@@ -1,10 +1,20 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
-    def index
-        @reviews = Review.where(product_id: params[:product_id])
+    # def index
+    #     @reviews = Review.where(product_id: params[:product_id])
+    #     render :index
+    # end
+
+    def index # updated index for UserProfile
+        if params[:product_id]
+            @reviews = Review.where(product_id: params[:product_id])
+        elsif params[:user_id]
+            @reviews = Review.where(user_id: params[:user_id])
+        end
         render :index
     end
+
 
     def create
         @review = Review.new(review_params)

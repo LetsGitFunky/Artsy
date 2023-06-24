@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation/NavIndex';
 import ProductIndex from './components/ProductIndex/ProductIndex';
 import ProductShow from './components/ProductShow/ProductShow';
+import UserProfile from './components/UserProfile/UserProfile.js';
 
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     <Switch>
         <Route path="/products/:productId">
           <ProductShow />
+        </Route>
+        <Route path="/user/:userId"> {/* new Route for UserProfile */}
+          <UserProfile />
         </Route>
         <Route path="/">
           <ProductIndex />

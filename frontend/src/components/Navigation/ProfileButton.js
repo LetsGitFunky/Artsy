@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {FaUserCircle} from "react-icons/fa";
 import {TiArrowSortedDown} from "react-icons/ti";
-import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
+// import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
+import { Link } from 'react-router-dom';
 
 const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -41,8 +42,11 @@ const ProfileButton = () => {
         {showMenu && (
             <ul className='profile-menu'>
                 <li>{user.firstName}</li>
+                <li>
+                    <Link to={`/user/${user.id}`} className="profile-link">Profile</Link>
+                </li>
                 {/* <li>{user.email}</li> */}
-                <ReviewForm />
+                {/* <ReviewForm /> */}
                 <li>
                 <button onClick={handleLogout} className="logout">Logout</button>
                 </li>
