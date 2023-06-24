@@ -66,7 +66,7 @@ function ProductShow() {
                             showIndicators={false}
                             >
                             {product.images.map((url, index) => (
-                                <div key={index}>
+                                <div key={`prod-img${product.id}`}>
                                     <img
                                     className="carousel-main-img"
                                     src={url}
@@ -89,8 +89,8 @@ function ProductShow() {
                         <div className="select-wrapper">
                             <select className="select-size" value={selectedSize} onChange={handleSizeChange}>
                                 <option value="">Select a size</option>
-                                {product.sizes.map((size, index) => (
-                                    <option key={index} value={size}>{size}</option>
+                                {product.sizes.map((size,) => (
+                                    <option key={`prod-item${product.id}`} value={size}>{size}</option>
                                 ))}
                             </select>
                         </div>
