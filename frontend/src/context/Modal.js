@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useRef, useContext } from 'react';
 import ReactDOM from 'react-dom';
-import { changeForm } from '../components/Navigation/NavIndex';
+// import { changeForm } from '../components/Navigation/NavIndex';
 import './Modal.css';
 
 export const ModalContext = createContext();

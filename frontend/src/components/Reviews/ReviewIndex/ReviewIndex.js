@@ -4,7 +4,7 @@ import ReviewIndexItem from "../ReviewIndexItem/ReviewIndexItem.js";
 import './ReviewIndex.css';
 import AverageStarRating from "../Ratings/AverageStarRating";
 
-const ReviewIndex = ({productId}) => {
+const ReviewIndex = () => {
     const reviews = useSelector((state) => Object.values(state.reviews));
 
     return (

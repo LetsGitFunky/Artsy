@@ -7,6 +7,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./ProductShow.css"
 import "../SessionFormPage/FormStyles.css"
 import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
+import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -15,10 +16,11 @@ function ProductShow() {
 
     const [selectedSize, setSelectedSize] = useState("");
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
+    const [reviewsUpdated, setReviewsUpdated] = useState(false);
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
-    }, [dispatch, productId]);
+    }, [dispatch, productId, reviewsUpdated]);
 
     if (!product) {
         return (
@@ -29,6 +31,11 @@ function ProductShow() {
     const handleSizeChange = (e) => {
         setSelectedSize(e.target.value);
     }
+
+    const handleReviewSubmit = () => {
+        // debugger
+        setReviewsUpdated(!reviewsUpdated);
+    };
 
     return (
         <div className='prod-home-wrapper'>
@@ -88,11 +95,12 @@ function ProductShow() {
                     </label>
 
                     <button className='prod-cart-button'>Add to Cart</button>
+                    <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} />
                 </div>
 
             </div>
                 <div className='review-index-wrapper'>
-                    <ReviewIndex productId={productId} />
+                    <ReviewIndex productId={productId}/>
                 </div>
         </div>
     );

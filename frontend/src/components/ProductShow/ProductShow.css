@@ -52,11 +52,11 @@
 /* Font styling */
 .prod-price {
     font-weight: bold;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .prod-name {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #333;
 }
 

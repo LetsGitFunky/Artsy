@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import {FaUserCircle} from "react-icons/fa"
-import {TiArrowSortedDown} from "react-icons/ti"
+import {FaUserCircle} from "react-icons/fa";
+import {TiArrowSortedDown} from "react-icons/ti";
+import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
 
 const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -12,7 +13,7 @@ const ProfileButton = () => {
     const openMenu = (e) => {
         if (showMenu) return;
         setShowMenu(true);
-        e.stopPropagation();
+        // e.stopPropagation(); //TODO
     };
 
     const closeMenu = () => {
@@ -40,7 +41,8 @@ const ProfileButton = () => {
         {showMenu && (
             <ul className='profile-menu'>
                 <li>{user.firstName}</li>
-                <li>{user.email}</li>
+                {/* <li>{user.email}</li> */}
+                <ReviewForm />
                 <li>
                 <button onClick={handleLogout} className="logout">Logout</button>
                 </li>
