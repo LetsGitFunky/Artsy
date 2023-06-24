@@ -20,9 +20,57 @@ require "open-uri"
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      first_name: 'test',
-      email: 'test@test.com',
-      password: 'password'
+      first_name: 'jsonBourne',
+      email: 'hire@me.com',
+      password: 'wasspord'
+    )
+
+        User.create!(
+      first_name: 'greenSpec',
+      email: 'html@brackets.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'GITandGLITTER',
+      email: 'react@state.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'BlinkNPM',
+      email: 'rails@routes.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'linearGradient',
+      email: 'css@cascade.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'lowkeyFlex',
+      email: 'jsx@element.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'modalCitizen',
+      email: 'mvc@model.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'rubyGems',
+      email: 'ruby@gems.com',
+      password: 'password123'
+    )
+
+    User.create!(
+      first_name: 'Ajax',
+      email: 'ajax@request.com',
+      password: 'password123'
     )
 
 
@@ -118,47 +166,47 @@ require "open-uri"
       title: "Da Vinci's Enigma",
       rating: 4,
       body: "I love my Mona Lisa print! She's so mysterious... I spend hours trying to figure out her smile. Recommended for all art enthusiasts.",
-      user_id: 1,
+      user_id: 2,
       product_id: art1.id
     )
 
     Review.create!(
       title: "Endless Mystery",
-      rating: 5,
+      rating: 4,
       body: "I've been looking at this print for weeks, and still can't figure her out. She's the perfect conversation starter. Highly recommend!",
-      user_id: 1,
+      user_id: 3,
       product_id: art1.id
     )
 
     Review.create!(
       title: "Last Supper Fun",
-      rating: 5,
+      rating: 4,
       body: "I’ve never seen my guests so engaged! They all try to figure out who ditched on the check. Hilarious! Great quality too.",
-      user_id: 1,
+      user_id: 4,
       product_id: art2.id
     )
 
     Review.create!(
       title: "Dinner Debate",
-      rating: 4,
+      rating: 5,
       body: "Our dinner parties are now filled with lively debates, thanks to this Da Vinci's masterpiece. It's made every meal a memorable experience.",
-      user_id: 1,
+      user_id: 5,
       product_id: art2.id
     )
 
     Review.create!(
       title: "Dinner Drama",
-      rating: 4,
+      rating: 5,
       body: "The 'Last Supper' poster is the talk of the town! It has added a whole new level of intrigue to our dinner parties. Love it!",
-      user_id: 1,
+      user_id: 6,
       product_id: art2.id
     )
 
     Review.create!(
       title: "Fashion Forward",
-      rating: 5,
+      rating: 4,
       body: "Venus is the ultimate diva, and she knows it! This poster adds a certain glam to my room that even Beyoncé would be jealous of!",
-      user_id: 1,
+      user_id: 7,
       product_id: art3.id
     )
 
@@ -166,7 +214,7 @@ require "open-uri"
       title: "Fabulous Venus",
       rating: 4,
       body: "Absolutely love the 'Birth of Venus' poster! The OG queen makes a statement in my living room. Visitors can't help but admire her!",
-      user_id: 1,
+      user_id: 8,
       product_id: art3.id
     )
 
@@ -174,13 +222,13 @@ require "open-uri"
       title: "Botticelli's Best",
       rating: 5,
       body: "Venus has added a touch of elegance and grace to my home. The quality of the print is excellent, and the size options were a plus.",
-      user_id: 1,
+      user_id: 9,
       product_id: art3.id
     )
 
     Review.create!(
       title: "Jade of Glory",
-      rating: 5,
+      rating: 4,
       body: "Felt like Mulan when I wore these Jade Earrings! They’re so elegant and make me feel powerful. Couldn’t ask for more!",
       user_id: 1,
       product_id: jewelry1.id
@@ -188,9 +236,9 @@ require "open-uri"
 
     Review.create!(
       title: "Warrior Earrings",
-      rating: 4,
+      rating: 5,
       body: "These earrings make me feel like I can take on the world. They're more than just beautiful, they're empowering. Love them!",
-      user_id: 1,
+      user_id: 2,
       product_id: jewelry1.id
     )
 
@@ -198,7 +246,7 @@ require "open-uri"
       title: "Elegance and Power",
       rating: 4,
       body: "Just like Mulan, these earrings show that beauty is more than skin-deep. They've become my go-to for any special occasion.",
-      user_id: 1,
+      user_id: 3,
       product_id: jewelry1.id
     )
 
@@ -206,7 +254,7 @@ require "open-uri"
       title: "My Own Fairy Tale",
       rating: 5,
       body: "I feel like Cinderella every time I wear this diamond ring! It's absolutely stunning. Who needs Prince Charming?",
-      user_id: 1,
+      user_id: 4,
       product_id: jewelry2.id
     )
 
@@ -214,7 +262,7 @@ require "open-uri"
       title: "Eternal Beauty",
       rating: 5,
       body: "This ring is beautiful! It sparkles and shines just like Cinderella's glass slipper. It's my favorite piece of jewelry!",
-      user_id: 1,
+      user_id: 5,
       product_id: jewelry2.id
     )
 
@@ -222,7 +270,7 @@ require "open-uri"
       title: "Cinderella's Choice",
       rating: 5,
       body: "This diamond ring is a dream come true! It's just like being Cinderella at the ball. A definite must-buy!",
-      user_id: 1,
+      user_id: 6,
       product_id: jewelry2.id
     )
 
@@ -230,7 +278,7 @@ require "open-uri"
       title: "Superhero Style",
       rating: 4,
       body: "This gold bracelet is my new secret weapon! I might not have superpowers, but I feel like Wonder Woman when I wear it.",
-      user_id: 1,
+      user_id: 7,
       product_id: jewelry3.id
     )
 
@@ -238,7 +286,7 @@ require "open-uri"
       title: "Wonderful Bracelet",
       rating: 5,
       body: "This bracelet is my new favorite accessory. It's not a lasso of truth, but it makes me feel powerful and stylish. Love it!",
-      user_id: 1,
+      user_id: 9,
       product_id: jewelry3.id
     )
 
@@ -259,10 +307,10 @@ require "open-uri"
     Product.all.map do |product|
       3.times do
         Review.create!(
-          title: Faker::Book.title, # generating random titles for the reviews
-          rating: rand(1..5),
-          body: Faker::Lorem.paragraph(sentence_count: 2),
-          user_id: User.first.id, # assuming that user with id 1 always exists
+          title: Faker::Movies::PrincessBride.character, # generating random titles for the reviews
+          rating: rand(3..5),
+          body: Faker::Movies::PrincessBride.quote,
+          user_id: rand(2..9), # assuming that user with id 1 always exists
           product_id: product.id
         )
       end

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as reviewActions from '../../../store/review.js';
 import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
+import ReviewStarRating from '../Ratings/ReviewStarRating.js';
 
 const ReviewForm = ({productId, onReviewSubmit }) => {
 
@@ -84,7 +85,8 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                         <div className='review-rating-container'>
                             <label className="review-input-label">
                                 Rating
-                                <select
+                                <ReviewStarRating onRatingChange={(newRating) => setRating(newRating)} />
+                                {/* <select
                                     className="review-form-input"
                                     value={rating}
                                     onChange={(e) => setRating(e.target.value)}
@@ -95,7 +97,7 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                                     <option value={3}>3</option>
                                     <option value={4}>4</option>
                                     <option value={5}>5</option>
-                                </select>
+                                </select> */}
                             </label>
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>

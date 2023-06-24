@@ -32,6 +32,7 @@
 }
 
 .review-form-input {
+    font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans", Arial, sans-serif;
     width: 300px;
     padding: 10px;
     margin: 10px 0;

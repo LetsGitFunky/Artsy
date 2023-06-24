@@ -16,9 +16,9 @@ const SignInForm = ({setFormType}) => {
 
     const handleDemoSignIn = (e) => {
         e.preventDefault(); // prevent form from submitting
-        setEmail("test@test.com");
-        setPassword("password");
-        dispatch(sessionActions.login({ email: "test@test.com", password: "password" }));
+        setEmail("hire@me.com");
+        setPassword("wasspord");
+        dispatch(sessionActions.login({ email: "hire@me.com", password: "wasspord" }));
     }
 
     const handleSubmit = (e) => {

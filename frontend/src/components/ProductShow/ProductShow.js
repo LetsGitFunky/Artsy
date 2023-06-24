@@ -82,7 +82,8 @@ function ProductShow() {
                     <p className="prod-name">{product.name}</p>
                     <p className="prod-desc">{product.description}</p>
                     {/* <p className="prod-cat">{product.category}</p> */}
-                    <p className='prod-rating'>(Ratings will go here)</p>
+                    {/* <p className='prod-rating'>(Ratings will go here)</p> */}
+                    {/* <p>Fast Shipping! Get it by {Faker::Date.forward(days: 23)}</p> */}
 
                     <label className='prod-size-label'>Size <span className='size-star'>*</span>
                         <div className="select-wrapper">
