@@ -210,6 +210,10 @@
     transition: 0.2s all ease-in-out;
 }
 
+.review-form-button-container {
+    width: 100%;
+}
+
 .review-index-wrapper {
     width: 100%;
 }

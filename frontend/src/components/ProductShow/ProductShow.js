@@ -8,6 +8,7 @@ import "./ProductShow.css"
 import "../SessionFormPage/FormStyles.css"
 import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
 import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
+import '../Reviews/ReviewForm/ReviewForm.css'
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -95,7 +96,9 @@ function ProductShow() {
                     </label>
 
                     <button className='prod-cart-button'>Add to Cart</button>
-                    <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} />
+                    <div className='review-form-button-container'>
+                        <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} />
+                    </div>
                 </div>
 
             </div>

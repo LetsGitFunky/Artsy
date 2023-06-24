@@ -16,32 +16,15 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setErrors([]);
-    //     return dispatch(reviewActions.createReview({id: productId}, { userId: currentUser.id, title, body, rating }))
-    //         .catch(async (res) => {
-    //         let data;
-    //             try {
-    //             data = await res.clone().json();
-    //             } catch {
-    //             data = await res.text();
-    //             }
-    //             if (data?.errors) setErrors(data.errors);
-    //             else if (data) setErrors([data]);
-    //             else setErrors([res.statusText]);
-    //     });
-    // }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
         return dispatch(reviewActions.createReview(productId, { userId: currentUser.id, title, body, rating, productId }))
         .then(() => {
-            setTitle(''); // Clear form fields
+            setTitle('');
             setBody('');
             setRating(3);
-            setShowModal(false); // Close modal
+            setShowModal(false);
             setSubmissionSuccessful(true);
             setTimeout(() => setSubmissionSuccessful(false), 5000);
             onReviewSubmit();
@@ -66,14 +49,16 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
         <div>
             {submissionSuccessful && <p>Review submitted successfully!</p>}
 
-            <button onClick={() => setShowModal(true)}>Write a Review</button>
+            <button className="new-review-button" onClick={() => setShowModal(true)}>Write a Review</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <form className="reviewFormContainer" onSubmit={handleSubmit}>
+                {/* <div className=''> */}
+                    <form className="review-form" onSubmit={handleSubmit}>
                         <ul className="error-list">
                             {errors.map((error, index) => <li key={index}>{error}</li>)}
                         </ul>
-                        <div>
+                        <h1 className='review-form-header'>Write a review</h1>
+                        <div className='review-title-container'>
                             <label className="review-input-label">
                                 Title
                                 <input
@@ -85,7 +70,7 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                                 />
                             </label>
                         </div>
-                        <div>
+                        <div className='review-body-container'>
                             <label className="review-input-label">
                                 Body
                                 <textarea
@@ -96,7 +81,7 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                                 />
                             </label>
                         </div>
-                        <div>
+                        <div className='review-rating-container'>
                             <label className="review-input-label">
                                 Rating
                                 <select
@@ -115,6 +100,7 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>
                     </form>
+                {/* </div> */}
                 </Modal>
             )}
         </div>
