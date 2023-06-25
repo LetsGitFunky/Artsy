@@ -10,14 +10,13 @@ import StarRating from '../Reviews/Ratings/StarRating';
 const UserProfile = ({ match }) => {
     const dispatch = useDispatch();
 
-    // Get the current logged-in user's id
-    const userId = useSelector(state => state.session.user.id);
+    const user = useSelector(state => state.session.user)
+    const userId = user.id
 
     useEffect(() => {
         dispatch(fetchUserReviews(userId));
     }, [dispatch, userId]);
 
-    // Select the reviews from your Redux state
     const reviews = useSelector(state => Object.values(state.reviews));
 
     const handleDelete = (reviewId) => {
@@ -28,15 +27,15 @@ const UserProfile = ({ match }) => {
 
     return (
         <div className='up-wrapper'>
-            <p className='up-header'>User Profile</p>
-            <p className='up-reviews-header'>User Reviews</p>
+            <p className='up-header'>{user.firstName}'s Profile</p>
+            <p className='up-reviews-header'>Your reviews:</p>
             {reviews.map(review => (
                 <div key={`rev-${review.id}`} className='up-review-container'>
                     {review.product && (
                         <>
                             <div className='up-prod-container'>
-                                <img src={review.product.images[0]} alt={review.product.name} className='up-prod-img' />
                                 <p className='up-prod-title'>{review.product.name}</p>
+                                <img src={review.product.images[0]} alt={review.product.name} className='up-prod-img' />
                             </div>
                             <div className='up-review-text-container'>
                                 <p className='up-review-title'>{review.title}</p>
@@ -45,9 +44,10 @@ const UserProfile = ({ match }) => {
                                 </p>
                                 <p className='up-review-body'>{review.body}</p>
                                 <div className='button-container'>
-                                    <ReviewForm className="update-review-button" review={review} onReviewSubmit={() => dispatch(updateReview(review.id))} />
+                                    <div className="update-review-button">
+                                        <ReviewForm review={review} onReviewSubmit={() => dispatch(updateReview(review.id))} />
+                                    </div>
                                     <button onClick={() => handleDelete(review.id)} className="delete-review-button">Delete</button>
-
                                 </div>
                             </div>
                         </>
