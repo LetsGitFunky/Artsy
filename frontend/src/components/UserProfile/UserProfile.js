@@ -27,16 +27,31 @@ const UserProfile = ({ match }) => {
     }
 
     return (
-        <div className='user-profile-wrapper'>
-            <p className='user-profile-header'>User Profile</p>
-            <p className='user-reviews-header'>User Reviews</p>
+        <div className='up-wrapper'>
+            <p className='up-header'>User Profile</p>
+            <p className='up-reviews-header'>User Reviews</p>
             {reviews.map(review => (
-                <div key={`rev-${review.id}`} className='user-profile-review-text-container'>
-                    <p className='user-profile-review-title'>{review.title}</p>
-                    <StarRating rating={review.rating}/>
-                    <p className='user-profile-review-body'>{review.body}</p>
-                    <ReviewForm review={review} onReviewSubmit={() => dispatch(updateReview(review.id))} />
-                    <button onClick={() => handleDelete(review.id)}>Delete</button>
+                <div key={`rev-${review.id}`} className='up-review-container'>
+                    {review.product && (
+                        <>
+                            <div className='up-prod-container'>
+                                <img src={review.product.images[0]} alt={review.product.name} className='up-prod-img' />
+                                <p className='up-prod-title'>{review.product.name}</p>
+                            </div>
+                            <div className='up-review-text-container'>
+                                <p className='up-review-title'>{review.title}</p>
+                                <p className='up-review-rating'>Rating:
+                                    <StarRating rating={review.rating}/>
+                                </p>
+                                <p className='up-review-body'>{review.body}</p>
+                                <div className='button-container'>
+                                    <ReviewForm className="update-review-button" review={review} onReviewSubmit={() => dispatch(updateReview(review.id))} />
+                                    <button onClick={() => handleDelete(review.id)} className="delete-review-button">Delete</button>
+
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </div>
             ))}
         </div>
