@@ -19,13 +19,20 @@ require "open-uri"
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
+
+    User.create!(
+      first_name: 'Demo',
+      email: 'demo@test.com',
+      password: 'password123'
+    )
+
     User.create!(
       first_name: 'jsonBourne',
       email: 'hire@me.com',
-      password: 'wasspord'
+      password: 'password123'
     )
 
-        User.create!(
+    User.create!(
       first_name: 'greenSpec',
       email: 'html@brackets.com',
       password: 'password123'
