@@ -5,17 +5,26 @@ import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
 import ReviewStarRating from '../Ratings/ReviewStarRating.js';
 
-const ReviewForm = ({productId, onReviewSubmit }) => {
+const ReviewForm = ({productId, onReviewSubmit, review, formType }) => {
+
+    // const [showModal, setShowModal] = useState(false);
+    // const [title, setTitle] = useState('');
+    // const [body, setBody] = useState('');
+    // const [rating, setRating] = useState(3);
+    // const currentUser = useSelector(state => state.session.user);
+    // const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
 
     const [showModal, setShowModal] = useState(false);
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    const [rating, setRating] = useState(3);
+    const [title, setTitle] = useState(review ? review.title : '');
+    const [body, setBody] = useState(review ? review.body : '');
+    const [rating, setRating] = useState(review ? review.rating : 3);
     const currentUser = useSelector(state => state.session.user);
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
+
+    const buttonText = formType === 'create' ? 'Write a Review' : 'Update Review';
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -44,13 +53,11 @@ const ReviewForm = ({productId, onReviewSubmit }) => {
         });
     }
 
-
-
     return (
         <div>
             {submissionSuccessful && <p>Review submitted successfully!</p>}
 
-            <button className="new-review-button" onClick={() => setShowModal(true)}>Write a Review</button>
+            <button className="new-review-button" onClick={() => setShowModal(true)}>{buttonText}</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                 {/* <div className=''> */}

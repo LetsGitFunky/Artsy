@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProduct } from '../../store/product';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import "./ProductShow.css"
-import "../SessionFormPage/FormStyles.css"
 import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
 import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Reviews/ReviewForm/ReviewForm.css'
+import "../SessionFormPage/FormStyles.css"
+import "./ProductShow.css"
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -98,7 +98,7 @@ function ProductShow() {
 
                     <button className='prod-cart-button'>Add to Cart</button>
                     <div className='review-form-button-container'>
-                        <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} />
+                        <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} formType={"create"}/>
                     </div>
                 </div>
 
