@@ -8,7 +8,7 @@ const StarRating = ({ rating }) => {
         {[...Array(5)].map((star, i) => {
             const ratingValue = i + 1;
             return (
-            <label key={i}>
+            <label key={`star-${i}`}>
                 <FaStar
                 className="star"
                 color={ratingValue <= rating ? "#000" : "#e4e5e9"}

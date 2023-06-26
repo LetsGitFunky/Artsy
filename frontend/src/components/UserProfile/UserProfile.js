@@ -38,10 +38,10 @@ const UserProfile = ({ match }) => {
                                 <img src={review.product.images[0]} alt={review.product.name} className='up-prod-img' />
                             </div>
                             <div className='up-review-text-container'>
-                                <p className='up-review-title'>{review.title}</p>
-                                <p className='up-review-rating'>Rating:
+                                <ul className='up-review-title'>{review.title}</ul>
+                                <ul className='up-review-rating'>Rating:
                                     <StarRating rating={review.rating}/>
-                                </p>
+                                </ul>
                                 <p className='up-review-body'>{review.body}</p>
                                 <div className='button-container'>
                                     <div className="update-review-button">
