@@ -4,12 +4,12 @@ export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
 
 
-const receiveProducts = (products) => ({
+export const receiveProducts = (products) => ({
     type: RECEIVE_PRODUCTS,
     products
 });
 
-const receiveProduct = (product) => ({
+export const receiveProduct = (product) => ({
     type: RECEIVE_PRODUCT,
     product
 });
@@ -44,6 +44,7 @@ const productReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
+            // debugger
         return {...action.products}
         case RECEIVE_PRODUCT:
             // debugger

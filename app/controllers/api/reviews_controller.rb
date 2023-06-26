@@ -1,19 +1,19 @@
 class Api::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
 
-    # def index
-    #     @reviews = Review.where(product_id: params[:product_id])
-    #     render :index
-    # end
-
-    def index # updated index for UserProfile
-        if params[:product_id]
-            @reviews = Review.where(product_id: params[:product_id])
-        elsif params[:user_id]
-            @reviews = Review.where(user_id: params[:user_id])
-        end
+    def index
+        @reviews = Review.where(product_id: params[:product_id])
         render :index
     end
+
+    # def index
+    #     if params[:product_id]
+    #         @reviews = Review.where(product_id: params[:product_id])
+    #     elsif params[:user_id]
+    #         @reviews = Review.where(user_id: params[:user_id])
+    #     end
+    #     render :index
+    # end
 
 
     def create
@@ -29,8 +29,10 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = current_user.reviews.find(params[:id])
+        # debugger
 
         if @review.update(review_params)
+
             render :show
         else
             render json: @review.errors.full_messages, status: 422
@@ -46,6 +48,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:body, :title, :rating, :product_id)
+        params.require(:review).permit(:body, :title, :rating, :product_id, :id)
     end
 end

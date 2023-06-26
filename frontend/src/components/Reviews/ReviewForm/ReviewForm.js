@@ -5,52 +5,59 @@ import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
 import ReviewStarRating from '../Ratings/ReviewStarRating.js';
 
-const ReviewForm = ({productId, onReviewSubmit, review, formType }) => {
-
-    // const [showModal, setShowModal] = useState(false);
-    // const [title, setTitle] = useState('');
-    // const [body, setBody] = useState('');
-    // const [rating, setRating] = useState(3);
-    // const currentUser = useSelector(state => state.session.user);
-    // const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
+const ReviewForm = ({product, review, formType }) => {
 
     const [showModal, setShowModal] = useState(false);
     const [title, setTitle] = useState(review ? review.title : '');
     const [body, setBody] = useState(review ? review.body : '');
     const [rating, setRating] = useState(review ? review.rating : 3);
-    const currentUser = useSelector(state => state.session.user);
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
+    const currentUser = useSelector(state => state.session.user);
+    let productId
+    if (product) {
+        const productId = product.id
+    }
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
 
     const buttonText = formType === 'create' ? 'Write a Review' : 'Update Review';
 
+    const handleSuccess = () => {
+        setTitle('');
+        setBody('');
+        setRating(3);
+        setShowModal(false);
+        setSubmissionSuccessful(true);
+        setTimeout(() => setSubmissionSuccessful(false), 5000);
+    };
+
+    const handleError = async (res) => {
+        let data;
+        try {
+            data = await res.json();
+        } catch {
+            data = await res.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(reviewActions.createReview(productId, { userId: currentUser.id, title, body, rating, productId }))
-        .then(() => {
-            setTitle('');
-            setBody('');
-            setRating(3);
-            setShowModal(false);
-            setSubmissionSuccessful(true);
-            setTimeout(() => setSubmissionSuccessful(false), 5000);
-            onReviewSubmit();
-            // debugger
-        })
-        .catch(async (res) => {
-            let data;
-            try {
-            data = await res.json();
-            } catch {
-            data = await res.text();
-            }
-            if (data?.errors) setErrors(data.errors);
-            else if (data) setErrors([data]);
-            else setErrors([res.statusText]);
-        });
+        const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
+
+        if(formType === 'create') {
+            dispatch(reviewActions.createReview(productId, reviewPayload))
+            .then(handleSuccess)
+            .catch(handleError);
+        } else if(formType === 'update') {
+            dispatch(reviewActions.updateReview(product, { ...reviewPayload, id: review.id }))
+            .then(handleSuccess)
+            .catch(handleError);
+        }
     }
 
     return (
@@ -60,10 +67,9 @@ const ReviewForm = ({productId, onReviewSubmit, review, formType }) => {
             <button className="new-review-button" onClick={() => setShowModal(true)}>{buttonText}</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                {/* <div className=''> */}
                     <form className="review-form" onSubmit={handleSubmit}>
                         <ul className="error-list">
-                            {errors.map((error, index) => <li key={index}>{error}</li>)}
+                            {errors.map((error, index) => <li key={`error-${index}`}>{error}</li>)}
                         </ul>
                         <h1 className='review-form-header'>Write a review</h1>
                         <div className='review-title-container'>
@@ -97,7 +103,6 @@ const ReviewForm = ({productId, onReviewSubmit, review, formType }) => {
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>
                     </form>
-                {/* </div> */}
                 </Modal>
             )}
         </div>

@@ -7,6 +7,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       login!(@user)
       # render json: @user
+
       render :show
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
@@ -16,7 +17,9 @@ class Api::UsersController < ApplicationController
   # user can view the products they've reviewed
   def show
     @user = User.find(params[:id])
-    @reviews = @user.reviews.includes(:product)
+    # @reviews = @user.reviews.includes(:product)
+
+    # debugger
     render :show
   end
 

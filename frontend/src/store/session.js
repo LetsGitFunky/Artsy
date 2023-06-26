@@ -1,4 +1,7 @@
 import csrfFetch, { storeCSRFToken } from './csrf';
+import { receiveProducts } from './product';
+import { receiveReviews } from './review';
+
 
 const SET_CURRENT_USER = "session/setCurrentUser"
 const REMOVE_CURRENT_USER = "session/removeCurrentUser"
@@ -78,7 +81,16 @@ export const signup = (user) => async (dispatch) => {
     return response;
 };
 
-
+export const fetchUser = (userId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/users/${userId}`)
+    .then(response => response.json())
+    .then((data) => {
+        dispatch(receiveReviews(data.reviews))
+        dispatch(setCurrentUser(data.user))
+        dispatch(receiveProducts(data.products))
+    })
+    return response
+}
 
 
 const initialState = { user: JSON.parse(sessionStorage.getItem('currentUser')) || null  };

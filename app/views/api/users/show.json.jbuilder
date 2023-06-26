@@ -1,12 +1,20 @@
 json.user do
   json.extract! @user, :id, :email, :first_name, :created_at, :updated_at
+end
 
-  json.reviews @user.reviews do |review|
-    json.extract! review, :id, :title, :body, :rating, :product_id
+json.reviews do
+  @user.reviews.each do |review|
+    json.set! review.id do
+      json.extract! review, :id, :body, :rating, :product_id, :user_id, :title
+    end
+  end
+end
 
-    json.product do
-      json.extract! review.product, :id, :name, :description, :price, :category, :sizes
-      json.images review.product.images.map { |file| file.url }
+json.products do
+  @user.reviewed_products.each do |product|
+    json.set! product.id do
+      json.extract! product, :id, :name, :description, :price, :category, :sizes
+      json.image product.images[0].url
     end
   end
 end

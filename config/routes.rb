@@ -4,26 +4,27 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  namespace :api, defaults: { format: :json } do
+    resources :users, only: [:create, :show]
+    resource :session, only: [:show, :create, :destroy]
+    resources :products, only: [:index, :show] do
+      resources :reviews, only: [:index, :create, :update, :destroy]
+    end
+    resources :reviews, only: [:index]
+  end
+
+  #updated routes for UserProfile
   # namespace :api, defaults: { format: :json } do
-  #   resources :users, only: :create
+  #   resources :users, only: :create do
+  #     resources :reviews, only: :index do
+  #       resources :products, only: :show
+  #     end
+  #   end
   #   resource :session, only: [:show, :create, :destroy]
   #   resources :products, only: [:index, :show] do
   #     resources :reviews, only: [:index, :create, :update, :destroy]
   #   end
   # end
-
-  #updated routes for UserProfile
-  namespace :api, defaults: { format: :json } do
-    resources :users, only: :create do
-      resources :reviews, only: :index do
-        resources :products, only: :show
-      end
-    end
-    resource :session, only: [:show, :create, :destroy]
-    resources :products, only: [:index, :show] do
-      resources :reviews, only: [:index, :create, :update, :destroy]
-    end
-  end
 
 
   # post 'api/test', to: 'application#test'

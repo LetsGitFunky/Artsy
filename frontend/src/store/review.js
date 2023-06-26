@@ -1,4 +1,5 @@
 import csrfFetch from './csrf';
+// import { receiveProducts } from "./product.js"
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
@@ -9,10 +10,13 @@ export const receiveReviews = (reviews) => ({
     reviews
 });
 
-export const receiveReview = (review) => ({
-    type: RECEIVE_REVIEW,
-    review
-});
+export const receiveReview = (data) => {
+    // debugger
+    return {
+        type: RECEIVE_REVIEW,
+        data
+    }
+};
 
 export const removeReview = (reviewId) => ({
     type: DELETE_REVIEW,
@@ -55,7 +59,7 @@ export const deleteReview = (product, reviewId) => (dispatch) => (
 export const fetchUserReviews = (userId) => (dispatch) => (
     csrfFetch(`/api/users/${userId}/reviews`)
     .then(response => response.json())
-    .then(data => dispatch(receiveReviews(data)))
+    .then(data => dispatch(receiveReviews(data.reviews)))
     .catch(error => console.error('Error:', error))
 );
 
@@ -66,9 +70,10 @@ const initialState = {
 const reviewsReducer = (state = initialState, action) => {
     switch (action.type) {
         case RECEIVE_REVIEWS:
+            // debugger
             return { ...action.reviews }
         case RECEIVE_REVIEW:
-            return { ...state, [action.review.id]: action.review }
+            return { ...state, [action.data.review.id]: action.data.review }
         case DELETE_REVIEW:
             const newState = { ...state }
             delete newState[action.reviewId]

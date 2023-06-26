@@ -12,7 +12,12 @@
 #
 class User < ApplicationRecord
   has_secure_password
+
   has_many :reviews
+
+  has_many :reviewed_products,
+    through: :reviews,
+    source: :product
 
   validates :first_name,
     length: { in: 2..30 },

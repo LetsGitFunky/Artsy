@@ -7,7 +7,7 @@ import AverageStarRating from "../Ratings/AverageStarRating";
 const ReviewIndex = () => {
     const reviews = useSelector((state) => Object.values(state.reviews));
 
-    return (
+    return reviews ? (
         <div className="review-index-container">
             <div className="avg-rating">
                 <AverageStarRating reviews={reviews} />
@@ -16,7 +16,7 @@ const ReviewIndex = () => {
                     <ReviewIndexItem key={`review-item-${i}`} review={review} />
                 ))}
         </div>
-    );
+    ) : null;
 };
 
 export default ReviewIndex;
