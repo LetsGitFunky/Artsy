@@ -5,7 +5,7 @@ import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
 import ReviewStarRating from '../Ratings/ReviewStarRating.js';
 
-const ReviewForm = ({product, review, formType }) => {
+const ReviewForm = ({product, review, formType}) => {
 
     const [showModal, setShowModal] = useState(false);
     const [title, setTitle] = useState(review ? review.title : '');

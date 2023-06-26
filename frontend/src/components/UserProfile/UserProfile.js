@@ -11,9 +11,6 @@ const UserProfile = () => {
 
     const user = useSelector(state => state.session.user)
     const userId = user.id
-    // const reviews = useSelector(state => Object.values(state.reviews));
-    // const products = useSelector(state => Object.values(state.products))
-    // const review = reviews.id
 
     useEffect(() => {
         dispatch(fetchUser(userId));
@@ -24,7 +21,6 @@ const UserProfile = () => {
         <div className='up-wrapper'>
             <p className='up-header'>{user.firstName}'s Profile</p>
             <p className='up-reviews-header'>Your reviews:</p>
-
             <UserProfileIndex/>
         </div>
     );

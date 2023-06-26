@@ -4,12 +4,15 @@ import * as sessionActions from '../../store/session';
 import {FaUserCircle} from "react-icons/fa";
 import {TiArrowSortedDown} from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "./Nav.css"
 
 const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const history = useHistory();
+
 
     const openMenu = (e) => {
         e.stopPropagation();
@@ -33,6 +36,7 @@ const ProfileButton = () => {
 
     const handleLogout = (e) => {
         e.preventDefault();
+        history.push('/');
         dispatch(sessionActions.logout());
     };
 
@@ -46,7 +50,9 @@ const ProfileButton = () => {
                     <Link to={`/user/${user.id}`}>View Profile</Link>
                 </li>
                 <li className="logout">
-                <button className="logout-button" onClick={handleLogout}>Logout</button>
+                    <Link to="/">
+                        <button className="logout-button" onClick={handleLogout}>Logout</button>
+                    </Link>
                 </li>
             </ul>
         )}

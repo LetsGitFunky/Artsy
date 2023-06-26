@@ -10,13 +10,10 @@ export const receiveReviews = (reviews) => ({
     reviews
 });
 
-export const receiveReview = (data) => {
-    // debugger
-    return {
+export const receiveReview = (data) => ({
         type: RECEIVE_REVIEW,
         data
-    }
-};
+});
 
 export const removeReview = (reviewId) => ({
     type: DELETE_REVIEW,
@@ -36,7 +33,6 @@ export const createReview = (productId, review) => (dispatch) => (
     .catch(error => console.error('Error:', error))
 );
 
-
 export const updateReview = (product, review) => (dispatch) => (
     csrfFetch(`/api/products/${product.id}/reviews/${review.id}`, {
         method: "PATCH",
@@ -52,14 +48,6 @@ export const deleteReview = (product, reviewId) => (dispatch) => (
         method: "DELETE"
     })
     .then(() => dispatch(removeReview(reviewId)))
-    .catch(error => console.error('Error:', error))
-);
-
-// for UserProfile
-export const fetchUserReviews = (userId) => (dispatch) => (
-    csrfFetch(`/api/users/${userId}/reviews`)
-    .then(response => response.json())
-    .then(data => dispatch(receiveReviews(data.reviews)))
     .catch(error => console.error('Error:', error))
 );
 
