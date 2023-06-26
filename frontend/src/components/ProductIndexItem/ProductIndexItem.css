@@ -9,9 +9,8 @@
 }
 
 .pii-text-container {
-    text-align: left; /* This will align the text to the left */
-    width: 100%; /* This will take up the full width of the container */
-
+    text-align: left;
+    width: 100%;
 }
 
 .pii-link {
