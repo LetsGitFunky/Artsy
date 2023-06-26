@@ -48,7 +48,7 @@ function ProductShow() {
                         {product.images.map((url, index) => (
                             <img
                             className={`thumbnail ${index === currentImgIndex ? "selected" : ""}`}
-                            key={index}
+                            key={`thumb-${index}`}
                             src={url}
                             alt={`${product.name} ${index}`}
                             onClick={() => setCurrentImgIndex(index)}
@@ -66,7 +66,7 @@ function ProductShow() {
                             showIndicators={false}
                             >
                             {product.images.map((url, index) => (
-                                <div key={`prod-img${product.id}`}>
+                                <div key={`prod-img-${index}`}>
                                     <img
                                     className="carousel-main-img"
                                     src={url}
@@ -82,15 +82,15 @@ function ProductShow() {
                     <p className="prod-name">{product.name}</p>
                     <p className="prod-desc">{product.description}</p>
                     {/* <p className="prod-cat">{product.category}</p> */}
-                    {/* <p className='prod-rating'>(Ratings will go here)</p> */}
+                    {/* <p className='prod-rating'>(TODO: Ratings will go here)</p> */}
                     {/* <p>Fast Shipping! Get it by {Faker::Date.forward(days: 23)}</p> */}
 
                     <label className='prod-size-label'>Size <span className='size-star'>*</span>
                         <div className="select-wrapper">
                             <select className="select-size" value={selectedSize} onChange={handleSizeChange}>
                                 <option value="">Select a size</option>
-                                {product.sizes.map((size,) => (
-                                    <option key={`prod-item${product.id}`} value={size}>{size}</option>
+                                {product.sizes.map((size, i) => (
+                                    <option key={`prod-item-${i}`} value={size}>{size}</option>
                                 ))}
                             </select>
                         </div>

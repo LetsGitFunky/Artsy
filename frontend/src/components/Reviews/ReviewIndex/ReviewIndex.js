@@ -12,8 +12,8 @@ const ReviewIndex = () => {
             <div className="avg-rating">
                 <AverageStarRating reviews={reviews} />
             </div>
-                {reviews.map((review) => (
-                    <ReviewIndexItem key={`rev-item-${review.id}`} review={review} />
+                {reviews.map((review, i) => (
+                    <ReviewIndexItem key={`review-item-${i}`} review={review} />
                 ))}
         </div>
     );
