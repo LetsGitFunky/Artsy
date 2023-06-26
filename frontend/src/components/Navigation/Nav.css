@@ -43,14 +43,21 @@
     color: black;
 }
 
-.navbar button,
 .profile-button {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 2em;
+    border: none;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.sign-in {
     cursor: pointer;
     background-color: #fff;
     border-radius: 2em;
     padding: 6px;
     border: none;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .profile-button:hover:before,
@@ -79,35 +86,60 @@
 }
 
 .profile-menu {
-    list-style-type: none; /* Removes the default list-style */
-    margin: 0;  /* Removes the default margin */
-    padding: 0;  /* Removes the default padding */
-    background-color: #fff;  /* Sets the background color to white */
-    border-radius: 8px;  /* Gives the menu rounded corners */
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 8px;
     box-shadow: 0 1px 5px black;
-    overflow: hidden;  /* Ensures the border-radius affects inner elements */
     position: absolute;
     animation: slideDownFromTop 0.5s ease-out forwards;
 }
 
 .profile-menu li {
-    padding: 12px 20px;  /* Adds some space around the text */
-    border-bottom: 1px solid #f2f2f2;  /* Adds a light separator between items */
-    color: #333;  /* Sets the text color */
-    font-size: 15px;  /* Sets the font size */
-    cursor: pointer;  /* Changes the cursor on hover */
+    border-bottom: 1px solid #f2f2f2;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 .profile-menu li:last-child {
-    border-bottom: none;  /* Removes the border-bottom from the last item */
+    border-bottom: none;
 }
 
 .profile-menu li:hover {
-    background-color: #f2f2f2;  /* Changes the background color on hover */
+    background-color: #f2f2f2;
 }
 
-.logout {
-    border: none
+.first-name {
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 8px;
+}
+
+.profile-link {
+    padding: 12px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.logout-button {
+    padding: 12px 23px;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
 }
 
 .login button {

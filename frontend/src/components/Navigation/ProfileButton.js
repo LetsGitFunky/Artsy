@@ -4,6 +4,7 @@ import * as sessionActions from '../../store/session';
 import {FaUserCircle} from "react-icons/fa";
 import {TiArrowSortedDown} from "react-icons/ti";
 import { Link } from 'react-router-dom';
+import "./Nav.css"
 
 const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -11,9 +12,9 @@ const ProfileButton = () => {
     const dispatch = useDispatch();
 
     const openMenu = (e) => {
+        e.stopPropagation();
         if (showMenu) return;
         setShowMenu(true);
-        // e.stopPropagation(); //TODO
     };
 
     const closeMenu = () => {
@@ -40,12 +41,12 @@ const ProfileButton = () => {
         <button className="navbar profile-button"><FaUserCircle size={20} style={{ color: "#0091F5" }}/> <TiArrowSortedDown style={{ color: "#0091F5" }}/></button>
         {showMenu && (
             <ul className='profile-menu'>
-                <li>{user.firstName}</li>
-                <li>
-                    <Link to={`/user/${user.id}`} className="profile-link">Profile</Link>
+                <li  className='first-name'>{user.firstName}</li>
+                <li className="profile-link">
+                    <Link to={`/user/${user.id}`}>View Profile</Link>
                 </li>
-                <li>
-                <button onClick={handleLogout} className="logout">Logout</button>
+                <li className="logout">
+                <button className="logout-button" onClick={handleLogout}>Logout</button>
                 </li>
             </ul>
         )}

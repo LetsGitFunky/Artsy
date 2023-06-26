@@ -11,19 +11,18 @@ function App() {
   return (
     <>
     <Navigation/>
-    <Switch>
+      <Switch>
         <Route path="/products/:productId">
           <ProductShow />
         </Route>
-        <Route path="/user/:userId"> {/* new Route for UserProfile */}
+        <Route path="/user/:userId">
           <UserProfile />
         </Route>
         <Route path="/">
           <ProductIndex />
         </Route>
-        {/* Add more routes as needed */}
       </Switch>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

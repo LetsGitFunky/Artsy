@@ -26,7 +26,7 @@ const Navigation = () => {
     } else {
         sessionLinks = (
             <li className='login navbar'>
-                <button onClick={() => setIsModalOpen(true)}>Sign In</button>
+                <button className="sign-in" onClick={() => setIsModalOpen(true)}>Sign In</button>
                 {isModalOpen && (
                     <Modal onClose={() => {
                         setIsModalOpen(false);
