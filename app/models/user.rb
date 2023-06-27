@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :reviews
+  has_many :cart_items
 
   has_many :reviewed_products,
     through: :reviews,

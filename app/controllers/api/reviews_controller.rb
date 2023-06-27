@@ -6,16 +6,6 @@ class Api::ReviewsController < ApplicationController
         render :index
     end
 
-    # def index
-    #     if params[:product_id]
-    #         @reviews = Review.where(product_id: params[:product_id])
-    #     elsif params[:user_id]
-    #         @reviews = Review.where(user_id: params[:user_id])
-    #     end
-    #     render :index
-    # end
-
-
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id
