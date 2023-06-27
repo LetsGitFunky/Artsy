@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/NavIndex';
 import ProductIndex from './components/ProductIndex/ProductIndex';
 import ProductShow from './components/ProductShow/ProductShow';
-import UserProfile from './components/UserProfile/UserProfile.js';
+import UserProfile from './components/UserProfile/UserProfile';
 
 
 function App() {

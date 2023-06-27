@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as reviewActions from '../../../store/review.js';
 import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
-import ReviewStarRating from '../Ratings/ReviewStarRating.js';
+import ReviewStarRating from '../Ratings/ReviewStarRating';
 
 const ReviewForm = ({productId, review, formType}) => {
 

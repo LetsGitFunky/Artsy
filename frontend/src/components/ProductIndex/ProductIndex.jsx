@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../store/product.js";
-import ProductIndexItem from "../ProductIndexItem/ProductIndexItem.js";
+import ProductIndexItem from "../ProductIndexItem/ProductIndexItem";
 import './ProductIndex.css';
 
 const ProductIndex = () => {
