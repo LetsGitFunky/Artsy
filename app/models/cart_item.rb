@@ -15,6 +15,6 @@ class CartItem < ApplicationRecord
     belongs_to :product
 
     validates :quantity, :options, :product_id, :user_id, presence: true
-    validates :quanitiy, numericality: { only_integer: true, greater_than: 0 }
+    validates :quantity, numericality: { only_integer: true, greater_than: 0 }
 
 end

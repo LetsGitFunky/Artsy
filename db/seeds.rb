@@ -11,6 +11,8 @@ require "open-uri"
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
     Product.destroy_all
+    Review.destroy_all
+    CartItem.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -307,7 +309,6 @@ require "open-uri"
 
 
 
-    puts "Done!"
 
     puts "seeding random reviews"
     # seed random reviews
@@ -319,6 +320,17 @@ require "open-uri"
           body: Faker::Movies::PrincessBride.quote,
           user_id: rand(2..9), # assuming that user with id 1 always exists
           product_id: product.id
-        )
+          )
+        end
       end
-    end
+
+      puts "cart item"
+
+      CartItem.create!(
+        user_id: 1,
+        product_id: 1,
+        quantity: 1,
+        options: '11×17'
+        )
+
+        puts "Done!"
