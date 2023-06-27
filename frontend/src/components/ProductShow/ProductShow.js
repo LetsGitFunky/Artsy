@@ -5,10 +5,12 @@ import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
 import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
+import AddToCartButton from '../Cart/AddToCartButton';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Reviews/ReviewForm/ReviewForm.css'
 import "../SessionFormPage/FormStyles.css"
 import "./ProductShow.css"
+
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -81,9 +83,6 @@ function ProductShow() {
                     <p className="prod-price">${product.price}.00</p>
                     <p className="prod-name">{product.name}</p>
                     <p className="prod-desc">{product.description}</p>
-                    {/* <p className="prod-cat">{product.category}</p> */}
-                    {/* <p className='prod-rating'>(TODO: Ratings will go here)</p> */}
-                    {/* <p>Fast Shipping! Get it by {Faker::Date.forward(days: 23)}</p> */}
 
                     <label className='prod-size-label'>Size <span className='size-star'>*</span>
                         <div className="select-wrapper">
@@ -96,7 +95,11 @@ function ProductShow() {
                         </div>
                     </label>
 
-                    <button className='prod-cart-button'>Add to Cart</button>
+                    {/* <button className='prod-cart-button'>Add to Cart</button> */}
+                    <div className='prod-cart-button'>
+                        <AddToCartButton product={product} selectedSize={selectedSize} />
+                    </div>
+
                     <div className='review-form-button-container'>
                         <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} formType={"create"}/>
                     </div>

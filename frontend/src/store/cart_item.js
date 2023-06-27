@@ -9,9 +9,9 @@ export const receiveCartItems = (cartItems) => ({
     cartItems
 });
 
-export const receiveCartItem = (cartItem) => ({
+export const receiveCartItem = (data) => ({
     type: RECEIVE_CART_ITEM,
-    cartItem
+    data
 });
 
 export const removeCartItem = (cartItemId) => ({
@@ -28,7 +28,7 @@ export const createCartItem = (cartItem) => (dispatch) => {
         body: JSON.stringify({cartItem})
     })
     .then(response => response.json())
-    .then(cartItem => dispatch(receiveCartItem(cartItem)))
+    .then(data => dispatch(receiveCartItem(data)))
     .catch(error => console.error('Error:', error))
 }
 
@@ -50,9 +50,7 @@ export const deleteCartItem = (cartItemId) => (dispatch) => {
     .catch(error => console.error('Error:', error))
 }
 
-const initialState = {
-    cart_items: {},
-};
+const initialState = {};
 
 const cartItemsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -60,7 +58,7 @@ const cartItemsReducer = (state = initialState, action) => {
             // debugger
             return { ...action.cartItems }
         case RECEIVE_CART_ITEM:
-            return { ...state, [action.cartItem.id]: action.cartItem }
+            return { ...state, [action.data.cartItem.id]: action.data.cartItem }
         case DELETE_CART_ITEM:
             const newState = { ...state }
             delete newState[action.cartItemId]
