@@ -4,12 +4,13 @@ import logger from 'redux-logger';
 import sessionReducer from './session';
 import productReducer from './product';
 import reviewsReducer from './review';
-
+import cartItemsReducer from './cart_item';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     products: productReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    cartItems: cartItemsReducer
 });
 
 let enhancer;

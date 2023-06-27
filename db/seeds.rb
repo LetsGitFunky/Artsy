@@ -9,10 +9,10 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
-    User.destroy_all
-    Product.destroy_all
-    Review.destroy_all
     CartItem.destroy_all
+    Review.destroy_all
+    Product.destroy_all
+    User.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -329,6 +329,13 @@ require "open-uri"
       CartItem.create!(
         user_id: 1,
         product_id: 1,
+        quantity: 1,
+        options: '11×17'
+        )
+
+      CartItem.create!(
+        user_id: 1,
+        product_id: 2,
         quantity: 1,
         options: '11×17'
         )
