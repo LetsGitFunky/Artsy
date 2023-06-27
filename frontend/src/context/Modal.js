@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useRef, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import { useSelector } from 'react-redux';
 // import { changeForm } from '../components/Navigation/NavIndex';
 import './Modal.css';
 
@@ -8,6 +9,7 @@ export const ModalContext = createContext();
 export function ModalProvider({ children }) {
     const modalRef = useRef();
     const [value, setValue] = useState();
+    const reviews = useSelector(state => state.reviews)
 
     useEffect(() => {
         setValue(modalRef.current);
@@ -15,7 +17,7 @@ export function ModalProvider({ children }) {
 
     return (
         <>
-        <ModalContext.Provider value={value}>
+        <ModalContext.Provider value={value} reviews={reviews}>
             {children}
         </ModalContext.Provider>
         <div ref={modalRef} />

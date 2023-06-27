@@ -5,7 +5,7 @@ import { Modal } from '../../../context/Modal.js'
 import './ReviewForm.css'
 import ReviewStarRating from '../Ratings/ReviewStarRating.js';
 
-const ReviewForm = ({product, review, formType}) => {
+const ReviewForm = ({productId, review, formType}) => {
 
     const [showModal, setShowModal] = useState(false);
     const [title, setTitle] = useState(review ? review.title : '');
@@ -13,10 +13,14 @@ const ReviewForm = ({product, review, formType}) => {
     const [rating, setRating] = useState(review ? review.rating : 3);
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
     const currentUser = useSelector(state => state.session.user);
-    let productId
-    if (product) {
-        const productId = product.id
-    }
+    // const product = useSelector(state => state.products[productId])
+
+    const reviews = useSelector(state => state.reviews)
+
+    // let productId
+    // if (product) {
+    //     const productId = product.id
+    // }
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
@@ -54,7 +58,7 @@ const ReviewForm = ({product, review, formType}) => {
             .then(handleSuccess)
             .catch(handleError);
         } else if(formType === 'update') {
-            dispatch(reviewActions.updateReview(product, { ...reviewPayload, id: review.id }))
+            dispatch(reviewActions.updateReview(productId, { ...reviewPayload, id: review.id }))
             .then(handleSuccess)
             .catch(handleError);
         }

@@ -33,8 +33,8 @@ export const createReview = (productId, review) => (dispatch) => (
     .catch(error => console.error('Error:', error))
 );
 
-export const updateReview = (product, review) => (dispatch) => (
-    csrfFetch(`/api/products/${product.id}/reviews/${review.id}`, {
+export const updateReview = (productId, review) => (dispatch) => (
+    csrfFetch(`/api/products/${productId}/reviews/${review.id}`, {
         method: "PATCH",
         body: JSON.stringify(review)
     })
