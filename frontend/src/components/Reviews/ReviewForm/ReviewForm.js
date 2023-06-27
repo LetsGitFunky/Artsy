@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as reviewActions from '../../../store/review.js';
 import { Modal } from '../../../context/Modal.js'
@@ -13,14 +13,15 @@ const ReviewForm = ({productId, review, formType}) => {
     const [rating, setRating] = useState(review ? review.rating : 3);
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
     const currentUser = useSelector(state => state.session.user);
-    // const product = useSelector(state => state.products[productId])
 
-    const reviews = useSelector(state => state.reviews)
+    // const reviews = useSelector(state => state.reviews)
 
-    // let productId
-    // if (product) {
-    //     const productId = product.id
-    // }
+    useEffect(() => {
+        setTitle(review ? review.title : '');
+        setBody(review ? review.body : '');
+        setRating(review ? review.rating : 3);
+    }, [review]);
+
 
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
