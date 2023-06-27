@@ -11,8 +11,8 @@ export const receiveReviews = (reviews) => ({
 });
 
 export const receiveReview = (data) => ({
-        type: RECEIVE_REVIEW,
-        data
+    type: RECEIVE_REVIEW,
+    data
 });
 
 export const removeReview = (reviewId) => ({
