@@ -10,10 +10,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Reviews/ReviewForm/ReviewForm.css'
 import "../SessionFormPage/FormStyles.css"
 import "./ProductShow.css"
-// import SignInForm from '../SessionFormPage/SignInForm';
-
-
-
 
 function ProductShow() {
     const dispatch = useDispatch();
@@ -100,9 +96,9 @@ function ProductShow() {
 
                     {/* <button className='prod-cart-button'>Add to Cart</button> */}
                     <div className='prod-cart-button-container'>
+                    {selectedSize === "" && <p className="size-warning">*Select a size to add to cart.*</p>}
                         <AddToCartButton product={product} selectedSize={selectedSize} />
                     </div>
-
                     <div className='review-form-button-container'>
                         <ReviewForm productId={productId} onReviewSubmit={handleReviewSubmit} formType={"create"}/>
                     </div>

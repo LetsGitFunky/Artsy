@@ -21,7 +21,7 @@ const AddToCartButton = ({ product, selectedSize }) => {
 
     return (
         <>
-            <button className="add-to-cart-button" onClick={handleAddToCart}>
+            <button className="add-to-cart-button" onClick={handleAddToCart} disabled={selectedSize === "" ? true : false}>
                 Add To Cart
             </button>
         </>
