@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCartItem, deleteCartItem } from '../../../store/cart_item';
+import {AiOutlineClose} from "react-icons/ai"
 import "./CartIndexItem.css"
 
 const CartIndexItem = ({ cartItem }) => {
@@ -20,14 +21,13 @@ const CartIndexItem = ({ cartItem }) => {
         dispatch(deleteCartItem(cartItem.id));
     }
 
-    console.log(cartItem.product)
-
     return (
         <div className="cart-item">
             {/* <div className="cart-item-productId">ProductId: {cartItem.productId}</div> */}
             <div className="cart-prod-name">{cartItem.productName}</div>
             <img className="cart-prod-img" src={cartItem.productImage} alt={cartItem.productName} />
-            <div className="cart-prod-price">{cartItem.productPrice}</div>
+            <div className="cart-prod-price">${cartItem.productPrice}.00</div>
+            <div className="cart-item-options">Options: {cartItem.options}</div>
             <div className="cart-item-quantity">
                 <label className='quantity-label'>Quantity
                     <select value={quantity} onChange={handleQuantityChange}>
@@ -41,8 +41,7 @@ const CartIndexItem = ({ cartItem }) => {
                     </select>
                 </label>
             </div>
-            <div className="cart-item-options">Options: {cartItem.options}</div>
-            <button onClick={handleRemoveItem}>Remove Item</button>
+            <button className="remove-item-button" onClick={handleRemoveItem}><AiOutlineClose/> Remove Item</button>
         </div>
     )
 }

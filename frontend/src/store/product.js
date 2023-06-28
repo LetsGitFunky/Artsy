@@ -36,11 +36,9 @@ export const fetchProduct = (product) => async (dispatch) => {
     }
 };
 
-const initialState = {
-    products: {},
-};
 
-const productReducer = (state = initialState, action) => {
+
+const productReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
