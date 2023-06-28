@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createCartItem } from "../../../store/cart_item";
+import "./AddToCartButton.css"
 
 const AddToCartButton = ({ product, selectedSize }) => {
     const dispatch = useDispatch()

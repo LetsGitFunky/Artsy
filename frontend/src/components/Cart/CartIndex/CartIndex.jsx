@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom/cjs/react-router-dom';
+// import { useParams } from 'react-router-dom/cjs/react-router-dom';
 import { fetchCartItems } from '../../../store/cart_item';
 import CartIndexItem from '../CartIndexItem/CartIndexItem';
 import "./CartIndex.css"
@@ -8,8 +8,8 @@ import "./CartIndex.css"
 const CartIndex = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => Object.values(state.cartItems));
-    const products = useSelector(state => state.products);
-    const productId = useParams()
+    // const products = useSelector(state => state.products);
+    // const productId = useParams()
 
     useEffect(() => {
         dispatch(fetchCartItems());

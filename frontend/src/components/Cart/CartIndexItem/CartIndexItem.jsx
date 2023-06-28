@@ -20,7 +20,6 @@ const CartIndexItem = ({ cartItem }) => {
         dispatch(deleteCartItem(cartItem.id));
     }
 
-
     return (
         <div className="cart-item">
             <div className="cart-item-productId">ProductId: {cartItem.productId}</div>
