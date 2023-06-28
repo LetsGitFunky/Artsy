@@ -10,7 +10,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Reviews/ReviewForm/ReviewForm.css'
 import "../SessionFormPage/FormStyles.css"
 import "./ProductShow.css"
-import SignInForm from '../SessionFormPage/SignInForm';
+// import SignInForm from '../SessionFormPage/SignInForm';
 
 
 

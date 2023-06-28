@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login!(@user)
-      # render json: @user
 
       render :show
     else
@@ -14,10 +13,9 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # user can view the products they've reviewed
+
   def show
     @user = User.find(params[:id])
-    # @reviews = @user.reviews.includes(:product)
 
     # debugger
     render :show

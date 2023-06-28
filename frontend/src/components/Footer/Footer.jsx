@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className='site-footer'>
+        <div className='site-footer'>
         <div className='footer-content'>
             <div className='footer-links'>
             <h3 className='footer-column'>Explore</h3>
@@ -34,7 +34,7 @@ const Footer = () => {
         <div className='footer-credit'>
             <p className='footer-credit-text'>© {new Date().getFullYear()} Nick Hein</p>
         </div>
-        </footer>
+        </div>
     );
 }
 
