@@ -2,52 +2,74 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     height: 30%;
     width: 90%;
-    /* border: 1px solid darkgray; */
-    /* background-color: rgba(255, 248, 200, 0.276); */
     border-radius: 5px;
-    padding: 10px;
     margin-bottom: 10px;
     box-shadow: 2px 3px 10px 1px lightgray;
-    gap: 2px;
+    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
 }
 
 .cart-prod-name {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
-    margin-left: 10px;
+    text-align: center;
+    width: 100%;
 }
 
-.cart-prod-price {
-    font-size: 1em;
-    font-weight: bold;
-    margin-left: 10px;
-}
-
-.cart-prod-img {
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    border: 2px solid transparent;
+.cart-prod-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 8px;
+    background-color: #F2F2F2;
     border-radius: 5px;
-    margin-left: 10px;
 }
 
-.cart-item-quantity {
+.cart-prod-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     font-size: 0.9em;
-    margin-left: 10px;
+    height: 100%;
+    padding-top: 5%;
+    gap: 2%;
 }
 
-.cart-item-options {
-    font-size: 0.9em;
-    margin-left: 10px;
+.cart-price-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2%;
+    padding-right: 5px;
 }
 
 .cart-item-total-price {
-    font-size: 0.9em;
+    font-size: .9em;
     margin-left: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.cart-prod-price {
+    font-size: .6em;
+    font-weight: 400;
+    margin-left: 10px;
+    height: 100%;
+}
+
+
+.cart-prod-img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .remove-item-button {
@@ -56,7 +78,13 @@
     justify-content: center;
     border: none;
     background-color: white;
-    margin: 1% 0 0 2%;
     font-size: .6em;
     color: red;
+    cursor: pointer;
+}
+
+.quantity-select {
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 3px;
 }
