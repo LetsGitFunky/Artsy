@@ -13,6 +13,10 @@ const CartIndexItem = ({ cartItem }) => {
 
     const totalItemPrice = cartItem.productPrice * quantity;
 
+    let currentDate = new Date();
+    let arrivalDate = new Date(currentDate);
+    arrivalDate.setDate(currentDate.getDate() + 5);
+
     useEffect(() => {
         setQuantity(cartItem.quantity);
     }, [cartItem.quantity]);
@@ -53,6 +57,7 @@ const CartIndexItem = ({ cartItem }) => {
             <div className='cart-price-container'>
                 <div className="cart-item-total-price">${totalItemPrice}.00</div>
                 <div className="cart-prod-price">(${cartItem.productPrice}.00 each)</div>
+                <div className="arrival-date">Arrives by: {arrivalDate.toLocaleDateString()}</div>
             </div>
             </div>
             <button className="remove-item-button" onClick={handleRemoveItem}><AiOutlineClose/> Remove Item</button>

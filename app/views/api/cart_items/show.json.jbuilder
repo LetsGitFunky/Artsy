@@ -1,7 +1,3 @@
-# json.cart_item do
-#     json.extract! @cart_item, :quantity, :options, :user_id, :product_id, :id
-# end
-
 json.cart_item do
     json.extract! @cart_item, :id, :quantity, :options, :user_id, :product_id
     product = @cart_item.product
