@@ -15,6 +15,7 @@ function ProductShow() {
     const dispatch = useDispatch();
     const { productId } = useParams();
     const product = useSelector(state => state.products[productId]);
+    const currentUser = useSelector(state => state.session.user); // TODO
 
     const [selectedSize, setSelectedSize] = useState("");
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -96,6 +97,7 @@ function ProductShow() {
 
                     {/* <button className='prod-cart-button'>Add to Cart</button> */}
                     <div className='prod-cart-button-container'>
+                    {currentUser === null && <p className="size-warning">*Please login to add to cart.*</p>}
                     {selectedSize === "" && <p className="size-warning">*Select a size to add to cart.*</p>}
                         <AddToCartButton product={product} selectedSize={selectedSize} />
                     </div>
