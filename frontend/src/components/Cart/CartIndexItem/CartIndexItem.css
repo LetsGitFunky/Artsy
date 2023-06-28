@@ -5,12 +5,13 @@
     align-items: flex-start;
     height: 30%;
     width: 90%;
-    border: 1px solid darkgray;
+    /* border: 1px solid darkgray; */
     /* background-color: rgba(255, 248, 200, 0.276); */
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: 10px 5px 5px lightgray;
+    box-shadow: 2px 3px 10px 1px lightgray;
+    gap: 2px;
 }
 
 .cart-prod-name {
@@ -40,6 +41,11 @@
 }
 
 .cart-item-options {
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.cart-item-total-price {
     font-size: 0.9em;
     margin-left: 10px;
 }

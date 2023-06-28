@@ -11,6 +11,8 @@ const CartIndexItem = ({ cartItem }) => {
 
     const [quantity, setQuantity] = useState(cartItem.quantity)
 
+    const totalItemPrice = cartItem.productPrice * quantity;
+
     useEffect(() => {
         setQuantity(cartItem.quantity);
     }, [cartItem.quantity]);
@@ -46,6 +48,7 @@ const CartIndexItem = ({ cartItem }) => {
                     </select>
                 </label>
             </div>
+            <div className="cart-item-total-price">Total: ${totalItemPrice}.00</div>
             <button className="remove-item-button" onClick={handleRemoveItem}><AiOutlineClose/> Remove Item</button>
         </div>
     )
