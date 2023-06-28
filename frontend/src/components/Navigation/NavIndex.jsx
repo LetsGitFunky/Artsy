@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LogoButton from './LogoButton';
-import CartButton from '../Cart/CartButton';
+import CartButton from '../Cart/CartButton/CartButton';
 import Categories from '../Categories/categories';
 import { Modal } from '../../context/Modal';
 import SessionForm from '../SessionFormPage/SessionForm';

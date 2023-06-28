@@ -19,6 +19,18 @@ export const removeCartItem = (cartItemId) => ({
     cartItemId
 });
 
+export const fetchCartItems = () => (dispatch) => {
+    csrfFetch(`/api/cart_items`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(cartItems => dispatch(receiveCartItems(cartItems)))
+    .catch(error => console.error('Error:', error))
+}
+
 export const createCartItem = (cartItem) => (dispatch) => {
     csrfFetch(`/api/cart_items`, {
         method: "POST",

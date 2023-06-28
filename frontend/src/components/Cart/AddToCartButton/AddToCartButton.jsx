@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createCartItem } from "../../store/cart_item";
+import { createCartItem } from "../../../store/cart_item";
 
 const AddToCartButton = ({ product, selectedSize }) => {
     const dispatch = useDispatch()
@@ -19,9 +19,11 @@ const AddToCartButton = ({ product, selectedSize }) => {
     }
 
     return (
-        <button className="add-to-cart-button" onClick={handleAddToCart}>
-            Add To Cart
-        </button>
+        <>
+            <button className="add-to-cart-button" onClick={handleAddToCart}>
+                Add To Cart
+            </button>
+        </>
     )
 }
 

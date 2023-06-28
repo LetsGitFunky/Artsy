@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import ReviewIndex from '../Reviews/ReviewIndex/ReviewIndex';
 import ReviewForm from '../Reviews/ReviewForm/ReviewForm';
-import AddToCartButton from '../Cart/AddToCartButton';
+import AddToCartButton from '../Cart/AddToCartButton/AddToCartButton';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../Reviews/ReviewForm/ReviewForm.css'
 import "../SessionFormPage/FormStyles.css"
