@@ -8,6 +8,7 @@ import "./CartIndex.css"
 const CartIndex = () => {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => Object.values(state.cartItems));
+    console.log(cartItems)
     // const products = useSelector(state => state.products);
     // const productId = useParams()
 

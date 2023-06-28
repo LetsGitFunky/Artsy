@@ -20,9 +20,14 @@ const CartIndexItem = ({ cartItem }) => {
         dispatch(deleteCartItem(cartItem.id));
     }
 
+    console.log(cartItem.product)
+
     return (
         <div className="cart-item">
-            <div className="cart-item-productId">ProductId: {cartItem.productId}</div>
+            {/* <div className="cart-item-productId">ProductId: {cartItem.productId}</div> */}
+            <div className="cart-prod-name">{cartItem.productName}</div>
+            <img className="cart-prod-img" src={cartItem.productImage} alt={cartItem.productName} />
+            <div className="cart-prod-price">{cartItem.productPrice}</div>
             <div className="cart-item-quantity">
                 <label className='quantity-label'>Quantity
                     <select value={quantity} onChange={handleQuantityChange}>

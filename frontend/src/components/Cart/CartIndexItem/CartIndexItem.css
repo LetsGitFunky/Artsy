@@ -26,3 +26,12 @@
     font-size: 0.9em;
     margin-left: 10px;
 }
+
+.cart-prod-img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    box-shadow: 1px lightgray inset;
+}
