@@ -1,0 +1,28 @@
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 20%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.cart-item-productId {
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.cart-item-quantity {
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.cart-item-options {
+    font-size: 0.9em;
+    margin-left: 10px;
+}
