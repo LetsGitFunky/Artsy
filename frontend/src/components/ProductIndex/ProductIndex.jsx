@@ -14,11 +14,14 @@ const ProductIndex = () => {
     }, [dispatch]);
 
     return (
-        <div className="product-index-container">
-            {products.map((product, i) => (
-                <ProductIndexItem key={`product-index-${i}`} product={product} reviews={product.reviews}/>
-            ))}
-        </div>
+        <>
+            <div className="splash-backdrop">Discover fresh summer finds from creative sellers!</div>
+            <div className="product-index-container">
+                {products.map((product, i) => (
+                    <ProductIndexItem key={`product-index-${i}`} product={product} reviews={product.reviews}/>
+                ))}
+            </div>
+        </>
     );
 };
 

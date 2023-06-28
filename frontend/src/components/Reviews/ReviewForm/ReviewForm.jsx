@@ -14,8 +14,6 @@ const ReviewForm = ({productId, review, formType}) => {
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
     const currentUser = useSelector(state => state.session.user);
 
-    // const reviews = useSelector(state => state.reviews)
-
     useEffect(() => {
         setTitle(review ? review.title : '');
         setBody(review ? review.body : '');
@@ -52,6 +50,12 @@ const ReviewForm = ({productId, review, formType}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+
+        if (!currentUser) {
+            setErrors(['Please log in to write a review.']);
+            return;
+        }
+        
         const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
 
         if(formType === 'create') {
