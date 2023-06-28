@@ -19,9 +19,9 @@ function App() {
         <Route path="/user/:userId">
           <UserProfile />
         </Route>
-        <Route path="/cart">
+        {/* <Route path="/cart">
           <CartIndex />
-        </Route>
+        </Route> */}
         <Route path="/">
           <ProductIndex />
         </Route>
