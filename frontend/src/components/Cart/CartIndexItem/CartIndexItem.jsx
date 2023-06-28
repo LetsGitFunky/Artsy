@@ -1,14 +1,19 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCartItem, deleteCartItem } from '../../../store/cart_item';
 import {AiOutlineClose} from "react-icons/ai"
 import "./CartIndexItem.css"
 
+
 const CartIndexItem = ({ cartItem }) => {
     const dispatch = useDispatch();
 
     const [quantity, setQuantity] = useState(cartItem.quantity)
+
+    useEffect(() => {
+        setQuantity(cartItem.quantity);
+    }, [cartItem.quantity]);
 
     const handleQuantityChange = (e) => {
         const newQuantity = e.target.value;
