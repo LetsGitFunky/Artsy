@@ -14,8 +14,6 @@ export const receiveProduct = (product) => ({
     product
 });
 
-//thunk action creators
-
 export const fetchProducts = () => async (dispatch) => {
     const response = await fetch(`/api/products`)
 
@@ -30,24 +28,26 @@ export const fetchProduct = (product) => async (dispatch) => {
 
     if (response.ok) {
         const data = await response.json()
-        // debugger
         dispatch(receiveProduct(data.product))
         dispatch(receiveReviews(data.reviews))
     }
 };
 
-
+export const fetchSearchResults = (searchTerm) => async (dispatch) => {
+    const response = await fetch(`/api/products/search?query=${searchTerm}`);
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveProducts(data))
+    }
+};
 
 const productReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_PRODUCTS:
-            // debugger
         return {...action.products}
         case RECEIVE_PRODUCT:
-            // debugger
         return {...state, [action.product.id]: action.product}
-
     default:
         return state;
     }

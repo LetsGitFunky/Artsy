@@ -6,8 +6,9 @@ import CartButton from '../Cart/CartButton/CartButton';
 import Categories from '../Categories/categories';
 import { Modal } from '../../context/Modal';
 import SessionForm from '../SessionFormPage/SessionForm';
-import { BsSearch } from 'react-icons/bs';
+// import { BsSearch } from 'react-icons/bs';
 import './Nav.css'
+import SearchBar from '../Search/SearchBar';
 
 
 const Navigation = () => {
@@ -43,7 +44,7 @@ const Navigation = () => {
         <div className='nav-wrapper'>
             <div className='nav-top'>
                     <LogoButton/>
-                <div className='search-container'>
+                {/* <div className='search-container'>
                     <input
                         className='searchbar'
                         type="text"
@@ -52,7 +53,8 @@ const Navigation = () => {
                     <button type="submit" className="search-button">
                         <span className="search-icon"><BsSearch size={17} /></span>
                     </button>
-                </div>
+                </div> */}
+                <SearchBar/>
 
                 <div className='nav-right'>
                     {sessionLinks}
