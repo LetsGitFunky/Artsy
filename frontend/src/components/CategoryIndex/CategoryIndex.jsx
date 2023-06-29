@@ -18,7 +18,7 @@ const CategoryIndex = () => {
 
     return (
         <>
-            <div className="splash-backdrop">{category}</div>
+            <div className="splash-backdrop">Discover {category}</div>
             <div className="product-index-container">
                 {filteredProducts.map(product =>
                     <ProductIndexItem key={`product-${product.id}`} product={product} />

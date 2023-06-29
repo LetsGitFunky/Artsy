@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/artsy_logo.png';  // Import your image
+import logo from '../../assets/images/artsy_logo.png';
 import { NavLink } from 'react-router-dom';
 
 const LogoButton = () => {
