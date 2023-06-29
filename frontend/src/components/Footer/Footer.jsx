@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import {BsLinkedin, BsGithub } from "react-icons/bs"
 
 const Footer = () => {
     return (
@@ -17,9 +18,9 @@ const Footer = () => {
             <div className='social-links'>
             <h3 className='footer-column'>Connect</h3>
             <ul>
-                <li><a href='https://github.com/LetsGitFunky/'>GitHub</a></li>
+                <li><a href='https://github.com/LetsGitFunky/'><BsGithub size={30}/></a></li>
                 {/* <li><a href='https://twitter.com/yourusername'>Twitter</a></li> */}
-                <li><a href='https://www.linkedin.com/in/nickjhein/'>LinkedIn</a></li>
+                <li><a href='https://www.linkedin.com/in/nickjhein/'><BsLinkedin size={30}/></a></li>
             </ul>
             </div>
             <div className='wiki-links'>
