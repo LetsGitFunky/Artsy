@@ -3,8 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchSearchResults } from "../../store/product";
 import { BsSearch } from 'react-icons/bs';
-// import { Navigate } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 const SearchBar = () => {
@@ -16,8 +15,8 @@ const SearchBar = () => {
     const handleSearch = (e) => {
         e.preventDefault()
         dispatch(fetchSearchResults(searchQuery))
-        // setSearchQuery("")
         history.push(`/search/${searchQuery}`)
+        setSearchQuery("")
     }
 
     return (
