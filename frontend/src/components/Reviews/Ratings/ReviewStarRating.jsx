@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import  {AiFillStar, AiOutlineStar } from "react-icons/ai"
 // import {AiOutlineStar} from "react-icons/ai"
 
-function Star({ filled, onClick }) {
+const Star = ({ filled, onClick }) => {
     return (
         <span onClick={onClick}>
         {filled ? <AiFillStar size={30}/> : <AiOutlineStar size={30}/>}
         </span>
     );
-    }
+}
 
-    export default function ReviewStarRating({ onRatingChange }) {
+const ReviewStarRating = ({ onRatingChange }) => {
     const [rating, setRating] = useState(0);
 
     const handleStarClick = (index) => {
@@ -31,3 +31,5 @@ function Star({ filled, onClick }) {
         </div>
     );
 }
+
+export default ReviewStarRating
