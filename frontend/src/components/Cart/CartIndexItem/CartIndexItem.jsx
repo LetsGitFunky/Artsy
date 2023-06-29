@@ -34,14 +34,13 @@ const CartIndexItem = ({ cartItem }) => {
 
     return (
         <div className="cart-item">
-            {/* <div className="cart-item-productId">ProductId: {cartItem.productId}</div> */}
             <div className="cart-prod-name">{cartItem.productName}</div>
             <div className='cart-prod-container'>
                 <img className="cart-prod-img" src={cartItem.productImage} alt={cartItem.productName} />
                 <div className='cart-prod-text-container'>
                     <div className="cart-item-options">Options: {cartItem.options}</div>
                         <div className="cart-item-quantity">
-                            <label className='quantity-label'>Quantity
+                            <label className='quantity-label'>Quantity:
                                 <select className='quantity-select' value={quantity} onChange={handleQuantityChange}>
                                     <option value={1}>1</option>
                                     <option value={2}>2</option>

@@ -6,6 +6,7 @@ import ProductIndex from './components/ProductIndex/ProductIndex';
 import ProductShow from './components/ProductShow/ProductShow';
 import UserProfile from './components/UserProfile/UserProfile';
 // import CartIndex from './components/Cart/CartIndex/CartIndex';
+import CategoryIndex from './components/CategoryIndex/CategoryIndex';
 
 
 function App() {
@@ -16,12 +17,12 @@ function App() {
         <Route path="/products/:productId">
           <ProductShow />
         </Route>
+        <Route path="/category/:category">
+          <CategoryIndex />
+        </Route>
         <Route path="/user/:userId">
           <UserProfile />
         </Route>
-        {/* <Route path="/cart">
-          <CartIndex />
-        </Route> */}
         <Route path="/">
           <ProductIndex />
         </Route>
