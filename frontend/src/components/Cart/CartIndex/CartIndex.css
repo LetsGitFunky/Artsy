@@ -17,3 +17,25 @@
     font-size: 1.5em;
     margin-bottom: 10px;
 }
+
+.cart-links-container {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-links {
+    list-style: none;
+    padding: 10px;
+    margin:10px;
+    background: linear-gradient(45deg, #2F466C, #0091F5);
+    color: white;
+    border-radius: 50%;
+}
+
+.cart-links:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px 1px lightgray;
+}

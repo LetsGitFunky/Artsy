@@ -5,7 +5,6 @@ import Navigation from './components/Navigation/NavIndex';
 import ProductIndex from './components/ProductIndex/ProductIndex';
 import ProductShow from './components/ProductShow/ProductShow';
 import UserProfile from './components/UserProfile/UserProfile';
-// import CartIndex from './components/Cart/CartIndex/CartIndex';
 import CategoryIndex from './components/CategoryIndex/CategoryIndex';
 import SearchIndex from './components/Search/SearchIndex';
 

@@ -12,7 +12,7 @@ const Footer = () => {
             <ul>
                 <li><Link to='/'>Product Index</Link></li>
                 <li><Link to='/products/1'>Product Show Page</Link></li>
-                <li><Link to='/faq'>FAQ</Link></li>
+                {/* <li><Link to='/faq'>FAQ</Link></li> */}
             </ul>
             </div>
             <div className='social-links'>
