@@ -6,7 +6,7 @@ const Categories = () => {
     return (
         <>
             <div className="cat-container">
-                <Link  to="/category/deals" className="cat-links">Deals</Link>
+                {/* <Link  to="/category/deals" className="cat-links">Deals</Link> */}
                 <Link  to="/category/jewelry" className="cat-links">Jewelry & Accessories</Link>
                 <Link  to="/category/clothing" className="cat-links">Clothing & Shoes</Link>
                 <Link  to="/category/home" className="cat-links">Home & Living</Link>
@@ -14,7 +14,7 @@ const Categories = () => {
                 <Link  to="/category/toys" className="cat-links">Toys & Entertainment</Link>
                 <Link  to="/category/art" className="cat-links">Art & Collectibles</Link>
                 <Link  to="/category/crafts" className="cat-links">Craft & Supplies</Link>
-                <Link  to="/category/gifts" className="cat-links">Gifts & Gift Cards</Link>
+                {/* <Link  to="/category/gifts" className="cat-links">Gifts & Gift Cards</Link> */}
             </div>
         </>
     )

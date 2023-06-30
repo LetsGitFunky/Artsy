@@ -22,11 +22,10 @@ require "open-uri"
     ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
     puts "Creating users..."
-    # Create one user with an easy to remember username, email, and password:
 
     User.create!(
-      first_name: 'Demo',
-      email: 'demo@test.com',
+      first_name: 'Michaelangelo',
+      email: 'ninja@turtle.com',
       password: 'password123'
     )
 
@@ -100,7 +99,7 @@ require "open-uri"
 
     art1 = Product.create!(
       name: "Mona Lisa High Resolution Poster Print",
-      description: "Own the enigma! The Mona Lisa print, a timeless masterpiece with an elusive smile that's been baffling art critics and living room guests alike. 'Is she chuckling at your dance moves?' Order now and wonder forever!",
+      description: "Own the enigma! The Mona Lisa print, a timeless masterpiece with an elusive smile that's been baffling art critics and living room guests alike. 'Is she chuckling at your dance moves?' Order now and wonder forever! Painting",
       price: 20,
       category: "Art",
       sizes: ["11x17", "18x24", "24x36", "27x40"]
@@ -113,23 +112,39 @@ require "open-uri"
     art2 = Product.create!(
       name: "The Last Supper by Da Vinci Poster Print",
       description:
-      "Spice up your dining room with Da Vinci's 'Last Supper' poster. One of the most recognized pieces of art history, now it can spark lively debate at your dinner parties! 'Which disciple skipped on the check?' Keep guests guessing!",
-      price: 20,
+      "Spice up your dining room with Da Vinci's 'Last Supper' poster. One of the most recognized pieces of art history, now it can spark lively debate at your dinner parties! 'Which disciple skipped on the check?' Keep guests guessing! Painting",
+      price: 35,
       category: "Art",
       sizes: ["11x17", "18x24", "24x36", "27x40"]
       )
 
       art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
+      art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper2.avif"), filename: "supper2.avif")
+      art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper3.jpg"), filename: "supper3.jpg")
 
       art3 = Product.create!(
         name: "Birth of Venus by Botticelli Fine Art Print",
-        description: "Shake up your home decor with Botticelli's 'Birth of Venus' poster. Before Beyoncé, there was Venus, setting the original standard for emerging flawlessly. Get this poster and celebrate the OG queen of fabulous entrances!",
-        price: 20,
+        description: "Shake up your home decor with Botticelli's 'Birth of Venus' poster. Before Beyoncé, there was Venus, setting the original standard for emerging flawlessly. Get this poster and celebrate the OG queen of fabulous entrances! Painting",
+        price: 28,
         category: "Art",
         sizes: ["11x17", "18x24", "24x36", "27x40"]
       )
 
       art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/BirthOfVenus.jpeg"), filename: "Venus1.jpg")
+      art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus2.jpg"), filename: "venus2.jpg")
+      art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus3.avif"), filename: "venus3.avif")
+
+      art4 = Product.create!(
+        name: "Mona Lisa by Fernando Botero",
+        description: "The real Mona. Mona Lisa by Fernando Botero Canvas Print Painting Mid Century Modern Living Room Wall Decor Framed Canvas Art",
+        price: 2000,
+        category: "Art",
+        sizes: ["11x17", "18x24", "24x36", "27x40"]
+      )
+
+      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona3.webp"), filename: "monamona3.webp")
+      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona.avif"), filename: "monamona.avif")
+      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona2.avif"), filename: "monamona2.avif")
 
     jewelry1 = Product.create!(
       name: "Handcrafted Jade Bead Earrings",
@@ -140,17 +155,21 @@ require "open-uri"
       sizes: ["12mm"]
     )
 
-    jewelry1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/Jade.jpeg"), filename: "Jade1.jpg")
+    jewelry1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/jade2.avif"), filename: "jade2.avif")
+    jewelry1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/jade3.avif"), filename: "jade3.avif")
+    jewelry1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/jade4.avif"), filename: "jade4.avif")
 
     jewelry2 = Product.create!(
       name: "Elegant Round Cut Diamond Ring",
       description: "Sparkle brighter than Cinderella at the ball with this exquisite Diamond Ring. Who needs a Fairy Godmother when you've got this eternal beauty at your fingertips!",
-      price: 1000,
+      price: 250,
       category: "Jewelry",
       sizes: ["12mm"]
     )
 
-    jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond.jpeg"), filename: "Diamond1.jpg")
+    jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond2.avif"), filename: "diamond2.avif")
+    jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond3.avif"), filename: "diamond3.avif")
+    jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond4.avif"), filename: "diamond4.avif")
 
     jewelry3 = Product.create!(
       name: "Classic Gold Cuff Bracelet",
@@ -158,16 +177,18 @@ require "open-uri"
       "Embrace your inner Wonder Woman with this elegant Gold Bracelet. Not quite a lasso of truth, but this stunning piece might just make you feel like a superhero!",
       price: 150,
       category: "Jewelry",
-      sizes: ["10in", "12in", "14in"]
+      sizes: ["open cuff"]
     )
 
-    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold.jpeg"), filename: "Gold1.jpg")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet1.webp"), filename: "goldbracelet1.webp")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet2.webp"), filename: "goldbracelet2.webp")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet3.webp"), filename: "goldbracelet3.webp")
 
     jewelry4 = Product.create!(
       name: "Gold Chain",
       description:
       "I got a gold chain with a bad name. Love my face but dont love my brain. Lets talk about it",
-      price: 150,
+      price: 125,
       category: "Jewelry",
       sizes: ["10in", "12in", "14in"]
     )
@@ -191,7 +212,7 @@ require "open-uri"
     clothing1 = Product.create!(
       name: "Boho Chic Dress",
       description:
-      "Introducing our Printed Hippie Boho Chic Summer Dress, the epitome of laid-back style and bohemian charm.",
+      "Introducing our Printed Hippie Boho Chic Summer Dress, the epitome of laid-back style and bohemian charm. Women.",
       price: 40,
       category: "Clothing",
       sizes: ["XS", "S", "M", "L", "XL"]
@@ -202,7 +223,7 @@ require "open-uri"
     clothing2 = Product.create!(
       name: "Wool Sweater",
       description:
-      "Stay warm with this cozy wool sweater. Chunky Merino Wool Sweater, Oversized Women Jumper, Loose Knit Jumper, Minimalist Basic Knitwear, Boho Sweater, Winter Clothing, Winter Gift",
+      "Stay warm with this cozy wool sweater. Chunky Merino Wool Sweater, Oversized Women Jumper, Loose Knit Jumper, Minimalist Basic Knitwear, Boho Sweater, Winter Clothing, Winter Gift.",
       price: 65,
       category: "Clothing",
       sizes: ["XS", "S", "M", "L", "XL"]
@@ -215,7 +236,7 @@ require "open-uri"
     clothing3 = Product.create!(
       name: "Leather Sandals",
       description:
-      "Women Leather Sandals, Feather Fan Sandals, Handmade To Order, Fur Lace Sandals, Women Shoes, Summer Shoes, Sandales Grecques / KIRKI",
+      "Women Leather Sandals, Feather Fan Sandals, Handmade To Order, Fur Lace Sandals, Women Shoes, Summer Shoes. Summer.",
       price: 145,
       category: "Clothing",
       sizes: ["5", "6", "7", "8", "9"]
@@ -240,7 +261,7 @@ require "open-uri"
     home1 = Product.create!(
       name: "Moss Wall Clock",
       description:
-      "Made to Order Moss Wall Clock, Personalized gift, Wall Art, Custom Made Moss & Wood Wall Clock, Custom Wall Decor",
+      "Made to Order Moss Wall Clock, Personalized gift, Wall Art, Custom Made Moss & Wood Wall Clock, Custom Wall Decor.",
       price: 168,
       category: "Home",
       sizes: ["12in", "14in", "16in"]
@@ -252,7 +273,7 @@ require "open-uri"
     home2 = Product.create!(
       name: "Navajo Pillow",
       description:
-      "home decor pillow, tribal pillow cover, bench cushion, contemporary pillow, aztec pillow, body pillow, eco friendly, interior pillows",
+      "home decor pillow, tribal pillow cover, bench cushion, contemporary pillow, aztec pillow, body pillow, eco friendly, interior pillows. boho",
       price: 12,
       category: "Home",
       sizes: ["18x18", "12x24"]
@@ -265,8 +286,7 @@ require "open-uri"
     home3 = Product.create!(
       name: "Blue Persian Rug",
       description:
-      "Blue Persian Rug 8x10, Blue Kilim Rug 8x10, Oriental Vintage Blue Rug, Bessarabian Kilim, Custom Sized Blue Rug, Animal Patterned Blue Rug
-      ",
+      "Blue Persian Rug 8x10, Blue Kilim Rug 8x10, Oriental Vintage Blue Rug, Bessarabian Kilim, Custom Sized Blue Rug, Animal Patterned Blue Rug. Boho.",
       price: 85,
       category: "Home",
       sizes: ["5ftx7ft", "7ftx10ft"]
@@ -275,6 +295,19 @@ require "open-uri"
     home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug1.avif"), filename: "rug1.avif")
     home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug2.avif"), filename: "rug2.avif")
     home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug3.avif"), filename: "rug3.avif")
+
+    home4 = Product.create!(
+      name: "Bagel Doggie Bed",
+      description:
+      "Personalized Bagel Style Dog Bed Durable Bedding Supportive Cushion Custom Embroidered Machine Washable.",
+      price: 85,
+      category: "Home",
+      sizes: ["toy-size", "doggo", "Floof"]
+    )
+
+    home4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/dogbed.avif"), filename: "dogbed.avif")
+    home4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/dogbed2.avif"), filename: "dogbed2.avif")
+    home4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/dogbed3.avif"), filename: "dogbed3.avif")
 
     wedding1 = Product.create!(
       name: "Mr. and Mrs. Custom Champagne Flutes",
@@ -292,7 +325,7 @@ require "open-uri"
     wedding2 = Product.create!(
       name: "Floral Wedding Tiara",
       description:
-      "Floral Bridal Tiara, Wedding Tiara, Bridal Crown, Wedding Crown, Bridal Tiara, Floral Bridal Headpiece",
+      "Floral Bridal Tiara, Wedding Tiara, Bridal Crown, Wedding Crown, Bridal Tiara, Floral Bridal Headpiece. Bride.",
       price: 85,
       category: "Wedding",
       sizes: ["7.5", "8", "8.5"]
@@ -305,7 +338,7 @@ require "open-uri"
     wedding3 = Product.create!(
       name: "Wax seal for wedding invites",
       description:
-      "Custom logo wax seal stamp kit for wedding invitation , Custom letter wax stamp kit , Wedding wax seal kit , Letter wax stamp kit custom",
+      "Custom logo wax seal stamp kit for wedding invitation , Custom letter wax stamp kit , Wedding wax seal kit , Letter wax stamp kit custom. Arts & Crafts. Stationary. Bride and Groom.",
       price: 100,
       category: "Wedding",
       sizes: ["100", "200", "400"]
@@ -315,11 +348,23 @@ require "open-uri"
     wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal2.avif"), filename: "waxseal2.avif")
     wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal3.avif"), filename: "waxseal3.avif")
 
+    wedding4 = Product.create!(
+      name: "Rustic Wedding Arch",
+      description:
+      "7ft Brown Wooden Heptagonal Wedding Arch with Two Wires For Stability- For Rustic wedding, Natural Photo Booth, Boho Indoor/Outdoor Arbor",
+      price: 100,
+      category: "Wedding",
+      sizes: ["100", "200", "400"]
+    )
+
+    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch1.avif"), filename: "arch1.avif")
+    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch2.avif"), filename: "arch2.avif")
+
     toys1 = Product.create!(
       name: "Akira: Volume 1",
       description:
-      "AKIRA - Volume 1 - Katsuhiro Otomo Manga Sci-Fi (Book 1) Anime PB. Greatest thing ever.",
-      price: 100,
+      "AKIRA - Volume 1 - Katsuhiro Otomo Manga Sci-Fi (Book 1) Anime PB. Greatest thing ever. Graphic Novel. Anime. Manga. Hero.",
+      price: 20,
       category: "toys",
       sizes: ["paperback"]
     )
@@ -331,10 +376,10 @@ require "open-uri"
     toys2 = Product.create!(
       name: "Crystal Singing Bowls",
       description:
-      "Professional Chakra Tuning 432HZ Perfect Pitch 6-12 Inches Crystal Singing Bowls, for meditation, 7 Pieces Set CDEFGAB with Carry Cases and Mallets",
-      price: 100,
+      "Professional Chakra Tuning 432HZ Perfect Pitch 6-12 Inches Crystal Singing Bowls, for meditation, 7 Pieces Set CDEFGAB with Carry Cases and Mallets. Music.",
+      price: 250,
       category: "toys",
-      sizes: ["paperback"]
+      sizes: ["full set", "C", "D", "E", "F", "G", "A", "B"]
     )
 
     toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls1.avif"), filename: "bowls1.avif")
@@ -344,10 +389,10 @@ require "open-uri"
     toys3 = Product.create!(
       name: "Premium Collectors Chess Set",
       description:
-      "Premium Chess Set - Handmade Chess Board - Resin Chess Pieces - Gorgeous Walnut Brass Chess Board - Luxury Gift for Him",
+      "Premium Chess Set - Handmade Chess Board - Resin Chess Pieces - Gorgeous Walnut Brass Chess Board - Luxury Gift for Him. Gaming. Games",
       price: 100,
       category: "toys",
-      sizes: ["Full Set"]
+      sizes: ["full Set"]
     )
 
     toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess1.avif"), filename: "chess1.avif")
@@ -357,7 +402,7 @@ require "open-uri"
     toys4 = Product.create!(
       name: "Vintage Blue Dice DnD Metal Dice",
       description:
-      "Vintage Blue Dice DnD Metal Dice, Dungeons and Dragons, dnd dice set Polyhedral Dice, MTG Dice D&D Dice , Metal Dnd Dice Gifts for Christmas",
+      "Vintage Blue Dice DnD Metal Dice, Dungeons and Dragons, dnd dice set Polyhedral Dice, MTG Dice D&D Dice , Metal Dnd Dice Gifts for Christmas. Gaming. Games",
       price: 40,
       category: "toys",
       sizes: ["full set"]
@@ -382,7 +427,7 @@ require "open-uri"
     crafts2 = Product.create!(
       name: "Ultralight Bamboo Magnetic Sketch Easel Handmade",
       description:
-      "Magnetic Sketch Easel! Great for small works of watercolor, gouache, pencil, and acrylics (not recommended for oils). Painting anywhere!",
+      "Magnetic Sketch Easel! Great for small works of watercolor, gouache, pencil, and acrylics (not recommended for oils). Painting anywhere! For artists",
       price: 40,
       category: "crafts",
       sizes: ["8in", "10in", "12in"]
@@ -395,7 +440,7 @@ require "open-uri"
     crafts3 = Product.create!(
       name: "Watercolor Palette",
       description:
-      "Walnut watercolor box Travel watercolor Go draw Watercolor palette Pocket watercolor box for painting.",
+      "Walnut watercolor box Travel watercolor Go draw Watercolor palette Pocket watercolor box for painting. Art. Nature. Gifts.",
       price: 25,
       category: "crafts",
       sizes: ["8in", "10in", "12in"]
@@ -405,12 +450,17 @@ require "open-uri"
     crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor2.avif"), filename: "watercolor2.avif")
     crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor3.avif"), filename: "watercolor3.avif")
 
+    crafts4 = Product.create!(
+      name: "Floating Planter",
+      description:
+      "Boho Modern Living Floating Plant Pot, Levitating Planter for Air Plants and Small Plants, Floating Bonsai, Levitating Pot, Floating Pot. Magnetic. Zero Gavity",
+      price: 100,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
 
-
-
-
-
-
+    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float.avif"), filename: "watercolor1.avif")
+    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float2.jpg"), filename: "watercolor2.jpg")
 
     puts "seeding custom reviews"
 
@@ -566,10 +616,10 @@ require "open-uri"
     Product.all.map do |product|
       3.times do
         Review.create!(
-          title: Faker::Movies::PrincessBride.character, # generating random titles for the reviews
+          title: Faker::Movies::PrincessBride.character,
           rating: rand(3..5),
           body: Faker::Movies::PrincessBride.quote,
-          user_id: rand(2..9), # assuming that user with id 1 always exists
+          user_id: rand(2..9),
           product_id: product.id
           )
         end
@@ -581,14 +631,14 @@ require "open-uri"
         user_id: 1,
         product_id: 1,
         quantity: 1,
-        options: '11×17'
+        options: "11x17"
         )
 
       CartItem.create!(
         user_id: 1,
         product_id: 2,
         quantity: 1,
-        options: '11×17'
+        options: "11x17"
         )
 
         puts "Done!"
