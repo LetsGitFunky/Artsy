@@ -147,6 +147,30 @@ require "open-uri"
     toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess2.avif"), filename: "chess2.avif")
     toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess3.avif"), filename: "chess3.avif")
 
+    wedding4 = Product.create!(
+      name: "Rustic Wedding Arch",
+      description:
+      "7ft Brown Wooden Heptagonal Wedding Arch with Two Wires For Stability- For Rustic wedding, Natural Photo Booth, Boho Indoor/Outdoor Arbor",
+      price: 100,
+      category: "Wedding",
+      sizes: ["100", "200", "400"]
+    )
+
+    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch1.avif"), filename: "arch1.avif")
+    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch2.avif"), filename: "arch2.avif")
+
+    crafts4 = Product.create!(
+      name: "Floating Planter",
+      description:
+      "Boho Modern Living Floating Plant Pot, Levitating Planter for Air Plants and Small Plants, Floating Bonsai, Levitating Pot, Floating Pot. Magnetic. Zero Gavity",
+      price: 100,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
+
+    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float.avif"), filename: "watercolor1.avif")
+    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float2.jpg"), filename: "watercolor2.jpg")
+
     jewelry3 = Product.create!(
       name: "Classic Gold Cuff Bracelet",
       description:
@@ -362,18 +386,6 @@ require "open-uri"
     wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal2.avif"), filename: "waxseal2.avif")
     wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal3.avif"), filename: "waxseal3.avif")
 
-    wedding4 = Product.create!(
-      name: "Rustic Wedding Arch",
-      description:
-      "7ft Brown Wooden Heptagonal Wedding Arch with Two Wires For Stability- For Rustic wedding, Natural Photo Booth, Boho Indoor/Outdoor Arbor",
-      price: 100,
-      category: "Wedding",
-      sizes: ["100", "200", "400"]
-    )
-
-    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch1.avif"), filename: "arch1.avif")
-    wedding4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/arch2.avif"), filename: "arch2.avif")
-
     toys1 = Product.create!(
       name: "Akira: Volume 1",
       description:
@@ -437,18 +449,6 @@ require "open-uri"
     crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor1.avif"), filename: "watercolor1.avif")
     crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor2.avif"), filename: "watercolor2.avif")
     crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor3.avif"), filename: "watercolor3.avif")
-
-    crafts4 = Product.create!(
-      name: "Floating Planter",
-      description:
-      "Boho Modern Living Floating Plant Pot, Levitating Planter for Air Plants and Small Plants, Floating Bonsai, Levitating Pot, Floating Pot. Magnetic. Zero Gavity",
-      price: 100,
-      category: "crafts",
-      sizes: ["8in", "10in", "12in"]
-    )
-
-    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float.avif"), filename: "watercolor1.avif")
-    crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float2.jpg"), filename: "watercolor2.jpg")
 
     art4 = Product.create!(
       name: "Mona Lisa by Fernando Botero",
