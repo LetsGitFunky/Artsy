@@ -1,24 +1,25 @@
-# README
+# Artsy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Artsy is a full-stack web application inspired by Etsy. It features user authentication, product browsing and searching, reviews and ratings, and a shopping cart system. 
 
-Things you may want to cover:
+## Technologies Used
+- Frontend: React/Redux
+- Backend: Ruby on Rails
+- Database: PostgreSQL
+- Other: AWS for image hosting
 
-* Ruby version
+## Features
+- User registration and login
+- Product browsing
+- Product search
+- User reviews and ratings
+- Shopping cart system
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## System Dependencies & Configuration
+- Ruby version: 3.1.1p18
+- PostgreSQL
+- Node.js
+- npm
+- AWS S3
+- React
+- Render
