@@ -13,7 +13,7 @@ const Categories = () => {
                 <Link  to="/category/wedding" className="cat-links">Wedding & Party</Link>
                 <Link  to="/category/toys" className="cat-links">Toys & Entertainment</Link>
                 <Link  to="/category/art" className="cat-links">Art & Collectibles</Link>
-                <Link  to="/category/craft" className="cat-links">Craft & Supplies</Link>
+                <Link  to="/category/crafts" className="cat-links">Craft & Supplies</Link>
                 <Link  to="/category/gifts" className="cat-links">Gifts & Gift Cards</Link>
             </div>
         </>

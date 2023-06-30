@@ -18,6 +18,8 @@ require "open-uri"
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('products')
+    ApplicationRecord.connection.reset_pk_sequence!('cart_items')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -101,7 +103,7 @@ require "open-uri"
       description: "Own the enigma! The Mona Lisa print, a timeless masterpiece with an elusive smile that's been baffling art critics and living room guests alike. 'Is she chuckling at your dance moves?' Order now and wonder forever!",
       price: 20,
       category: "Art",
-      sizes: ['11×17', '18×24', '24×36', '27×40']
+      sizes: ["11x17", "18x24", "24x36", "27x40"]
     )
 
     art1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/Mona.jpeg"), filename: "Mona1.jpg")
@@ -114,7 +116,7 @@ require "open-uri"
       "Spice up your dining room with Da Vinci's 'Last Supper' poster. One of the most recognized pieces of art history, now it can spark lively debate at your dinner parties! 'Which disciple skipped on the check?' Keep guests guessing!",
       price: 20,
       category: "Art",
-      sizes: ['11×17', '18×24', '24×36', '27×40']
+      sizes: ["11x17", "18x24", "24x36", "27x40"]
       )
 
       art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
@@ -124,7 +126,7 @@ require "open-uri"
         description: "Shake up your home decor with Botticelli's 'Birth of Venus' poster. Before Beyoncé, there was Venus, setting the original standard for emerging flawlessly. Get this poster and celebrate the OG queen of fabulous entrances!",
         price: 20,
         category: "Art",
-        sizes: ['11×17', '18×24', '24×36', '27×40']
+        sizes: ["11x17", "18x24", "24x36", "27x40"]
       )
 
       art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/BirthOfVenus.jpeg"), filename: "Venus1.jpg")
@@ -135,7 +137,7 @@ require "open-uri"
       "Embrace your inner warrior with these Jade Earrings. Just like Mulan, show that your beauty is more than just skin-deep. Let your strength and courage shine every time you wear these!",
       price: 50,
       category: "Jewelry",
-      sizes: []
+      sizes: ["12mm"]
     )
 
     jewelry1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/Jade.jpeg"), filename: "Jade1.jpg")
@@ -145,7 +147,7 @@ require "open-uri"
       description: "Sparkle brighter than Cinderella at the ball with this exquisite Diamond Ring. Who needs a Fairy Godmother when you've got this eternal beauty at your fingertips!",
       price: 1000,
       category: "Jewelry",
-      sizes: []
+      sizes: ["12mm"]
     )
 
     jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond.jpeg"), filename: "Diamond1.jpg")
@@ -156,10 +158,259 @@ require "open-uri"
       "Embrace your inner Wonder Woman with this elegant Gold Bracelet. Not quite a lasso of truth, but this stunning piece might just make you feel like a superhero!",
       price: 150,
       category: "Jewelry",
-      sizes: []
+      sizes: ["10in", "12in", "14in"]
     )
 
     jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold.jpeg"), filename: "Gold1.jpg")
+
+    jewelry4 = Product.create!(
+      name: "Gold Chain",
+      description:
+      "I got a gold chain with a bad name. Love my face but dont love my brain. Lets talk about it",
+      price: 150,
+      category: "Jewelry",
+      sizes: ["10in", "12in", "14in"]
+    )
+
+    jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain.avif"), filename: "gold_chain.avif")
+    jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain2.avif"), filename: "gold_chain2.avif")
+    jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain3.avif"), filename: "gold_chain3.avif")
+
+    jewelry5 = Product.create!(
+      name: "Wood ring.",
+      description:
+      "Wood Ring Gift for Woman Resin Rings Gift For Her Statement Ring Wood Jewelry Unique gift Birthday gift Clothing gift Wooden Ring Boho Ring.",
+      price: 145,
+      category: "Jewelry",
+      sizes: ["10in", "12in", "14in"]
+    )
+
+    jewelry5.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/woodring.webp"), filename: "woodring.webp")
+    jewelry5.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/woodring2.avif"), filename: "woodring2.avif")
+
+    clothing1 = Product.create!(
+      name: "Boho Chic Dress",
+      description:
+      "Introducing our Printed Hippie Boho Chic Summer Dress, the epitome of laid-back style and bohemian charm.",
+      price: 40,
+      category: "Clothing",
+      sizes: ["XS", "S", "M", "L", "XL"]
+    )
+
+    clothing1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/bohochicdress.avif"), filename: "bohochicdress.avif")
+
+    clothing2 = Product.create!(
+      name: "Wool Sweater",
+      description:
+      "Stay warm with this cozy wool sweater. Chunky Merino Wool Sweater, Oversized Women Jumper, Loose Knit Jumper, Minimalist Basic Knitwear, Boho Sweater, Winter Clothing, Winter Gift",
+      price: 65,
+      category: "Clothing",
+      sizes: ["XS", "S", "M", "L", "XL"]
+    )
+
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater.avif"), filename: "woolsweater.avif")
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater2.avif"), filename: "woolsweater2.avif")
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater3.avif"), filename: "woolsweater3.avif")
+
+    clothing3 = Product.create!(
+      name: "Leather Sandals",
+      description:
+      "Women Leather Sandals, Feather Fan Sandals, Handmade To Order, Fur Lace Sandals, Women Shoes, Summer Shoes, Sandales Grecques / KIRKI",
+      price: 145,
+      category: "Clothing",
+      sizes: ["5", "6", "7", "8", "9"]
+    )
+
+    clothing3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/leathersandals.avif"), filename: "leathersandals.avif")
+    clothing3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/leathersandals2.avif"), filename: "leathersandals2.avif")
+    clothing3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/leathersandals3.avif"), filename: "leathersandals3.avif")
+
+    clothing4 = Product.create!(
+      name: "Mushroom Converse",
+      description:
+      "Custom Converse Chuck Taylor Mushrooms Embroidered Converse Shoes/ Mushrooms Embroidered Converse Custom/ Mushrooms Embroidered Sneakers",
+      price: 100,
+      category: "Clothing",
+      sizes: ["7", "8", "9", "10", "11"]
+    )
+
+    clothing4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/mushroomconverse.webp"), filename: "mushroomconverse.webp")
+    clothing4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/mushroomconverse2.avif"), filename: "mushroomconverse2.avif")
+
+    home1 = Product.create!(
+      name: "Moss Wall Clock",
+      description:
+      "Made to Order Moss Wall Clock, Personalized gift, Wall Art, Custom Made Moss & Wood Wall Clock, Custom Wall Decor",
+      price: 168,
+      category: "Home",
+      sizes: ["12in", "14in", "16in"]
+    )
+
+    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock1.avif"), filename: "clock1.avif")
+    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock2.avif"), filename: "clock2.avif")
+
+    home2 = Product.create!(
+      name: "Navajo Pillow",
+      description:
+      "home decor pillow, tribal pillow cover, bench cushion, contemporary pillow, aztec pillow, body pillow, eco friendly, interior pillows",
+      price: 12,
+      category: "Home",
+      sizes: ["18x18", "12x24"]
+    )
+
+    home2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/pillow.avif"), filename: "pillow.avif")
+    home2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/pillow2.avif"), filename: "pillow.avif2")
+    home2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/pillow3.avif"), filename: "pillow.avif3")
+
+    home3 = Product.create!(
+      name: "Blue Persian Rug",
+      description:
+      "Blue Persian Rug 8x10, Blue Kilim Rug 8x10, Oriental Vintage Blue Rug, Bessarabian Kilim, Custom Sized Blue Rug, Animal Patterned Blue Rug
+      ",
+      price: 85,
+      category: "Home",
+      sizes: ["5ftx7ft", "7ftx10ft"]
+    )
+
+    home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug1.avif"), filename: "rug1.avif")
+    home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug2.avif"), filename: "rug2.avif")
+    home3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/rug3.avif"), filename: "rug3.avif")
+
+    wedding1 = Product.create!(
+      name: "Mr. and Mrs. Custom Champagne Flutes",
+      description:
+      "Wedding Champagne Glasses, Set of 2 - Champagne Flutes, Wedding Gifts, Mr and Mrs Toasting Glasses, Wedding Decor, Bride and Groom",
+      price: 30,
+      category: "Wedding",
+      sizes: ["set of 2"]
+    )
+
+    wedding1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/flutes1.avif"), filename: "flutes1.avif")
+    wedding1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/flutes2.avif"), filename: "flutes2.avif")
+    wedding1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/flutes3.avif"), filename: "flutes3.avif")
+
+    wedding2 = Product.create!(
+      name: "Floral Wedding Tiara",
+      description:
+      "Floral Bridal Tiara, Wedding Tiara, Bridal Crown, Wedding Crown, Bridal Tiara, Floral Bridal Headpiece",
+      price: 85,
+      category: "Wedding",
+      sizes: ["7.5", "8", "8.5"]
+    )
+
+    wedding2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/weddingcrown.avif"), filename: "weddingcrown.avif")
+    wedding2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/weddingcrown2.avif"), filename: "weddingcrown2.avif")
+    wedding2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/weddingcrown3.avif"), filename: "weddingcrown3.avif")
+
+    wedding3 = Product.create!(
+      name: "Wax seal for wedding invites",
+      description:
+      "Custom logo wax seal stamp kit for wedding invitation , Custom letter wax stamp kit , Wedding wax seal kit , Letter wax stamp kit custom",
+      price: 100,
+      category: "Wedding",
+      sizes: ["100", "200", "400"]
+    )
+
+    wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal1.avif"), filename: "waxseal1.avif")
+    wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal2.avif"), filename: "waxseal2.avif")
+    wedding3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/wedding/waxseal3.avif"), filename: "waxseal3.avif")
+
+    toys1 = Product.create!(
+      name: "Akira: Volume 1",
+      description:
+      "AKIRA - Volume 1 - Katsuhiro Otomo Manga Sci-Fi (Book 1) Anime PB. Greatest thing ever.",
+      price: 100,
+      category: "toys",
+      sizes: ["paperback"]
+    )
+
+    toys1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/akira1.avif"), filename: "akira1.avif")
+    toys1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/akira2.jpg"), filename: "akira2.jpg")
+    toys1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/akira3.jpg"), filename: "akira3.jpg")
+
+    toys2 = Product.create!(
+      name: "Crystal Singing Bowls",
+      description:
+      "Professional Chakra Tuning 432HZ Perfect Pitch 6-12 Inches Crystal Singing Bowls, for meditation, 7 Pieces Set CDEFGAB with Carry Cases and Mallets",
+      price: 100,
+      category: "toys",
+      sizes: ["paperback"]
+    )
+
+    toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls1.avif"), filename: "bowls1.avif")
+    toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls2.avif"), filename: "bowls2.avif")
+    toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls3.avif"), filename: "bowls3.avif")
+
+    toys3 = Product.create!(
+      name: "Premium Collectors Chess Set",
+      description:
+      "Premium Chess Set - Handmade Chess Board - Resin Chess Pieces - Gorgeous Walnut Brass Chess Board - Luxury Gift for Him",
+      price: 100,
+      category: "toys",
+      sizes: ["Full Set"]
+    )
+
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess1.avif"), filename: "chess1.avif")
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess2.avif"), filename: "chess2.avif")
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess3.avif"), filename: "chess3.avif")
+
+    toys4 = Product.create!(
+      name: "Vintage Blue Dice DnD Metal Dice",
+      description:
+      "Vintage Blue Dice DnD Metal Dice, Dungeons and Dragons, dnd dice set Polyhedral Dice, MTG Dice D&D Dice , Metal Dnd Dice Gifts for Christmas",
+      price: 40,
+      category: "toys",
+      sizes: ["full set"]
+    )
+
+    toys4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/dnd.avif"), filename: "dnd.avif")
+    toys4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/dnd.webp"), filename: "dnd.webp")
+
+    crafts1 = Product.create!(
+      name: "Disco Ball Pot for Plants",
+      description:
+      "Hanging Disco Ball Planter brightens up any room or porch, catching the sunlight to shine where it's needed most. This stylish boho disco ball extends the reach of your window and making your home décor pop!",
+      price: 40,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
+
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco1.avif"), filename: "disco1.avif")
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco2.avif"), filename: "disco2.avif")
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco3.webp"), filename: "disco3.webp")
+
+    crafts2 = Product.create!(
+      name: "Ultralight Bamboo Magnetic Sketch Easel Handmade",
+      description:
+      "Magnetic Sketch Easel! Great for small works of watercolor, gouache, pencil, and acrylics (not recommended for oils). Painting anywhere!",
+      price: 40,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
+
+    crafts2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/easel.avif"), filename: "easel.avif")
+    crafts2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/easel2.avif"), filename: "easel2.avif")
+    crafts2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/easel3.avif"), filename: "easel3.avif")
+
+    crafts3 = Product.create!(
+      name: "Watercolor Palette",
+      description:
+      "Walnut watercolor box Travel watercolor Go draw Watercolor palette Pocket watercolor box for painting.",
+      price: 25,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
+
+    crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor1.avif"), filename: "watercolor1.avif")
+    crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor2.avif"), filename: "watercolor2.avif")
+    crafts3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/watercolor3.avif"), filename: "watercolor3.avif")
+
+
+
+
+
+
+
 
     puts "seeding custom reviews"
 
