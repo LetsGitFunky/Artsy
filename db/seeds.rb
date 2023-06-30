@@ -147,18 +147,31 @@ require "open-uri"
     toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess2.avif"), filename: "chess2.avif")
     toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess3.avif"), filename: "chess3.avif")
 
-    art2 = Product.create!(
-      name: "The Last Supper by Da Vinci Poster Print",
+    jewelry3 = Product.create!(
+      name: "Classic Gold Cuff Bracelet",
       description:
-      "Spice up your dining room with Da Vinci's 'Last Supper' poster. One of the most recognized pieces of art history, now it can spark lively debate at your dinner parties! 'Which disciple skipped on the check?' Keep guests guessing! Painting",
-      price: 35,
-      category: "Art",
-      sizes: ["11x17", "18x24", "24x36", "27x40"]
+      "Embrace your inner Wonder Woman with this elegant Gold Bracelet. Not quite a lasso of truth, but this stunning piece might just make you feel like a superhero!",
+      price: 150,
+      category: "Jewelry",
+      sizes: ["open cuff"]
     )
 
-    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
-    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper2.avif"), filename: "supper2.avif")
-    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper3.jpg"), filename: "supper3.jpg")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet1.webp"), filename: "goldbracelet1.webp")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet2.webp"), filename: "goldbracelet2.webp")
+    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet3.webp"), filename: "goldbracelet3.webp")
+
+    clothing2 = Product.create!(
+      name: "Wool Sweater",
+      description:
+      "Stay warm with this cozy wool sweater. Chunky Merino Wool Sweater, Oversized Women Jumper, Loose Knit Jumper, Minimalist Basic Knitwear, Boho Sweater, Winter Clothing, Winter Gift.",
+      price: 65,
+      category: "Clothing",
+      sizes: ["XS", "S", "M", "L", "XL"]
+    )
+
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater.avif"), filename: "woolsweater.avif")
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater2.avif"), filename: "woolsweater2.avif")
+    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater3.avif"), filename: "woolsweater3.avif")
 
     art3 = Product.create!(
       name: "Birth of Venus by Botticelli Fine Art Print",
@@ -197,19 +210,6 @@ require "open-uri"
     jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond3.avif"), filename: "diamond3.avif")
     jewelry2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/diamond4.avif"), filename: "diamond4.avif")
 
-    jewelry3 = Product.create!(
-      name: "Classic Gold Cuff Bracelet",
-      description:
-      "Embrace your inner Wonder Woman with this elegant Gold Bracelet. Not quite a lasso of truth, but this stunning piece might just make you feel like a superhero!",
-      price: 150,
-      category: "Jewelry",
-      sizes: ["open cuff"]
-    )
-
-    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet1.webp"), filename: "goldbracelet1.webp")
-    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet2.webp"), filename: "goldbracelet2.webp")
-    jewelry3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/goldbracelet3.webp"), filename: "goldbracelet3.webp")
-
     jewelry4 = Product.create!(
       name: "Gold Chain",
       description:
@@ -222,6 +222,19 @@ require "open-uri"
     jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain.avif"), filename: "gold_chain.avif")
     jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain2.avif"), filename: "gold_chain2.avif")
     jewelry4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/jewelry/gold_chain3.avif"), filename: "gold_chain3.avif")
+
+    art2 = Product.create!(
+      name: "The Last Supper by Da Vinci Poster Print",
+      description:
+      "Spice up your dining room with Da Vinci's 'Last Supper' poster. One of the most recognized pieces of art history, now it can spark lively debate at your dinner parties! 'Which disciple skipped on the check?' Keep guests guessing! Painting",
+      price: 35,
+      category: "Art",
+      sizes: ["11x17", "18x24", "24x36", "27x40"]
+    )
+
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper2.avif"), filename: "supper2.avif")
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper3.jpg"), filename: "supper3.jpg")
 
     jewelry5 = Product.create!(
       name: "Wood ring.",
@@ -245,19 +258,6 @@ require "open-uri"
     )
 
     clothing1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/bohochicdress.avif"), filename: "bohochicdress.avif")
-
-    clothing2 = Product.create!(
-      name: "Wool Sweater",
-      description:
-      "Stay warm with this cozy wool sweater. Chunky Merino Wool Sweater, Oversized Women Jumper, Loose Knit Jumper, Minimalist Basic Knitwear, Boho Sweater, Winter Clothing, Winter Gift.",
-      price: 65,
-      category: "Clothing",
-      sizes: ["XS", "S", "M", "L", "XL"]
-    )
-
-    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater.avif"), filename: "woolsweater.avif")
-    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater2.avif"), filename: "woolsweater2.avif")
-    clothing2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/woolsweater3.avif"), filename: "woolsweater3.avif")
 
     clothing3 = Product.create!(
       name: "Leather Sandals",
