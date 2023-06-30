@@ -109,6 +109,44 @@ require "open-uri"
     art1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/MonaFloor.avif"), filename: "Mona2.jpg")
     art1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/MonaWall.avif"), filename: "Mona3.jpg")
 
+    crafts1 = Product.create!(
+      name: "Disco Ball Pot for Plants",
+      description:
+      "Hanging Disco Ball Planter brightens up any room or porch, catching the sunlight to shine where it's needed most. This stylish boho disco ball extends the reach of your window and making your home décor pop!",
+      price: 40,
+      category: "crafts",
+      sizes: ["8in", "10in", "12in"]
+    )
+
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco1.avif"), filename: "disco1.avif")
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco2.avif"), filename: "disco2.avif")
+    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco3.webp"), filename: "disco3.webp")
+
+    home1 = Product.create!(
+      name: "Moss Wall Clock",
+      description:
+      "Made to Order Moss Wall Clock, Personalized gift, Wall Art, Custom Made Moss & Wood Wall Clock, Custom Wall Decor.",
+      price: 168,
+      category: "Home",
+      sizes: ["12in", "14in", "16in"]
+    )
+
+    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock1.avif"), filename: "clock1.avif")
+    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock2.avif"), filename: "clock2.avif")
+
+    toys3 = Product.create!(
+      name: "Premium Collectors Chess Set",
+      description:
+      "Premium Chess Set - Handmade Chess Board - Resin Chess Pieces - Gorgeous Walnut Brass Chess Board - Luxury Gift for Him. Gaming. Games",
+      price: 100,
+      category: "toys",
+      sizes: ["full Set"]
+    )
+
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess1.avif"), filename: "chess1.avif")
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess2.avif"), filename: "chess2.avif")
+    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess3.avif"), filename: "chess3.avif")
+
     art2 = Product.create!(
       name: "The Last Supper by Da Vinci Poster Print",
       description:
@@ -116,35 +154,23 @@ require "open-uri"
       price: 35,
       category: "Art",
       sizes: ["11x17", "18x24", "24x36", "27x40"]
-      )
+    )
 
-      art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
-      art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper2.avif"), filename: "supper2.avif")
-      art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper3.jpg"), filename: "supper3.jpg")
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/LastSupper.jpeg"), filename: "Supper1.jpg")
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper2.avif"), filename: "supper2.avif")
+    art2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/supper3.jpg"), filename: "supper3.jpg")
 
-      art3 = Product.create!(
-        name: "Birth of Venus by Botticelli Fine Art Print",
-        description: "Shake up your home decor with Botticelli's 'Birth of Venus' poster. Before Beyoncé, there was Venus, setting the original standard for emerging flawlessly. Get this poster and celebrate the OG queen of fabulous entrances! Painting",
-        price: 28,
-        category: "Art",
-        sizes: ["11x17", "18x24", "24x36", "27x40"]
-      )
+    art3 = Product.create!(
+      name: "Birth of Venus by Botticelli Fine Art Print",
+      description: "Shake up your home decor with Botticelli's 'Birth of Venus' poster. Before Beyoncé, there was Venus, setting the original standard for emerging flawlessly. Get this poster and celebrate the OG queen of fabulous entrances! Painting",
+      price: 28,
+      category: "Art",
+      sizes: ["11x17", "18x24", "24x36", "27x40"]
+    )
 
-      art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/BirthOfVenus.jpeg"), filename: "Venus1.jpg")
-      art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus2.jpg"), filename: "venus2.jpg")
-      art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus3.avif"), filename: "venus3.avif")
-
-      art4 = Product.create!(
-        name: "Mona Lisa by Fernando Botero",
-        description: "The real Mona. Mona Lisa by Fernando Botero Canvas Print Painting Mid Century Modern Living Room Wall Decor Framed Canvas Art",
-        price: 2000,
-        category: "Art",
-        sizes: ["11x17", "18x24", "24x36", "27x40"]
-      )
-
-      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona3.webp"), filename: "monamona3.webp")
-      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona.avif"), filename: "monamona.avif")
-      art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona2.avif"), filename: "monamona2.avif")
+    art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/BirthOfVenus.jpeg"), filename: "Venus1.jpg")
+    art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus2.jpg"), filename: "venus2.jpg")
+    art3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/venus3.avif"), filename: "venus3.avif")
 
     jewelry1 = Product.create!(
       name: "Handcrafted Jade Bead Earrings",
@@ -257,18 +283,6 @@ require "open-uri"
 
     clothing4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/mushroomconverse.webp"), filename: "mushroomconverse.webp")
     clothing4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/clothing/mushroomconverse2.avif"), filename: "mushroomconverse2.avif")
-
-    home1 = Product.create!(
-      name: "Moss Wall Clock",
-      description:
-      "Made to Order Moss Wall Clock, Personalized gift, Wall Art, Custom Made Moss & Wood Wall Clock, Custom Wall Decor.",
-      price: 168,
-      category: "Home",
-      sizes: ["12in", "14in", "16in"]
-    )
-
-    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock1.avif"), filename: "clock1.avif")
-    home1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/home/clock2.avif"), filename: "clock2.avif")
 
     home2 = Product.create!(
       name: "Navajo Pillow",
@@ -386,19 +400,6 @@ require "open-uri"
     toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls2.avif"), filename: "bowls2.avif")
     toys2.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/bowls3.avif"), filename: "bowls3.avif")
 
-    toys3 = Product.create!(
-      name: "Premium Collectors Chess Set",
-      description:
-      "Premium Chess Set - Handmade Chess Board - Resin Chess Pieces - Gorgeous Walnut Brass Chess Board - Luxury Gift for Him. Gaming. Games",
-      price: 100,
-      category: "toys",
-      sizes: ["full Set"]
-    )
-
-    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess1.avif"), filename: "chess1.avif")
-    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess2.avif"), filename: "chess2.avif")
-    toys3.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/chess3.avif"), filename: "chess3.avif")
-
     toys4 = Product.create!(
       name: "Vintage Blue Dice DnD Metal Dice",
       description:
@@ -410,19 +411,6 @@ require "open-uri"
 
     toys4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/dnd.avif"), filename: "dnd.avif")
     toys4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/toys/dnd.webp"), filename: "dnd.webp")
-
-    crafts1 = Product.create!(
-      name: "Disco Ball Pot for Plants",
-      description:
-      "Hanging Disco Ball Planter brightens up any room or porch, catching the sunlight to shine where it's needed most. This stylish boho disco ball extends the reach of your window and making your home décor pop!",
-      price: 40,
-      category: "crafts",
-      sizes: ["8in", "10in", "12in"]
-    )
-
-    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco1.avif"), filename: "disco1.avif")
-    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco2.avif"), filename: "disco2.avif")
-    crafts1.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/disco3.webp"), filename: "disco3.webp")
 
     crafts2 = Product.create!(
       name: "Ultralight Bamboo Magnetic Sketch Easel Handmade",
@@ -461,6 +449,18 @@ require "open-uri"
 
     crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float.avif"), filename: "watercolor1.avif")
     crafts4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/crafts/float2.jpg"), filename: "watercolor2.jpg")
+
+    art4 = Product.create!(
+      name: "Mona Lisa by Fernando Botero",
+      description: "The real Mona. Mona Lisa by Fernando Botero Canvas Print Painting Mid Century Modern Living Room Wall Decor Framed Canvas Art",
+      price: 2000,
+      category: "Art",
+      sizes: ["11x17", "18x24", "24x36", "27x40"]
+    )
+
+    art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona3.webp"), filename: "monamona3.webp")
+    art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona.avif"), filename: "monamona.avif")
+    art4.images.attach(io: URI.open("https://artsy-seeds.s3.us-west-1.amazonaws.com/products-photos/art/monamona2.avif"), filename: "monamona2.avif")
 
     puts "seeding custom reviews"
 
