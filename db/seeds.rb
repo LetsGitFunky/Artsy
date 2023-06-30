@@ -24,8 +24,8 @@ require "open-uri"
     puts "Creating users..."
 
     User.create!(
-      first_name: 'Michaelangelo',
-      email: 'ninja@turtle.com',
+      first_name: 'Demo',
+      email: 'demo@test.com',
       password: 'password123'
     )
 
