@@ -19,7 +19,7 @@ class Api::ReviewsController < ApplicationController
 
     def update
         @review = current_user.reviews.find(params[:id])
-        # debugger
+        debugger
 
         if @review.update(review_params)
 

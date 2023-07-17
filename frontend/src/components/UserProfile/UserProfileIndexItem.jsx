@@ -29,7 +29,11 @@ const UserProfileIndexItem = ({review}) => {
                 <p className='up-review-body'>{review.body}</p>
                 <div className='button-container'>
                     <div className="update-review-button">
-                        <ReviewForm productId={product.id} review={review} formType={"update"}/>
+                        <ReviewForm
+                            productId={product.id}
+                            review={review}
+                            formType={"update"}
+                        />
                     </div>
                     <button onClick={() => handleDelete(review)} className="delete-review-button">Delete</button>
                 </div>
