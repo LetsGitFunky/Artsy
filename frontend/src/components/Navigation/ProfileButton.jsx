@@ -45,9 +45,8 @@ const ProfileButton = () => {
         <button className="navbar profile-button"><FaUserCircle size={20} style={{ color: "#0091F5" }}/> <TiArrowSortedDown style={{ color: "#0091F5" }}/></button>
         {showMenu && (
             <ul className='profile-menu'>
-                <li  className='first-name'>{user.firstName}</li>
                 <li className="profile-link">
-                    <Link to={`/user/${user.id}`}>View Profile</Link>
+                    <Link to={`/user/${user.id}`}>View {user.firstName}'s Profile</Link>
                 </li>
                 <li className="logout">
                     <Link to="/">
