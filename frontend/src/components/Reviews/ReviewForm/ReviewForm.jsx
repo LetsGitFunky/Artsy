@@ -55,7 +55,7 @@ const ReviewForm = ({productId, review, formType}) => {
             setErrors(['Please log in to write a review.']);
             return;
         }
-        
+
         const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
 
         if(formType === 'create') {
@@ -73,7 +73,7 @@ const ReviewForm = ({productId, review, formType}) => {
         <div>
             {submissionSuccessful && <p>Review submitted successfully!</p>}
 
-            <button className="new-review-button" onClick={() => setShowModal(true)}>{buttonText}</button>
+            <button className="new-review-button" onClick={() => setShowModal(true)} >{buttonText}</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <form className="review-form" onSubmit={handleSubmit}>

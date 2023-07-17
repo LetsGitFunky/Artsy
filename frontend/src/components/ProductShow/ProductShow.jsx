@@ -15,7 +15,7 @@ function ProductShow() {
     const dispatch = useDispatch();
     const { productId } = useParams();
     const product = useSelector(state => state.products[productId]);
-    const currentUser = useSelector(state => state.session.user); // TODO
+    const currentUser = useSelector(state => state.session.user);
 
     const [selectedSize, setSelectedSize] = useState("");
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -42,9 +42,7 @@ function ProductShow() {
 
     return (
         <div className='prod-home-wrapper'>
-
             <div className="prod-show-wrapper">
-
                 <div className="img-carousel-container">
                     <div className="thumbnails-container">
                         {product.images.map((url, index) => (
