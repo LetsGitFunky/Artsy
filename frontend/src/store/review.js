@@ -10,10 +10,11 @@ export const receiveReviews = (reviews) => ({
     reviews
 });
 
-export const receiveReview = (data) => ({
+export const receiveReview = (data) => {
+    return {
     type: RECEIVE_REVIEW,
     data
-});
+}};
 
 export const removeReview = (reviewId) => ({
     type: DELETE_REVIEW,
@@ -61,7 +62,8 @@ const reviewsReducer = (state = initialState, action) => {
             // debugger
             return { ...action.reviews }
         case RECEIVE_REVIEW:
-            return { ...state, [action.data.review.id]: action.data.review }
+            // debugger
+            return { ...state, [action.data.review.id]: {...action.data.review} }
         case DELETE_REVIEW:
             const newState = { ...state }
             delete newState[action.reviewId]

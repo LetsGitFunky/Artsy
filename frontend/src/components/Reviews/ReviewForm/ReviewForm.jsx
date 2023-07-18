@@ -14,6 +14,7 @@ const ReviewForm = ({productId, review, formType}) => {
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
     const currentUser = useSelector(state => state.session.user);
 
+
     useEffect(() => {
         setTitle(review ? review.title : '');
         setBody(review ? review.body : '');
@@ -57,6 +58,7 @@ const ReviewForm = ({productId, review, formType}) => {
         }
 
         const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
+
 
         if(formType === 'create') {
             dispatch(reviewActions.createReview(productId, reviewPayload))

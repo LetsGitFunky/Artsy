@@ -4,7 +4,7 @@ import ReviewIndexItem from "../ReviewIndexItem/ReviewIndexItem";
 import './ReviewIndex.css';
 import AverageStarRating from "../Ratings/AverageStarRating";
 
-const ReviewIndex = () => {
+const ReviewIndex = ({currentUser}) => {
     const reviews = useSelector((state) => Object.values(state.reviews));
 
     return reviews ? (
@@ -13,7 +13,7 @@ const ReviewIndex = () => {
                 <AverageStarRating reviews={reviews} />
             </div>
                 {reviews.map((review, i) => (
-                    <ReviewIndexItem key={`review-item-${i}`} review={review} />
+                    <ReviewIndexItem key={`review-item-${i}`} review={review} currentUser={currentUser}/>
                 ))}
         </div>
     ) : null;

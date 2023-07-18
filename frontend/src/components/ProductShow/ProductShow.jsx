@@ -106,7 +106,7 @@ function ProductShow() {
 
             </div>
                 <div className='review-index-wrapper'>
-                    <ReviewIndex productId={productId}/>
+                    <ReviewIndex productId={productId} currentUser={currentUser}/>
                 </div>
         </div>
     );
