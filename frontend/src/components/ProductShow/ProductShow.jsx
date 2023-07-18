@@ -93,7 +93,6 @@ function ProductShow() {
                         </div>
                     </label>
 
-                    {/* <button className='prod-cart-button'>Add to Cart</button> */}
                     <div className='prod-cart-button-container'>
                     {currentUser === null && <p className="size-warning">*Please login to add to cart.*</p>}
                     {selectedSize === "" && <p className="size-warning">*Select a size to add to cart.*</p>}

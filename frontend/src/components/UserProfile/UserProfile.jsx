@@ -4,8 +4,6 @@ import './UserProfile.css';
 import { fetchUser } from '../../store/session';
 import UserProfileIndex from './UserProfileIndex';
 
-
-
 const UserProfile = () => {
     const dispatch = useDispatch();
 

@@ -11,8 +11,6 @@
     gap: 5px
 }
 
-/* .rii-rating {} */
-
 .rii-title {
     font-size: 1em;
     font-weight: bold;
@@ -34,7 +32,6 @@
     align-items: center;
     gap: 5px;
 }
-/* .rii-text {} */
 
 .update-delete-container {
     display: flex;

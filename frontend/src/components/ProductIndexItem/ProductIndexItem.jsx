@@ -19,7 +19,6 @@ const ProductIndexItem = ({ product }) => {
                     alt={product.name} />
                 <div className="pii-text-container">
                     <h2 className="pii-text pii-name">{product.name}</h2>
-                    {/* <p className="pii-text pii-rating">(ratings will go here)</p> */}
                     <p className="pii-text pii-price">${product.price}</p>
                     <p className="pii-text pii-shipping">Free shipping</p>
                     <p className="pii-text pii-verified"><MdVerified size={12} style={{ marginRight: '2px', color: "#6400F5" }}/>Verified seller</p>
