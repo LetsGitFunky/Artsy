@@ -10,9 +10,9 @@ const UserProfileIndexItem = ({review}) => {
     const product = useSelector(state => (state.products[review.productId]))
 
     const handleDelete = (review) => {
-        // if (window.confirm("Are you sure you want to delete this review?")) {
+        if (window.confirm("Are you sure you want to delete this review?")) {
             dispatch(deleteReview(product, review.id));
-        // }
+        }
     }
 
     return product ? (
