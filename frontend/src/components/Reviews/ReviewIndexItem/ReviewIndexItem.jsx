@@ -4,9 +4,10 @@ import StarRating from "../Ratings/StarRating";
 import ReviewForm from "../ReviewForm/ReviewForm";
 // import { useState } from "react";
 
-// console.log(review);
-
 const ReviewIndexItem = ({review, currentUser}) => {
+
+    // console.log(review)
+
     return (
         <div className="rii-container">
             <div className="rii-rating">
@@ -14,7 +15,7 @@ const ReviewIndexItem = ({review, currentUser}) => {
             </div>
             <p className="rii-title rii-text">{review.title}</p>
             <p className="rii-body rii-text">{review.body}</p>
-            <p>{review.id}</p>
+            {/* <p>{review.id}</p> */}
             <p className="rii-author rii-text">Reviewed by: {review.author}</p>
             {currentUser && currentUser.id === review.userId &&
                 <ReviewForm

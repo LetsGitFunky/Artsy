@@ -62,6 +62,7 @@ const reviewsReducer = (state = initialState, action) => {
             // debugger
             return { ...action.reviews }
         case RECEIVE_REVIEW:
+            // debugger
             return { ...state, [action.data.review.id]: {...action.data.review} }
         case DELETE_REVIEW:
             const newState = { ...state }

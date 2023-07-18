@@ -60,7 +60,7 @@ const ReviewForm = ({productId, review, formType}) => {
 
         const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
 
-        console.log(review);
+        // console.log(review);
 
 
         if(formType === 'create') {
