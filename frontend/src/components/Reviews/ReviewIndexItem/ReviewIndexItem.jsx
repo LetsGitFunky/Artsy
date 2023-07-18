@@ -28,19 +28,19 @@ const ReviewIndexItem = ({review, currentUser}) => {
             <p className="rii-body rii-text">{review.body}</p>
             <p className="rii-author rii-text">Reviewed by: {review.author}</p>
             {currentUser && currentUser.id === review.userId &&
-                <>
+                <div className="update-delete-container">
                     <ReviewForm
                         productId={review.productId}
                         review={review}
                         formType={"update"}
                     />
-                    <button onClick={() => handleDelete(review)} className="delete-review-button">Delete</button>
+                    <button onClick={() => handleDelete(review)} className="delete-review-button">Delete Review</button>
                     {showConfirm &&
                         <ConfirmationModal
                             onConfirm={handleConfirmDelete}
                             onCancel={() => setShowConfirm(false)}
                         />}
-                </>
+                </div>
             }
         </div>
     )

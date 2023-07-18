@@ -35,3 +35,17 @@
     gap: 5px;
 }
 /* .rii-text {} */
+
+.update-delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.delete-review-button {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 16px;
+}

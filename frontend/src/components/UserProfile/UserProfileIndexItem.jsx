@@ -40,7 +40,7 @@ const UserProfileIndexItem = ({review}) => {
                             formType={"update"}
                         />
                     </div>
-                    <button onClick={() => handleDelete(review)} className="delete-review-button">Delete</button>
+                    <button onClick={() => handleDelete(review)} className="delete-review-button">Delete Review</button>
                     {showConfirm &&
                         <ConfirmationModal
                             onConfirm={handleConfirmDelete}
