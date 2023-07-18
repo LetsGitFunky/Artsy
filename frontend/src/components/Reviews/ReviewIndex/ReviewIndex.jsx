@@ -6,7 +6,6 @@ import AverageStarRating from "../Ratings/AverageStarRating";
 
 const ReviewIndex = ({currentUser}) => {
     const reviews = useSelector((state) => Object.values(state.reviews));
-    // console.log(reviews[0].title)
 
     return reviews ? (
         <div className="review-index-container">

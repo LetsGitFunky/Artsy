@@ -14,7 +14,6 @@ const ReviewForm = ({productId, review, formType}) => {
     const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
     const currentUser = useSelector(state => state.session.user);
 
-    // console.log(review.id)
 
     useEffect(() => {
         setTitle(review ? review.title : '');
@@ -59,8 +58,6 @@ const ReviewForm = ({productId, review, formType}) => {
         }
 
         const reviewPayload = { userId: currentUser.id, title, body, rating, productId };
-
-        // console.log(review);
 
 
         if(formType === 'create') {
@@ -115,7 +112,6 @@ const ReviewForm = ({productId, review, formType}) => {
                                 <ReviewStarRating onRatingChange={(newRating) => setRating(newRating)} />
                             </label>
                         </div>
-                        <p>{review.id}</p>
                         <button className="review-form-button" type="submit">Submit Review</button>
                     </form>
                 </Modal>
