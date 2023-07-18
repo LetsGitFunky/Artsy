@@ -9,6 +9,7 @@ import configureStore from './store/store_index';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import { ModalProvider } from './context/Modal';
+import Modal from 'react-modal';
 
 
 const store = configureStore();
@@ -18,6 +19,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
 }
+
+Modal.setAppElement('#root');
 
 function Root() {
   return (

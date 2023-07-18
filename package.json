@@ -16,6 +16,7 @@
     "node": "16.20.0"
   },
   "dependencies": {
+    "react-modal": "^3.16.1",
     "react-responsive-carousel": "^3.2.23"
   }
 }

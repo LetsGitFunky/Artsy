@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ReviewIndexItem.css";
 import StarRating from "../Ratings/StarRating";
 import ReviewForm from "../ReviewForm/ReviewForm";
 import { deleteReview } from "../../../store/review";
 import { useDispatch } from "react-redux";
+import ConfirmationModal from "../../../context/ConfirmationModal";
 
 const ReviewIndexItem = ({review, currentUser}) => {
+    const [showConfirm, setShowConfirm] = useState(false);
     const dispatch = useDispatch()
 
     const handleDelete = (review) => {
-        if (window.confirm("Are you sure you want to delete this review?")) {
-            dispatch(deleteReview(review.productId, review.id));
-        }
+        setShowConfirm(true);
+    }
+
+    const handleConfirmDelete = () => {
+        setShowConfirm(false);
+        dispatch(deleteReview(review.productId, review.id));
     }
 
     return (
@@ -30,6 +35,11 @@ const ReviewIndexItem = ({review, currentUser}) => {
                         formType={"update"}
                     />
                     <button onClick={() => handleDelete(review)} className="delete-review-button">Delete</button>
+                    {showConfirm &&
+                        <ConfirmationModal
+                            onConfirm={handleConfirmDelete}
+                            onCancel={() => setShowConfirm(false)}
+                        />}
                 </>
             }
         </div>

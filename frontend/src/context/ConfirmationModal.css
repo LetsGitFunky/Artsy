@@ -1,0 +1,42 @@
+.confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F2F2F2;
+    border-radius: 1em;
+    padding: 20px;
+    width: 400px;
+    max-height: 90vh;
+    overflow: auto;
+    border: 1px solid black;
+    text-align: center;
+    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+}
+
+.confirmation-modal h2 {
+    margin: 10px;
+    font-weight: 500;
+    font-size: larger;
+}
+
+.confirmation-modal p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.confirmation-modal button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    width: 60px;
+}
+
+.confirmation-modal button:hover {
+    background-color: #7a7a7a;
+}
