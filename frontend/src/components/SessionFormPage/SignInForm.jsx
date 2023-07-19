@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './FormStyles.css'
 import '../Navigation/Nav.css'
+import { fetchCartItems } from '../../store/cart_item';
 
 const SignInForm = ({setFormType}) => {
 
@@ -18,20 +19,22 @@ const SignInForm = ({setFormType}) => {
         e.preventDefault(); // prevent form from submitting
         setEmail("demo@test.com");
         setPassword("password123");
-        dispatch(sessionActions.login({ email: "demo@test.com", password: "password123" }));
+        dispatch(sessionActions.login({ email: "demo@test.com", password: "password123" }))
+        .then(() => dispatch(fetchCartItems()));
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        // setIsModalOpen(false);
-                return dispatch(sessionActions.login({ email, password }))
+
+        return dispatch(sessionActions.login({ email, password }))
+        .then(() => dispatch(fetchCartItems()))
         .catch(async (res) => {
             let data;
             try {
-            data = await res.clone().json();
+                data = await res.clone().json();
             } catch {
-            data = await res.text();
+                data = await res.text();
             }
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);

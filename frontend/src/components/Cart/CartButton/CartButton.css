@@ -1,12 +1,26 @@
 .cart-button {
     cursor: pointer;
-    border-radius: 50%;
-    padding: 6px 9px;
+    border-radius: 2em;
+    padding: 6px;
     border: none;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
     background-color: white;
 }
 
 .cart-button:hover {
     background-color: rgb(226, 226, 226);
+}
+
+.cart-count {
+    background-color: #faa077;
+    color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 2px 5px;
+    width: 5px;
+    height: 5px;
+    font-size: 0.8em;
+    position: relative;
+    top: -20px;
+    left: -10px;
 }

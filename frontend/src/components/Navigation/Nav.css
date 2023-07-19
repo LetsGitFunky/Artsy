@@ -120,12 +120,16 @@
     white-space: nowrap;
 }
 
+
+
 .logout-button {
     padding: 12px 23px;
     border: none;
     background-color: white;
     border-radius: 8px;
     cursor: pointer;
+    width: 90px;
+
 }
 
 a {

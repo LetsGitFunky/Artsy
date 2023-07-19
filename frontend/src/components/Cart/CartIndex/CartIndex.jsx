@@ -27,7 +27,6 @@ const CartIndex = () => {
             </div>
             <div className="cart-links-container">
                 <li className="cart-links"><a href='https://github.com/LetsGitFunky/'><BsGithub size={30}/></a></li>
-                {/* <li><a href='https://twitter.com/yourusername'>Twitter</a></li> */}
                 <li className="cart-links"><a href='https://www.linkedin.com/in/nickjhein/'><BsLinkedin size={30}/></a></li>
             </div>
 

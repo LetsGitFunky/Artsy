@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import {FaUserCircle} from "react-icons/fa";
@@ -20,10 +20,10 @@ const ProfileButton = () => {
         setShowMenu(true);
     };
 
-    const closeMenu = () => {
+    const closeMenu = useCallback(() => {
         if (!showMenu) return;
         setShowMenu(false);
-    };
+    }, [showMenu]);
 
     useEffect(() => {
         if (!showMenu) return;
@@ -32,7 +32,7 @@ const ProfileButton = () => {
         return () => {
         document.removeEventListener('click', closeMenu);
         };
-    }, [showMenu]);
+    }, [showMenu, closeMenu]);
 
     const handleLogout = (e) => {
         e.preventDefault();
