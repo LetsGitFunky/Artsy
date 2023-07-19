@@ -18,6 +18,12 @@
     margin-bottom: 10px;
 }
 
+.cart-total-price {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 20px;
+}
+
 .cart-links-container {
     list-style: none;
     display: flex;
@@ -38,4 +44,30 @@
 .cart-links:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 5px 1px lightgray;
+}
+
+.thank-you {
+    font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.checkout {
+    width: 80%;
+    margin: 10px;
+    border: none;
+    border-radius: 6em;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 18px;
+    /* overflow: hidden; */
+}
+
+.checkout:hover {
+    background-color: rgb(47, 47, 47);
+    scale: 1.01;
+    transition: 0.2s all ease-in-out;
 }
