@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Modal } from '../../../context/Modal';
 import { TiShoppingCart } from 'react-icons/ti'
 import CartIndex from '../CartIndex/CartIndex';
 import SignInForm from '../../SessionFormPage/SignInForm';
 import "./CartButton.css"
-// import { fetchCartItems } from '../../../store/cart_item';
+import { fetchCartItems } from '../../../store/cart_item';
 
 
 const CartButton = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const user = useSelector(state => state.session.user);
 
@@ -17,11 +17,11 @@ const CartButton = () => {
         Object.values(state.cartItems).reduce((count, item) => count + item.quantity, 0)
     );
 
-    // useEffect(() => {
-    //     if (user) {
-    //         dispatch(fetchCartItems());
-    //     }
-    // }, [user, dispatch]);
+    useEffect(() => {
+        if (user) {
+            dispatch(fetchCartItems());
+        }
+    }, [user, dispatch]);
 
     const handleOpen = () => {
         setIsModalOpen(true);
