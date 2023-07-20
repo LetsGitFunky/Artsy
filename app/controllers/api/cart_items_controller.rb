@@ -34,6 +34,11 @@ class Api::CartItemsController < ApplicationController
     render :show
   end
 
+  def clear
+    current_user.cart_items.destroy_all
+    render json: { message: 'Cart cleared' }, status: :ok
+  end
+
   private
 
   def cart_item_params

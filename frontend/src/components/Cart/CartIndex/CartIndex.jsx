@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCartItems, clearCart } from '../../../store/cart_item';
+import { fetchCartItems, clearAllCartItems } from '../../../store/cart_item';
 import CartIndexItem from '../CartIndexItem/CartIndexItem';
 import {BsGithub, BsLinkedin} from "react-icons/bs"
 import "./CartIndex.css"
@@ -15,7 +15,7 @@ const CartIndex = () => {
     const [thankYouMessage, setThankYouMessage] = useState(false); // Add state for thank you message
 
     const handleCheckout = () => {
-        dispatch(clearCart()); // Clear the cart on checkout
+        dispatch(clearAllCartItems())
         setThankYouMessage(true); // Show the thank you message
     };
 

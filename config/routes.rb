@@ -14,7 +14,11 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index, :create, :update, :destroy]
     end
     resources :reviews, only: [:index]
-    resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy] do
+      collection do
+        delete 'clear'
+      end
+    end
   end
 
   # post 'api/test', to: 'application#test'

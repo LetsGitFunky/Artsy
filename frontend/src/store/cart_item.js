@@ -67,6 +67,14 @@ export const deleteCartItem = (cartItemId) => (dispatch) => {
     .catch(error => console.error('Error:', error))
 }
 
+export const clearAllCartItems = () => (dispatch) => {
+    csrfFetch(`/api/cart_items/clear`, {
+        method: "DELETE",
+    })
+    .then(() => dispatch(clearCart()))
+    .catch(error => console.error('Error:', error))
+}
+
 const initialState = {};
 
 const cartItemsReducer = (state = initialState, action) => {
