@@ -1,24 +1,41 @@
-# README
+# Artsy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Add a descriptive image here.
+![Project Image](link_to_image)
 
-Things you may want to cover:
+## Live Link
+[Live Link](https://artsy-bp61.onrender.com/)
 
-* Ruby version
+## Introduction
+Give a brief introduction about the project, what it does, what it's for, and maybe a little bit about the technologies you've used.
 
-* System dependencies
+## Features
+- **Feature 1:** A brief description of Feature 1.
+- **Feature 2:** A brief description of Feature 2.
+- **Feature 3:** A brief description of Feature 3.
 
-* Configuration
+You can add as many features as you want.
 
-* Database creation
+## Technologies Used
+Here is a list of technologies used within this project:
 
-* Database initialization
+- **Front End:**
+  - React.js
+  - Redux
+  - CSS
 
-* How to run the test suite
+- **Back End:**
+  - Node.js
+  - Express.js
+  - PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+- **Deployment and Hosting:**
+  - Render
 
-* Deployment instructions
+You can change the technologies as per your actual usage.
 
-* ...
+## Future Plans
+Talk about features or improvements you plan on implementing in the future.
+
+## Screenshots
+Include a few screenshots/gifs of your project's features here.
