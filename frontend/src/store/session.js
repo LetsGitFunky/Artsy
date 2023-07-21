@@ -92,6 +92,24 @@ export const fetchUser = (userId) => async (dispatch) => {
     return response
 }
 
+export const updateUser = (user) => async (dispatch) => {
+    const response = await csrfFetch(`/api/users/${user.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(setCurrentUser(data.user));
+        return null;
+    } else {
+        const data = await response.json();
+        const { errors } = data;
+        return errors;
+    }
+};
+
 
 const initialState = { user: JSON.parse(sessionStorage.getItem('currentUser')) || null  };
 

@@ -113,3 +113,41 @@
     scale: 1.01;
     transition: 0.2s all ease-in-out;
 }
+
+.info-header {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-left: 5px;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.info-container {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.info-cat-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.info-cat {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.change-name {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+    margin-left: 5px;
+}
