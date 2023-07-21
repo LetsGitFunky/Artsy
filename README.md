@@ -1,20 +1,28 @@
-# Artsy
+![Project Image](./frontend/src/assets/images/artsy_logo.png)
 
-Add a descriptive image here.
-![Project Image](link_to_image)
-
-## Live Link
-[Live Link](https://artsy-bp61.onrender.com/)
+## [Live Link](https://artsy-bp61.onrender.com/)
 
 ## Introduction
-Give a brief introduction about the project, what it does, what it's for, and maybe a little bit about the technologies you've used.
+Artsy is a full stack Etsy clone build on Ruby on Rails and React.
 
 ## Features
-- **Feature 1:** A brief description of Feature 1.
-- **Feature 2:** A brief description of Feature 2.
-- **Feature 3:** A brief description of Feature 3.
-
-You can add as many features as you want.
+- **Users:**
+    - Users can create accounts with firstname, email and password.
+    - Option to login as demo user.
+    - Full error handling and validation for signup and login.
+- **Products:**
+    - Seeded products of various categories featuring images (via AWS), reviews and size options.
+    - Product Show page features and image carousel, reviews and average rating.
+    - Products are searchable and able to be browsed by category.
+- **Reviews:**
+    - Reviews can be created, read, updated and deleted by user.
+    - Only logged in users can leave reviews, and only update or delete their own reviews.
+    - Modal confirmation message before a review is delete
+- **Cart:**
+    - Logged in users can add products to their Cart.
+    - Cart is full CRUD feature.
+    - Cart is visible as a modal, with a checkout button that clears the cart and renders a thank you message
+    - Cart Button, visible on the navbar has cart item quanitity that updates when items are added to cart.
 
 ## Technologies Used
 Here is a list of technologies used within this project:
@@ -25,6 +33,7 @@ Here is a list of technologies used within this project:
   - CSS
 
 - **Back End:**
+  - Ruby on Rails
   - Node.js
   - Express.js
   - PostgreSQL
@@ -32,10 +41,27 @@ Here is a list of technologies used within this project:
 - **Deployment and Hosting:**
   - Render
 
-You can change the technologies as per your actual usage.
-
 ## Future Plans
-Talk about features or improvements you plan on implementing in the future.
+  - Add taxes and shipping fees cart
+  - Have a sale options for products and a separate sale category
+  - Add a "Helpful Review" option for all reviews (essentially a review like count)
+  - Upload user image for userProfile
 
 ## Screenshots
-Include a few screenshots/gifs of your project's features here.
+
+### Splash
+![Project Image](./images/LoggedInSplash.png)
+### Product Show
+![Project Image](./images/ProductShow.png)
+### Register Form
+![Project Image](./images/RegisterForm.png)
+### Sign in Form
+![Project Image](./images/SignInForm.png)
+### Search Index
+![Project Image](./images/SearchIndex.png)
+### User Profile
+![Project Image](./images/UserProfile.png)
+### Cart
+![Project Image](./images/Cart.png)
+### Checkout
+![Project Image](./images/Checkout.png)
