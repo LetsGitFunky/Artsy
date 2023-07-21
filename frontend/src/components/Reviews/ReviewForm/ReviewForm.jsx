@@ -114,7 +114,10 @@ const ReviewForm = ({productId, review, formType}) => {
                         <div className='review-rating-container'>
                             <label className="review-input-label">
                                 Rating
-                                <ReviewStarRating onRatingChange={(newRating) => setRating(newRating)} />
+                                <ReviewStarRating
+                                    currentRating={rating}
+                                    onRatingChange={(newRating) => setRating(newRating)}
+                                />
                             </label>
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>

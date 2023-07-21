@@ -9,8 +9,8 @@ const Star = ({ filled, onClick }) => {
     );
 }
 
-const ReviewStarRating = ({ onRatingChange }) => {
-    const [rating, setRating] = useState(0);
+const ReviewStarRating = ({ currentRating, onRatingChange }) => {
+    const [rating, setRating] = useState(currentRating || 0);
 
     const handleStarClick = (index) => {
         const newRating = index + 1;
