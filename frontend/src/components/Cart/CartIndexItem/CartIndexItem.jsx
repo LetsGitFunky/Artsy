@@ -42,13 +42,14 @@ const CartIndexItem = ({ cartItem }) => {
                         <div className="cart-item-quantity">
                             <label className='quantity-label'>Quantity:
                                 <select className='quantity-select' value={quantity} onChange={handleQuantityChange}>
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                    <option value={4}>4</option>
-                                    <option value={5}>5</option>
-                                    <option value={6}>6</option>
-                                    <option value={7}>7</option>
+                                    {
+                                        Array.from({length: 99}, (_, i) => i + 1)
+                                            .map(num => (
+                                                <option key={num} value={num}>
+                                                    {num}
+                                                </option>
+                                        ))
+                                    }
                                 </select>
                             </label>
                         </div>

@@ -32,7 +32,7 @@ const CartButton = () => {
     };
 
     return (
-        <div>
+        <div className='cart-button-container'>
             <button onClick={handleOpen} className='cart-button'>
                 <TiShoppingCart size={24} />
                 {user && cartItemCount > 0 && (
