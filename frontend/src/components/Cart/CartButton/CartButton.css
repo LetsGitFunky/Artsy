@@ -1,3 +1,11 @@
+.cart-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+}
+
 .cart-button {
     cursor: pointer;
     border-radius: 2em;
@@ -5,6 +13,7 @@
     border: none;
     transition: background-color 0.5s ease-in-out;
     background-color: white;
+    position: relative;
 }
 
 .cart-button:hover {
@@ -16,11 +25,13 @@
     color: black;
     border-radius: 50%;
     border: 2px solid white;
-    padding: 2px 5px;
-    width: 5px;
-    height: 5px;
+    padding: 3px 3px;
     font-size: 0.8em;
-    position: relative;
-    top: -20px;
-    left: -10px;
+    margin-top: -10px;
+    position: absolute;
+    top: 6px;
+    left: 22px;
+    min-width: 10px;
+    min-height: 10px;
+    text-align: center;
 }
