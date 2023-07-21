@@ -18,7 +18,7 @@ const ReviewForm = ({productId, review, formType}) => {
     useEffect(() => {
         setTitle(review ? review.title : '');
         setBody(review ? review.body : '');
-        setRating(review ? review.rating : 3);
+        setRating(review ? review.rating : 0);
     }, [review]);
 
 
@@ -28,9 +28,9 @@ const ReviewForm = ({productId, review, formType}) => {
     const buttonText = formType === 'create' ? 'Write a Review' : 'Update Review';
 
     const handleSuccess = () => {
-        setTitle('');
-        setBody('');
-        setRating(3);
+        setTitle(review.title);
+        setBody(review.body);
+        setRating(review.rating);
         setShowModal(false);
         setSubmissionSuccessful(true);
         setTimeout(() => setSubmissionSuccessful(false), 5000);
@@ -54,6 +54,11 @@ const ReviewForm = ({productId, review, formType}) => {
 
         if (!currentUser) {
             setErrors(['Please log in to write a review.']);
+            return;
+        }
+
+        if (rating === 0) {
+            setErrors(['Rating cannot be 0.']);
             return;
         }
 
@@ -109,7 +114,10 @@ const ReviewForm = ({productId, review, formType}) => {
                         <div className='review-rating-container'>
                             <label className="review-input-label">
                                 Rating
-                                <ReviewStarRating onRatingChange={(newRating) => setRating(newRating)} />
+                                <ReviewStarRating
+                                    currentRating={rating}
+                                    onRatingChange={(newRating) => setRating(newRating)}
+                                />
                             </label>
                         </div>
                         <button className="review-form-button" type="submit">Submit Review</button>
