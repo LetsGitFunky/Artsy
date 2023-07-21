@@ -28,9 +28,9 @@ const ReviewForm = ({productId, review, formType}) => {
     const buttonText = formType === 'create' ? 'Write a Review' : 'Update Review';
 
     const handleSuccess = () => {
-        setTitle('');
-        setBody('');
-        setRating(3);
+        setTitle(review.title);
+        setBody(review.body);
+        setRating(review.rating);
         setShowModal(false);
         setSubmissionSuccessful(true);
         setTimeout(() => setSubmissionSuccessful(false), 5000);
