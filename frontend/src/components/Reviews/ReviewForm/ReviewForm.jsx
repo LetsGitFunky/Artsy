@@ -18,7 +18,7 @@ const ReviewForm = ({productId, review, formType}) => {
     useEffect(() => {
         setTitle(review ? review.title : '');
         setBody(review ? review.body : '');
-        setRating(review ? review.rating : 3);
+        setRating(review ? review.rating : 0);
     }, [review]);
 
 
@@ -54,6 +54,11 @@ const ReviewForm = ({productId, review, formType}) => {
 
         if (!currentUser) {
             setErrors(['Please log in to write a review.']);
+            return;
+        }
+
+        if (rating === 0) {
+            setErrors(['Rating cannot be 0.']);
             return;
         }
 
